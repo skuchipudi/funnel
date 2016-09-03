@@ -1,0 +1,30 @@
+import {Injectable} from 'angular2/core';
+import {Http} from 'angular2/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
+@Injectable()
+export class AuditLoggerService {
+    private _url = "http://ec2-54-174-128-188.compute-1.amazonaws.com:8080/auditlogger/entries/";
+    private _url2 = "http://jsonplaceholder.typicode.com/albums";
+    private _auditDetailUrl  
+    = "http://ec2-54-174-128-188.compute-1.amazonaws.com:8080/auditlogger/getentry/partnerId/";
+
+
+    constructor(private _http: Http){
+    }
+    
+    getAlbums() {
+        return this._http.get(this._url2)
+            .map(res => res.json());
+    }
+    getAuditLogs() {
+        return this._http.get(this._url)
+            .map(res => res.json());
+    }
+    
+    getAuditDetail(id:any){
+        return this._http.get(this._auditDetailUrl + id)
+            .map(res => res.json())  
+    }
+}
