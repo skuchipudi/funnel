@@ -4,7 +4,7 @@ import {PhotoService} from './photo.service';
 
 @Component({
     template: `
-        <h1>Welcome to FileSentinel&trade;</h1>
+        <h1>Welcome</h1>
         <div>
         FileSentinel&trade; provides an enterprise scale and peer 
         to peer registered and managed secure file exchange.  
@@ -18,7 +18,7 @@ import {PhotoService} from './photo.service';
     `,
     providers: [PhotoService, HTTP_PROVIDERS]
 })
-export class BrandComponent implements OnInit {
+export class FileSentinelSplashComponent implements OnInit {
     isLoading = true;
     photos: any;
 

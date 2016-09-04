@@ -14,8 +14,12 @@ import {AuditLoggerService} from './auditlogger.service';
             <tr>
              <th>Partner Id</th>
              <th>User Id</th>
+             <th>*Sender</th>
+             <th>*Receiver</th>
              <th>Log Event</th>
              <th>Time Stamp</th>
+            <th>*Status</th>
+
             </tr>
          </thead>
         <tbody>
@@ -24,8 +28,11 @@ import {AuditLoggerService} from './auditlogger.service';
                <td>{{auditlog.partnerId}}</td>
               </a>
               <td> {{auditlog.userId}}</td>
+              <td> Sender*</td>
+              <td> Receiver*</td>
               <td>{{auditlog.logEvent}}</td>
               <td>{{auditlog.timeStamp}}</td>
+              <td>PASS*</td>
             </tr>
         </tbody>
         </table>  

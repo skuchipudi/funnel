@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './registration.component', './auditlog.component', './auditdetail.component', './brand.component', './albums.component', './album.component', './contact.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './registration.component', './auditlog.component', './auditdetail.component', './filesentinel_splash.component', './albums.component', './album.component', './contact.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './registration.component',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, registration_component_1, auditlog_component_1, auditdetail_component_1, brand_component_1, albums_component_1, album_component_1, contact_component_1;
+    var core_1, router_1, registration_component_1, auditlog_component_1, auditdetail_component_1, filesentinel_splash_component_1, albums_component_1, album_component_1, contact_component_1;
     var AppComponent;
     return {
         setters:[
@@ -29,8 +29,8 @@ System.register(['angular2/core', 'angular2/router', './registration.component',
             function (auditdetail_component_1_1) {
                 auditdetail_component_1 = auditdetail_component_1_1;
             },
-            function (brand_component_1_1) {
-                brand_component_1 = brand_component_1_1;
+            function (filesentinel_splash_component_1_1) {
+                filesentinel_splash_component_1 = filesentinel_splash_component_1_1;
             },
             function (albums_component_1_1) {
                 albums_component_1 = albums_component_1_1;
@@ -50,7 +50,7 @@ System.register(['angular2/core', 'angular2/router', './registration.component',
                         //   { path: '/registrationlogs', name: 'RegistrationLogs', component: RegistrationLogsComponent, useAsDefault:true},
                         { path: '/albums', name: 'Albums', component: albums_component_1.AlbumsComponent },
                         { path: '/albums/:id', name: 'Album', component: album_component_1.AlbumComponent },
-                        { path: '/brand', name: 'Brand', component: brand_component_1.BrandComponent },
+                        { path: '/filesentinelsplash', name: 'FileSentinelSplash', component: filesentinel_splash_component_1.FileSentinelSplashComponent },
                         { path: '/contact', name: 'Contact', component: contact_component_1.ContactComponent },
                         { path: '/auditlog', name: 'AuditLog', component: auditlog_component_1.AuditLogComponent },
                         { path: '/auditdetail/:id', name: 'AuditDetail', component: auditdetail_component_1.AuditDetailComponent },

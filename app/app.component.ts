@@ -3,7 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {RegistrationComponent} from './registration.component';
 import {AuditLogComponent} from './auditlog.component';
 import {AuditDetailComponent} from './auditdetail.component';
-import {BrandComponent} from './brand.component';
+import {FileSentinelSplashComponent} from './filesentinel_splash.component';
 import {AlbumsComponent} from './albums.component';
 import {AlbumComponent} from './album.component';
 import {ContactComponent} from './contact.component';
@@ -14,7 +14,7 @@ import {ContactComponent} from './contact.component';
  //   { path: '/registrationlogs', name: 'RegistrationLogs', component: RegistrationLogsComponent, useAsDefault:true},
     { path: '/albums', name: 'Albums', component: AlbumsComponent},
     { path: '/albums/:id', name: 'Album', component: AlbumComponent },
-    { path: '/brand', name: 'Brand', component: BrandComponent},
+    { path: '/filesentinelsplash', name: 'FileSentinelSplash', component: FileSentinelSplashComponent},
     { path: '/contact', name: 'Contact', component: ContactComponent},
     
     { path: '/auditlog', name: 'AuditLog', component: AuditLogComponent},

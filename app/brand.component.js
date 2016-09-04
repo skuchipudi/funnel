@@ -39,7 +39,7 @@ System.register(['angular2/core', 'angular2/http', './photo.service'], function(
                 };
                 BrandComponent = __decorate([
                     core_1.Component({
-                        template: "\n        <h1>Welcome to FileSentinel</h1>\n        <div *ngIf=\"isLoading\">\n            <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        </div>\n        <div>\n            <img *ngFor=\"#photo of photos\" src=\"{{ photo.thumbnailUrl }}\">\n        </div>\n    ",
+                        template: "\n        <h1>Welcome to FileSentinel&trade;</h1>\n        <div>\n        FileSentinel&trade; provides an\u00A0enterprise scale and peer \n        to peer registered and managed secure file exchange.\u00A0 \n        </div>\n        <div *ngIf=\"isLoading\">\n            <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        </div>\n        <div>\n            <img *ngFor=\"#photo of photos\" src=\"{{ photo.thumbnailUrl }}\">\n        </div>\n    ",
                         providers: [photo_service_1.PhotoService, http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [photo_service_1.PhotoService])
