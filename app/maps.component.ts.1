@@ -1,0 +1,49 @@
+import {Component, OnInit} from 'angular2/core';
+import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+
+
+declare var jQuery:any;
+
+@Component({
+    template: `
+        <h1>Map</h1>
+        <div style="width:60%" id="container"></div>
+        `,
+    directives: [ROUTER_DIRECTIVES]
+})
+
+export class MapsComponent { 
+  private data = [
+		{
+	           name: 'Union Bank',
+	           data: [1,3,4]
+	        }, 
+                {
+            	   name: 'Wells Bank',
+	           data: [5,7,3]
+	        }];
+ 
+    ngAfterViewInit() {
+    	this.renderMap();
+    }
+ 
+    renderMap(){
+    	jQuery('#container').highcharts({
+	chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Transaction Volume'
+        },
+        xAxis: {
+            categories: ['Deposits', 'Credits', 'Exceptions']
+        },
+        yAxis: {
+            title: {
+                text: '* millions of dollars'
+            }
+        },
+        series: this.data
+        });
+    }
+}
