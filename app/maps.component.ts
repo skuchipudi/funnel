@@ -3,12 +3,13 @@ import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 
 
 declare var jQuery:any;
-
+declare var Highcharts:any;
 
 @Component({
     template: `
         <h1>Map</h1>
-        <div id="mapcontainer" style="height: 800px; min-width: 610px; max-width: 800px; margin: 0 auto"></div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+        <div id="mapcontainer" style="height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto"></div>
         `,
     directives: [ROUTER_DIRECTIVES]
 })
@@ -106,10 +107,6 @@ export class MapsComponent {
         }
     ];
 
-    
-
-   
-        
  
     ngAfterViewInit() {
      	this.renderMap();
@@ -119,11 +116,11 @@ export class MapsComponent {
     	jQuery('#mapcontainer').highcharts('Map',
         {
             title : {
-            text : 'Highmaps basic demo'
+            text : 'File Transfers'
         },
 
         subtitle : {
-            text : 'Source map: <a href="https://code.highcharts.com/mapdata/custom/north-america.js">North America</a>'
+            text : 'Source map: <a href="https://code.highcharts.com/mapdata/custom/world.js">World</a>'
         },
 
 
@@ -140,7 +137,8 @@ export class MapsComponent {
 
         series : [{
             data : this.data,
-            mapData: Highcharts.maps['custom/north-america'],
+           // mapData: Highcharts.maps['custom/north-america'],
+            mapData: Highcharts.maps['custom/world'],
             joinBy: 'hc-key',
             name: 'Random data',
             states: {
@@ -149,7 +147,7 @@ export class MapsComponent {
                 }
             },
             dataLabels: {
-                enabled: true,
+                enabled: false,
                 format: '{point.name}'
             }
         }]

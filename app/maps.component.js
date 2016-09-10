@@ -120,10 +120,10 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 MapsComponent.prototype.renderMap = function () {
                     jQuery('#mapcontainer').highcharts('Map', {
                         title: {
-                            text: 'Highmaps basic demo'
+                            text: 'File Transfers'
                         },
                         subtitle: {
-                            text: 'Source map: <a href="https://code.highcharts.com/mapdata/custom/north-america.js">North America</a>'
+                            text: 'Source map: <a href="https://code.highcharts.com/mapdata/custom/world.js">World</a>'
                         },
                         mapNavigation: {
                             enabled: true,
@@ -136,7 +136,8 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                         },
                         series: [{
                                 data: this.data,
-                                mapData: Highcharts.maps['custom/north-america'],
+                                // mapData: Highcharts.maps['custom/north-america'],
+                                mapData: Highcharts.maps['custom/world'],
                                 joinBy: 'hc-key',
                                 name: 'Random data',
                                 states: {
@@ -145,7 +146,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                                     }
                                 },
                                 dataLabels: {
-                                    enabled: true,
+                                    enabled: false,
                                     format: '{point.name}'
                                 }
                             }]
@@ -153,7 +154,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 };
                 MapsComponent = __decorate([
                     core_1.Component({
-                        template: "\n        <h1>Map</h1>\n        <div id=\"mapcontainer\" style=\"height: 800px; min-width: 610px; max-width: 800px; margin: 0 auto\"></div>\n        ",
+                        template: "\n        <h1>Map</h1>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\n        <div id=\"mapcontainer\" style=\"height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto\"></div>\n        ",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

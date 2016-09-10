@@ -47,9 +47,10 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 }
                 ChartsComponent.prototype.ngAfterViewInit = function () {
                     this.renderChart();
+                    this.renderPie();
                 };
                 ChartsComponent.prototype.renderChart = function () {
-                    jQuery('#container').highcharts({
+                    jQuery('#chartcontainer').highcharts({
                         chart: {
                             type: 'area'
                         },
@@ -99,9 +100,63 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                         series: this.data
                     });
                 };
+                ChartsComponent.prototype.renderPie = function () {
+                    jQuery('#piecontainer').highcharts({
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Browser market shares January, 2015 to May, 2015'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                    }
+                                }
+                            }
+                        },
+                        series: [{
+                                name: 'Brands',
+                                colorByPoint: true,
+                                data: [{
+                                        name: 'Microsoft Internet Explorer',
+                                        y: 56.33
+                                    }, {
+                                        name: 'Chrome',
+                                        y: 24.03,
+                                        sliced: true,
+                                        selected: true
+                                    }, {
+                                        name: 'Firefox',
+                                        y: 10.38
+                                    }, {
+                                        name: 'Safari',
+                                        y: 4.77
+                                    }, {
+                                        name: 'Opera',
+                                        y: 0.91
+                                    }, {
+                                        name: 'Proprietary or Undetectable',
+                                        y: 0.2
+                                    }]
+                            }]
+                    });
+                };
                 ChartsComponent = __decorate([
                     core_1.Component({
-                        template: "\n        <h1>Log Charts</h1>\n        <div style=\"width:60%\" id=\"container\"></div>\n        ",
+                        template: "\n        <h1>Log Charts</h1>\n\t\t<table>\n\t\t<tr>\n        <td>\n\t\t<div style=\"width:40%\" id=\"chartcontainer\"></div>\n\t\t</td>\n\t\t<td>\n\t\t<div style=\"width:60%\" id=\"piecontainer\"></div>\n\t\t</td>\n\t\t</tr>\n\t\t</table>\n        ",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

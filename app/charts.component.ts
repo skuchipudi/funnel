@@ -3,11 +3,21 @@ import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 
 
 declare var jQuery:any;
+declare var Highcharts:any;
 
 @Component({
     template: `
         <h1>Log Charts</h1>
-        <div style="width:60%" id="container"></div>
+		<table>
+		<tr>
+        <td>
+		<div style="width:40%" id="chartcontainer"></div>
+		</td>
+		<td>
+		<div style="width:60%" id="piecontainer"></div>
+		</td>
+		</tr>
+		</table>
         `,
     directives: [ROUTER_DIRECTIVES]
 })
@@ -37,10 +47,11 @@ export class ChartsComponent {
  
     ngAfterViewInit() {
     	this.renderChart();
+		this.renderPie();
     }
  
     renderChart(){
-    	jQuery('#container').highcharts({
+    	jQuery('#chartcontainer').highcharts({
 	        chart: {
 	            type: 'area'
 	        },
@@ -90,4 +101,63 @@ export class ChartsComponent {
 	        series: this.data
 	    });
     }
+
+	renderPie () {
+
+		jQuery('#piecontainer').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Browser market shares January, 2015 to May, 2015'
+        },
+        
+		tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        
+		plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Microsoft Internet Explorer',
+                y: 56.33
+            }, {
+                name: 'Chrome',
+                y: 24.03,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Firefox',
+                y: 10.38
+            }, {
+                name: 'Safari',
+                y: 4.77
+            }, {
+                name: 'Opera',
+                y: 0.91
+            }, {
+                name: 'Proprietary or Undetectable',
+                y: 0.2
+            }]
+        }]
+		});
+	}
 }
+	
