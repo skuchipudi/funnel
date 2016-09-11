@@ -9,7 +9,8 @@ declare var Highcharts:any;
     template: `
         <h1>Map</h1>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-        <div id="mapcontainer" style="height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto"></div>
+           <div id="mapcontainer" style="height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto"></div> 
+           <div id="googlemaps" style="width: 900px; height: 300px;"></div> 
         `,
     directives: [ROUTER_DIRECTIVES]
 })
@@ -17,10 +18,12 @@ declare var Highcharts:any;
 export class MapsComponent { 
     
 	private data = [
+          
         {
             "hc-key": "gl",
             "value": 0
         },
+       
         {
             "hc-key": "lc",
             "value": 1
@@ -105,54 +108,93 @@ export class MapsComponent {
             "hc-key": "pr",
             "value": 21
         }
-    ];
+    ]
+    
 
- 
     ngAfterViewInit() {
-     	this.renderMap();
+     	 this.renderMap();
+         this.renderGoogleMap();
+         
     }
+
+    renderGoogleMap()
+    {
+        jQuery('#googlemaps').googleMap({
+            zoom: 100,
+            type: "TERRAIN"
+
+        });
+        jQuery('#googlemaps').addMarker(
+        {
+                coords: [48.895651, 2.290569], // Map center (optional)
+                
+        });
+        jQuery('#googlemaps').addMarker(
+        {
+                coords:  [48.869439, 2.308664], // Map center (optional)
+                
+        });
+        jQuery('#googlemaps').addMarker(
+        {
+                coords:  [30.3322, -81.6557], // Map center (optional)
+                
+        });
+        //{
+        //  zoom: 10, // Initial zoom level (optional)
+        //  coords: [48.895651, 2.290569], // Map center (optional)
+        //  type: "TERRAIN", // Map type (optional)
+        //  id: 'marker1' ,
+        //  market: 'marker'
+        //}); 
+    }
+
  
     renderMap(){  
     	jQuery('#mapcontainer').highcharts('Map',
         {
             title : {
-            text : 'File Transfers'
-        },
-
-        subtitle : {
-            text : 'Source map: <a href="https://code.highcharts.com/mapdata/custom/world.js">World</a>'
-        },
-
-
-        mapNavigation: {
+              text : 'File Transfers'
+            },
+        
+            //subtitle : {
+            //text : 'Source map: <a href="https://code.highcharts.com/mapdata/custom/world.js">World</a>'
+            //},
+            
+            mapNavigation: {
             enabled: true,
             buttonOptions: {
                 verticalAlign: 'bottom'
-            }
-        },
-
-        colorAxis: {
-            min: 0
-        },
-
-        series : [{
-            data : this.data,
-           // mapData: Highcharts.maps['custom/north-america'],
-            mapData: Highcharts.maps['custom/world'],
-            joinBy: 'hc-key',
-            name: 'Random data',
-            states: {
-                hover: {
-                    color: '#BADA55'
-                }
+             }
             },
-            dataLabels: {
-                enabled: false,
-                format: '{point.name}'
-            }
-        }]
-    
-              
+           colorAxis: {
+                min: 0
+            },
+
+            series : [{
+                 data : this.data,
+                // mapData: Highcharts.maps['custom/north-america'],
+                 mapData: Highcharts.maps['custom/world'],
+                 joinBy: 'hc-key',
+                 name: 'Random data',
+                 states: {
+                    hover: {
+                        color: '#BADA55'
+                    }
+                 },
+                    
+                    
+                 chart: {
+                    borderWidth: 1,
+                    borderColor: 'silver',
+                    borderRadius: 3,
+                    shadow: true
+                },
+
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.data}'
+                }
+            }]      
         });
     }
 }

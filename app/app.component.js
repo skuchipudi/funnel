@@ -63,7 +63,7 @@ System.register(['angular2/core', 'angular2/router', './registration.component',
                         { path: '/auditlog', name: 'AuditLog', component: auditlog_component_1.AuditLogComponent },
                         { path: '/auditdetail/:id', name: 'AuditDetail', component: auditdetail_component_1.AuditDetailComponent },
                         { path: '/register', name: 'Register', component: registration_component_1.RegistrationComponent },
-                        { path: '/*other', name: 'Other', redirectTo: ['Albums'] }
+                        { path: '/*other', name: 'Other', redirectTo: ['FileSentinelSplash'] }
                     ]),
                     core_1.Component({
                         selector: 'my-app',

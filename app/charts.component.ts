@@ -24,7 +24,7 @@ declare var Highcharts:any;
 
 export class ChartsComponent { 
 	private data = [
-		{
+		  {
 	            name: 'Daily Currency Transfers',
 	            data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
 	                1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
@@ -103,7 +103,6 @@ export class ChartsComponent {
     }
 
 	renderPie () {
-
 		jQuery('#piecontainer').highcharts({
         chart: {
             plotBackgroundColor: null,
@@ -156,7 +155,7 @@ export class ChartsComponent {
                 name: 'Proprietary or Undetectable',
                 y: 0.2
             }]
-        }]
+          }]
 		});
 	}
 }

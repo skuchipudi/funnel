@@ -116,15 +116,38 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 }
                 MapsComponent.prototype.ngAfterViewInit = function () {
                     this.renderMap();
+                    this.renderGoogleMap();
+                };
+                MapsComponent.prototype.renderGoogleMap = function () {
+                    jQuery('#googlemaps').googleMap({
+                        zoom: 100,
+                        type: "TERRAIN"
+                    });
+                    jQuery('#googlemaps').addMarker({
+                        coords: [48.895651, 2.290569],
+                    });
+                    jQuery('#googlemaps').addMarker({
+                        coords: [48.869439, 2.308664],
+                    });
+                    jQuery('#googlemaps').addMarker({
+                        coords: [30.3322, -81.6557],
+                    });
+                    //{
+                    //  zoom: 10, // Initial zoom level (optional)
+                    //  coords: [48.895651, 2.290569], // Map center (optional)
+                    //  type: "TERRAIN", // Map type (optional)
+                    //  id: 'marker1' ,
+                    //  market: 'marker'
+                    //}); 
                 };
                 MapsComponent.prototype.renderMap = function () {
                     jQuery('#mapcontainer').highcharts('Map', {
                         title: {
                             text: 'File Transfers'
                         },
-                        subtitle: {
-                            text: 'Source map: <a href="https://code.highcharts.com/mapdata/custom/world.js">World</a>'
-                        },
+                        //subtitle : {
+                        //text : 'Source map: <a href="https://code.highcharts.com/mapdata/custom/world.js">World</a>'
+                        //},
                         mapNavigation: {
                             enabled: true,
                             buttonOptions: {
@@ -145,16 +168,22 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                                         color: '#BADA55'
                                     }
                                 },
+                                chart: {
+                                    borderWidth: 1,
+                                    borderColor: 'silver',
+                                    borderRadius: 3,
+                                    shadow: true
+                                },
                                 dataLabels: {
-                                    enabled: false,
-                                    format: '{point.name}'
+                                    enabled: true,
+                                    format: '{point.data}'
                                 }
                             }]
                     });
                 };
                 MapsComponent = __decorate([
                     core_1.Component({
-                        template: "\n        <h1>Map</h1>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\n        <div id=\"mapcontainer\" style=\"height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto\"></div>\n        ",
+                        template: "\n        <h1>Map</h1>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\n           <div id=\"mapcontainer\" style=\"height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto\"></div> \n           <div id=\"googlemaps\" style=\"width: 900px; height: 300px;\"></div> \n        ",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])

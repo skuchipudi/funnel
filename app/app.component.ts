@@ -11,7 +11,6 @@ import {MapsComponent} from './maps.component';
 import {ChartsComponent} from './charts.component';
 
 
-
 @RouteConfig([
  //   { path: '/registrationlogs', name: 'RegistrationLogs', component: RegistrationLogsComponent, useAsDefault:true},
     { path: '/albums', name: 'Albums', component: AlbumsComponent},
@@ -24,7 +23,7 @@ import {ChartsComponent} from './charts.component';
     { path: '/auditlog', name: 'AuditLog', component: AuditLogComponent},
     { path: '/auditdetail/:id', name: 'AuditDetail', component: AuditDetailComponent },
     { path: '/register', name: 'Register', component: RegistrationComponent},
-    { path: '/*other', name: 'Other', redirectTo:['Albums']}
+    { path: '/*other', name: 'Other', redirectTo:['FileSentinelSplash']}
 ])
 
 @Component({ 
