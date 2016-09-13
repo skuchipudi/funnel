@@ -5,7 +5,6 @@ import {BarChartService} from './barchart.service';
 import {PieChartService} from './piechart.service';
 import {AreaChartService} from './areachart.service';
 
-
 declare var jQuery:any;
 declare var Highcharts:any;
 

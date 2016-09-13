@@ -1,12 +1,15 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+
 import {RegistrationComponent} from './registration.component';
 import {AuditLogComponent} from './auditlog.component';
 import {AuditDetailComponent} from './auditdetail.component';
 import {FileSentinelSplashComponent} from './filesentinel_splash.component';
+
 import {AlbumsComponent} from './albums.component';
 import {AlbumComponent} from './album.component';
-import {ContactComponent} from './contact.component';
+
+import {ScheduleTransferComponent} from './schedule.transfer.component';
 import {MapsComponent} from './maps.component';
 import {ChartsComponent} from './charts.component';
 
@@ -16,7 +19,7 @@ import {ChartsComponent} from './charts.component';
     { path: '/albums', name: 'Albums', component: AlbumsComponent},
     { path: '/albums/:id', name: 'Album', component: AlbumComponent },
     { path: '/filesentinelsplash', name: 'FileSentinelSplash', component: FileSentinelSplashComponent},
-    { path: '/contact', name: 'Contact', component: ContactComponent},
+    { path: '/schedule', name: 'Schedule', component: ScheduleTransferComponent},
     { path: '/maps', name: 'Maps', component: MapsComponent},
     { path: '/charts', name: 'Charts', component: ChartsComponent},
    
