@@ -27,6 +27,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 }
                 RegistrationComponent.prototype.onSubmit = function (form) {
                     console.log(form);
+                    // call the service
                     this._router.navigate(['Albums']);
                 };
                 RegistrationComponent = __decorate([

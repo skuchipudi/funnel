@@ -12,6 +12,7 @@ export class RegistrationComponent {
     
     onSubmit(form :any){
         console.log(form);
+        // call the service
         this._router.navigate (['Albums']);
     }
 
