@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 import {AuditLoggerService} from './auditlogger.service';
-import {AuditDetail} from './AuditDetail';
+import {AuditDetail} from './auditdetail';
 @Component({
     template: `
         <h1>Log Details</h1>
