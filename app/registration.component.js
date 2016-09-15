@@ -26,9 +26,16 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     this._router = _router;
                 }
                 RegistrationComponent.prototype.onSubmit = function (form) {
-                    console.log(form);
+                    console.log(form.value.partnername);
+                    console.log(form.value.serveraddress);
+                    console.log(form.value.remotefilepath);
+                    console.log(form.value.localfilepath);
+                    console.log(form.value.serveruserid);
+                    console.log(form.value.serverpassword);
+                    console.log(form.value.partnerdescription);
+                    console.log(JSON.stringify(form.value));
                     // call the service
-                    this._router.navigate(['Albums']);
+                    // this._router.navigate (['Albums']);
                 };
                 RegistrationComponent = __decorate([
                     core_1.Component({

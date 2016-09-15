@@ -33,14 +33,6 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', './auditlo
                     this._routeParms = _routeParms;
                     this._isLoading = true;
                 }
-                /*ngOnInit(){
-                    this._auditLoggerService.getAuditDetail(this._routeParms.get("id")).
-                        subscribe(detail => {
-                            this._isLoading = false;
-                            this._auditDetail = detail;
-                        });
-                }
-                */
                 AuditDetailComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this._auditLoggerService.getAuditDetail(this._routeParms.get("id")).

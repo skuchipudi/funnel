@@ -10,7 +10,7 @@ import {PhotoService} from './photo.service';
         </div>
         <div class="jumbotron">
          <h1> FileSentinel</h1>
-         <p>  FileSentinel&trade; provides an enterprise scale and peer to peer registered and managed secure file exchange.</p>
+         <p>  FileSentinel&trade; provides an enterprise scale, peer to peer registered and managed secure file exchange.</p>
             <p><a class="btn btn-primary btn-lg">Learn more</a></p>
         </div>
         <div *ngIf="isLoading">

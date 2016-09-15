@@ -10,10 +10,17 @@ export class RegistrationComponent {
    constructor (private _router: Router){
    }
     
-    onSubmit(form :any){
-        console.log(form);
+    onSubmit(form:any){
+        console.log(form.value.partnername);
+        console.log(form.value.serveraddress);
+        console.log(form.value.remotefilepath);
+        console.log(form.value.localfilepath);
+        console.log(form.value.serveruserid);
+        console.log(form.value.serverpassword);
+        console.log(form.value.partnerdescription);
+        console.log(JSON.stringify(form.value));      
         // call the service
-        this._router.navigate (['Albums']);
+       // this._router.navigate (['Albums']);
     }
 
   

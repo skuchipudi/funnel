@@ -44,14 +44,7 @@ export class AuditDetailComponent implements OnInit {
             private _routeParms: RouteParams){
     }
     
-    /*ngOnInit(){
-        this._auditLoggerService.getAuditDetail(this._routeParms.get("id")).
-            subscribe(detail => {
-                this._isLoading = false;
-                this._auditDetail = detail;
-            });      
-    }
-    */
+    
     ngOnInit(){
         this._auditLoggerService.getAuditDetail(this._routeParms.get("id")).
             subscribe(auditDetail => {

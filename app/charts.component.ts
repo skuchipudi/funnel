@@ -17,7 +17,7 @@ declare var Highcharts:any;
 				<div style="width:40%" id="areachartcontainer"></div>
 			</td>
 			<td>
-				<div style="width:55%" id ="piecontainer"></div>
+				<div style="width:55%" id="piecontainer"></div>
 			</td>
 		</tr>
 		<tr>

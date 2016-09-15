@@ -7,119 +7,119 @@ enter partner infomation. All transfers are completed through a secure file tran
         <label for="partnername">Partner Name</label>
         <input 
             ngControl="partnername" 
-            #name="ngForm" 
-            id="name" 
+            #partnername="ngForm" 
+            id="partnername" 
             type="text" 
             class="form-control" 
             required>
-        <div *ngIf="name.touched && name.errors">
+        <div *ngIf="partnername.touched && partnername.errors">
             <div 
                 class="alert alert-danger" 
-                *ngIf="name.errors.required">
+                *ngIf="partnername.errors.required">
                 Partner Name is required.
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label for="name">Server Address</label>
+        <label for="serveraddress">Server Address</label>
         <input 
-            ngControl="name" 
-            #name="ngForm" 
-            id="name" 
+            ngControl="serveraddress" 
+            #serveraddress="ngForm" 
+            id="serveraddress" 
             type="text" 
             class="form-control" 
             required>
-        <div *ngIf="name.touched && name.errors">
+        <div *ngIf="serveraddress.touched && serveraddress.errors">
             <div 
                 class="alert alert-danger" 
-                *ngIf="name.errors.required">
-                Name is required.
+                *ngIf="serveraddress.errors.required">
+                Server address is required.
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label for="name">Remote File Path</label>
+        <label for="remotefilepath">Remote File Path</label>
         <input 
-            ngControl="name" 
-            #name="ngForm" 
-            id="name" 
+            ngControl="remotefilepath" 
+            #remotefilepath="ngForm" 
+            id="remotefilepath" 
             type="text" 
             class="form-control" 
             required>
-        <div *ngIf="name.touched && name.errors">
+        <div *ngIf="remotefilepath.touched && remotefilepath.errors">
             <div 
                 class="alert alert-danger" 
-                *ngIf="name.errors.required">
-                Name is required.
+                *ngIf="remotefilepath.errors.required">
+                Remote file path is required.
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label for="name">Local File Path</label>
+        <label for="localfilePath">Local File Path</label>
         <input 
-            ngControl="name" 
-            #name="ngForm" 
-            id="name" 
+            ngControl="localfilepath" 
+            #localfilepath="ngForm" 
+            id="localfilepath" 
             type="text" 
             class="form-control" 
             required>
-        <div *ngIf="name.touched && name.errors">
+        <div *ngIf="localfilepath.touched && localfilepath.errors">
             <div 
                 class="alert alert-danger" 
-                *ngIf="name.errors.required">
-                Name is required.
+                *ngIf="localfilepath.errors.required">
+                Local file path is required.
             </div>
         </div>
     </div>
      <div class="form-group">
-        <label for="userid">Server UserId</label>
+        <label for="serveruserid">Server UserId</label>
         <input 
-            ngControl="name" 
-            #name="ngForm" 
-            id="name" 
+            ngControl="serveruserid" 
+            #serveruserid="ngForm" 
+            id="serveruserid" 
             type="text" 
             class="form-control" 
             required>
-        <div *ngIf="name.touched && name.errors">
+        <div *ngIf="serveruserid.touched && serveruserid.errors">
             <div 
                 class="alert alert-danger" 
-                *ngIf="name.errors.required">
-                UserId is required.
+                *ngIf="serveruserid.errors.required">
+                Server User Id required.
             </div>
         </div>
     </div>
      <div class="form-group">
-        <label for="name">Server Password</label>
+        <label for="serverpassword">Server Password</label>
         <input 
-            ngControl="name" 
-            #name="ngForm" 
-            id="name" 
+            ngControl="serverpassword" 
+            #serverpassword="ngForm" 
+            id="serverpassword" 
             type="text" 
             class="form-control" 
             required>
-        <div *ngIf="name.touched && name.errors">
+        <div *ngIf="serverpassword.touched && serverpassword.errors">
             <div 
                 class="alert alert-danger" 
-                *ngIf="name.errors.required">
+                *ngIf="serverpassword.errors.required">
                 Password is required.
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label for="comment">Partner Description</label>
+        <label for="partnerdescription">Partner Description</label>
         <textarea 
-            #comment="ngForm" 
-            ngControl="comment" 
-            id="comment" 
+            #partnerdescription="ngForm" 
+            ngControl="partnerdescription" 
+            id="name" 
             cols="30" 
             rows="2" 
             class="form-control"
             required>
         </textarea>
         <div 
-            *ngIf="comment.touched && !comment.valid" 
+            *ngIf="partnerdescription.touched && !partnerdescription.valid" 
             class="alert alert-danger">
-            Comment is required.
+            Partner description is required.
         </div>
     </div>
     <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
