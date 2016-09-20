@@ -32,8 +32,8 @@ declare var Highcharts:any;
 
 export class ChartsComponent { 
 	
-	constructor(private _barChartService: BarChartService,
-				private _pieChartService: PieChartService,
+	constructor(private _barChartService:  BarChartService,
+				private _pieChartService:  PieChartService,
 				private _areaChartService: AreaChartService){
     }
 

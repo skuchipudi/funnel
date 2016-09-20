@@ -2,6 +2,9 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {RegistrationComponent} from './registration.component';
+import {RegistrationsListComponent} from './registrations.list.component';
+import {RegistrationDetailComponent} from './registrationdetail.component';
+
 import {AuditLogComponent} from './auditlog.component';
 import {AuditDetailComponent} from './auditdetail.component';
 import {FileSentinelSplashComponent} from './filesentinel_splash.component';
@@ -25,7 +28,9 @@ import {ChartsComponent} from './charts.component';
    
     { path: '/auditlog', name: 'AuditLog', component: AuditLogComponent},
     { path: '/auditdetail/:id', name: 'AuditDetail', component: AuditDetailComponent },
+    { path: '/registrationslist/', name: 'RegistrationsList', component: RegistrationsListComponent },
     { path: '/register', name: 'Register', component: RegistrationComponent},
+    { path: '/registrationresponse', name: 'RegistrationDetail', component: RegistrationDetailComponent},
     { path: '/*other', name: 'Other', redirectTo:['FileSentinelSplash']}
 ])
 

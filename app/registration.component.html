@@ -55,6 +55,23 @@ enter partner infomation. All transfers are completed through a secure file tran
         </div>
     </div>
     <div class="form-group">
+        <label for="filename">File Name</label>
+        <input 
+            ngControl="filename" 
+            #filename="ngForm" 
+            id="filename" 
+            type="text" 
+            class="form-control" 
+            required>
+        <div *ngIf="filename.touched && filename.errors">
+            <div 
+                class="alert alert-danger" 
+                *ngIf="filename.errors.required">
+                File name is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
         <label for="localfilePath">Local File Path</label>
         <input 
             ngControl="localfilepath" 
