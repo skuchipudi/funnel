@@ -39,7 +39,7 @@ System.register(['angular2/core', 'angular2/http', './photo.service'], function(
                 };
                 FileSentinelSplashComponent = __decorate([
                     core_1.Component({
-                        template: "\n        <h1>Welcome</h1>\n        <div>\n       \n        </div>\n        <div class=\"jumbotron\">\n         <h1> FileSentinel</h1>\n         <p>  FileSentinel&trade; provides an\u00A0enterprise scale, peer to peer registered and managed secure file exchange.</p>\n            <p><a class=\"btn btn-primary btn-lg\">Learn more</a></p>\n        </div>\n        <div *ngIf=\"isLoading\">\n            <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        </div>\n        <div>\n            <img *ngFor=\"#photo of photos\" src=\"{{ photo.thumbnailUrl }}\">\n        </div>\n    ",
+                        template: "\n        <h1>Welcome</h1>\n        <div>\n        </div>\n        <div class=\"jumbotron\">\n         <h1> FileSentinel</h1>\n         <p> FileSentinel&trade; provides an\u00A0enterprise scale, peer to peer registered and managed secure file exchange.</p>\n            <p><a class=\"btn btn-primary btn-lg\">Learn more</a></p>\n        </div>\n        <div *ngIf=\"isLoading\">\n            <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        </div>\n        <div>\n            <img *ngFor=\"#photo of photos\" src=\"{{ photo.thumbnailUrl }}\">\n        </div>\n    ",
                         providers: [photo_service_1.PhotoService, http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [photo_service_1.PhotoService])

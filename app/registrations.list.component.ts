@@ -13,17 +13,17 @@ import {RegistrationInfo} from './registrationinfo';
          <table class="table table-striped table-hover ">
          <thead>
             <tr>
-             <th>Partner Id</th>
+             <th>Partner Name</th>
              <th>Server Address</th>
              <th>User Id</th>
              <th>Remote File Path</th>
              <th>Local File Path</th>
-             <th>File name </th>
+             <th>File Name</th>
             </tr>
          </thead>
         <tbody>
             <tr *ngFor = "#registrations_list of _registrations_list">
-              <td> {{ registrations_list.partnerId}}</td>
+              <td> {{ registrations_list.partnerName}}</td>
               <td> {{ registrations_list.serverAddress}}</td>
               <td> {{ registrations_list.userId}}</td>
               <td> {{ registrations_list.remoteFilePath}}</td>
