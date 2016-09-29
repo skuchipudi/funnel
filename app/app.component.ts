@@ -16,6 +16,8 @@ import {ScheduleTransferComponent} from './schedule.transfer.component';
 import {MapsComponent} from './maps.component';
 import {ChartsComponent} from './charts.component';
 
+import {FileMapComponent} from './filemap.component';
+
 
 @RouteConfig([
  //   { path: '/registrationlogs', name: 'RegistrationLogs', component: RegistrationLogsComponent, useAsDefault:true},
@@ -31,7 +33,9 @@ import {ChartsComponent} from './charts.component';
     { path: '/registrationslist/', name: 'RegistrationsList', component: RegistrationsListComponent },
     { path: '/register', name: 'Register', component: RegistrationComponent},
     { path: '/registrationresponse', name: 'RegistrationDetail', component: RegistrationDetailComponent},
+    { path: '/filemap', name: 'FileMap', component: FileMapComponent},
     { path: '/*other', name: 'Other', redirectTo:['FileSentinelSplash']}
+     
 ])
 
 @Component({ 

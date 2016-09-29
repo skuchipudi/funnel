@@ -116,6 +116,7 @@ export class MapsComponent {
          this.renderGoogleMap();
          
     }
+    
 
     renderGoogleMap()
     {
@@ -126,9 +127,9 @@ export class MapsComponent {
         });
         jQuery('#googlemaps').addMarker(
         {
-                coords: [48.895651, 2.290569], // Map center (optional)
-                
+                coords: [48.895651, 2.290569], // Map center (optional)        
         });
+
         jQuery('#googlemaps').addMarker(
         {
                 coords:  [48.869439, 2.308664], // Map center (optional)
