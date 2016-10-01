@@ -39,7 +39,10 @@ export class RegistrationComponent {
             registrationInfo.userId = form.value.serveruserid;
             registrationInfo.password = form.value.serverpassword;
             registrationInfo.filename = form.value.filename;
-            registrationInfo.partnerId = form.value.partnerdescription; 
+            // TODO - this should be auto created
+            registrationInfo.partnerId = form.value.partnerId; 
+            registrationInfo.partnerName = form.value.partnername;
+            registrationInfo.partnerDescription = form.value.partnerdescription;
             return registrationInfo;
     }
   

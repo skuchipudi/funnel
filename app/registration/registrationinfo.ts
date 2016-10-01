@@ -11,9 +11,10 @@ export class RegistrationInfo
 		localFilePath: string;
 		filename: string;
 		partnerId: string;
+		partnerName:string;
+		partnerDescription:string;
 
 		constructor( token:Token){
 			this.token = token;
 		}
-
 }

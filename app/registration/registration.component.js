@@ -57,7 +57,10 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './registr
                     registrationInfo.userId = form.value.serveruserid;
                     registrationInfo.password = form.value.serverpassword;
                     registrationInfo.filename = form.value.filename;
-                    registrationInfo.partnerId = form.value.partnerdescription;
+                    // TODO - this should be auto created
+                    registrationInfo.partnerId = form.value.partnerId;
+                    registrationInfo.partnerName = form.value.partnername;
+                    registrationInfo.partnerDescription = form.value.partnerdescription;
                     return registrationInfo;
                 };
                 RegistrationComponent = __decorate([

@@ -5,6 +5,11 @@
         <title>D3 Test</title>
         <script type="text/javascript" src="d3/d3.v3.js"></script>
         <style>
+            .pumpkin {
+                fill: yellow;
+                 stroke: orange;
+                 stroke-width: 5;
+            }
         p.bar1 {
            display: inline-block;
             width: 20px;
@@ -32,16 +37,21 @@
          .style("height", function(d) {
                      return d + "px";
          });
+         </script>
+         <script>
+        var dataset = [ 5, 10, 15, 20, 25 ];   
 
-         d3.select("body").selectAll("div")
-         .data(dataset2)
-         .enter()
-         .append("div")
-         .attr("class", "bar2")
-         .style("height", function(d) {
-                     return d + "px";
-         });
-        </script>
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 500)
+            .attr("height", 50);
+
+         var circles = svg.selectAll("circle")
+                 .data(dataset)
+                 .enter()
+                 .append("circle");
+       </script>
+       
         
     </body>
 </html>  

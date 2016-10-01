@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './registration.component', './registrations.list.component', './registrationdetail.component', './auditlog.component', './auditdetail.component', './filesentinel_splash.component', './albums.component', './album.component', './schedule.transfer.component', './maps.component', './charts.component', './filemap.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './registration/registration.component', './registration/registrations.list.component', './registration/registrationdetail.component', './auditlog.component', './auditdetail.component', './filesentinel_splash.component', './albums.component', './album.component', './schedule.transfer.component', './maps.component', './charts.component', './filemap.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

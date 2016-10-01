@@ -46,9 +46,10 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', './photo.s
                         template: "\n        <h1>Album</h1>\n        <div *ngIf=\"isLoading\">\n            <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        </div>\n        <div>\n            <img *ngFor=\"#photo of photos\" src=\"{{ photo.thumbnailUrl }}\">\n        </div>\n    ",
                         providers: [photo_service_1.PhotoService, http_1.HTTP_PROVIDERS]
                     }), 
-                    __metadata('design:paramtypes', [photo_service_1.PhotoService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof photo_service_1.PhotoService !== 'undefined' && photo_service_1.PhotoService) === 'function' && _a) || Object, router_1.RouteParams])
                 ], AlbumComponent);
                 return AlbumComponent;
+                var _a;
             }());
             exports_1("AlbumComponent", AlbumComponent);
         }

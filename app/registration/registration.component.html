@@ -21,6 +21,40 @@ enter partner infomation. All transfers are completed through a secure file tran
         </div>
     </div>
     <div class="form-group">
+        <label for="partnerdescription">Partner Description</label>
+        <textarea 
+            #partnerdescription="ngForm" 
+            ngControl="partnerdescription" 
+            id="name" 
+            cols="30" 
+            rows="2" 
+            class="form-control"
+            required>
+        </textarea>
+        <div 
+            *ngIf="partnerdescription.touched && !partnerdescription.valid" 
+            class="alert alert-danger">
+            Partner description is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="partnerid">Partner Id</label>
+        <textarea 
+            #partnerid="ngForm" 
+            ngControl="partnerid" 
+            id="name" 
+            cols="30" 
+            rows="2" 
+            class="form-control"
+            required>
+        </textarea>
+        <div 
+            *ngIf="partnerid.touched && !partnerid.valid" 
+            class="alert alert-danger">
+            Partner ID is required.
+        </div>
+    </div>
+    <div class="form-group">
         <label for="serveraddress">Server Address</label>
         <input 
             ngControl="serveraddress" 
@@ -122,22 +156,6 @@ enter partner infomation. All transfers are completed through a secure file tran
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label for="partnerdescription">Partner Description</label>
-        <textarea 
-            #partnerdescription="ngForm" 
-            ngControl="partnerdescription" 
-            id="name" 
-            cols="30" 
-            rows="2" 
-            class="form-control"
-            required>
-        </textarea>
-        <div 
-            *ngIf="partnerdescription.touched && !partnerdescription.valid" 
-            class="alert alert-danger">
-            Partner description is required.
-        </div>
-    </div>
+    
     <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
 </form>

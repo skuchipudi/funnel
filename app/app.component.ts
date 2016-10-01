@@ -1,28 +1,22 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {RegistrationComponent} from './registration.component';
-import {RegistrationsListComponent} from './registrations.list.component';
-import {RegistrationDetailComponent} from './registrationdetail.component';
+import {AuditLogComponent} from './audit/auditlog.component';
+import {AuditDetailComponent} from './audit/auditdetail.component';
+import {FileSentinelSplashComponent} from './splash/filesentinel_splash.component';
 
-import {AuditLogComponent} from './auditlog.component';
-import {AuditDetailComponent} from './auditdetail.component';
-import {FileSentinelSplashComponent} from './filesentinel_splash.component';
+import {RegistrationComponent} from './registration/registration.component';
+import {RegistrationsListComponent} from './registration/registrations.list.component';
+import {RegistrationDetailComponent} from './registration/registrationdetail.component';
 
-import {AlbumsComponent} from './albums.component';
-import {AlbumComponent} from './album.component';
+import {ScheduleTransferComponent} from './schedule/schedule.transfer.component';
 
-import {ScheduleTransferComponent} from './schedule.transfer.component';
-import {MapsComponent} from './maps.component';
-import {ChartsComponent} from './charts.component';
-
-import {FileMapComponent} from './filemap.component';
-
+import {MapsComponent} from './maps/maps.component';
+import {ChartsComponent} from './charts/charts.component';
+import {FileMapComponent} from './filemap/filemap.component';
 
 @RouteConfig([
  //   { path: '/registrationlogs', name: 'RegistrationLogs', component: RegistrationLogsComponent, useAsDefault:true},
-    { path: '/albums', name: 'Albums', component: AlbumsComponent},
-    { path: '/albums/:id', name: 'Album', component: AlbumComponent },
     { path: '/filesentinelsplash', name: 'FileSentinelSplash', component: FileSentinelSplashComponent},
     { path: '/schedule', name: 'Schedule', component: ScheduleTransferComponent},
     { path: '/maps', name: 'Maps', component: MapsComponent},
