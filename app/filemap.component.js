@@ -37,7 +37,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 };
                 // TODO
                 // Clean up the D3 Dom after you
-                // exit this Component page
+                // exit this Component page      
                 FileMapComponent.prototype.destroyTree = function () {
                     d3.select("svg").remove();
                 };
@@ -151,24 +151,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         }
                         update(d);
                     }
-                };
-                FileMapComponent.prototype.renderTryme = function () {
-                    // jQuery('#tryme').hello("Hello World !!"); This is JQuery function
-                    //d3.select("body").append("p").text("New paragraph!"); - This is D3 way
-                    var dataset = [5, 10, 15, 20, 25];
-                    d3.select("body").selectAll("p")
-                        .data(dataset)
-                        .enter()
-                        .append("p")
-                        .text(function (d) { return d; })
-                        .style("color", function (d) {
-                        if (d > 15) {
-                            return "red";
-                        }
-                        else {
-                            return "black";
-                        }
-                    });
                 };
                 FileMapComponent = __decorate([
                     core_1.Component({

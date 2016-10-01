@@ -4,10 +4,43 @@
         <meta charset="utf-8">
         <title>D3 Test</title>
         <script type="text/javascript" src="d3/d3.v3.js"></script>
+        <style>
+        p.bar1 {
+           display: inline-block;
+            width: 20px;
+             height: 75px;   /* We'll override this later */
+            background-color: teal;
+        }
+        div.bar2 {
+           display: inline-block;
+            width: 20px;
+             height: 75px;   /* We'll override this later */
+            background-color: green;
+        }
+        </style>
     </head>
     <body>
         <script type="text/javascript">
-        d3.select("body").append("p").text("New paragraph!");
+        var dataset1 = [ 5, 10, 15, 20, 25, 15, 45, 56, 2, 3 ];
+        var dataset2 = [ 5, 15, 15, 20, 3, 2, 41, 6, 12, 3 ];
+
+        d3.select("body").selectAll("p")
+         .data(dataset1)
+         .enter()
+         .append("p")
+         .attr("class", "bar1")
+         .style("height", function(d) {
+                     return d + "px";
+         });
+
+         d3.select("body").selectAll("div")
+         .data(dataset2)
+         .enter()
+         .append("div")
+         .attr("class", "bar2")
+         .style("height", function(d) {
+                     return d + "px";
+         });
         </script>
         
     </body>
