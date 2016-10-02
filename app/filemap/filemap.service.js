@@ -26,7 +26,7 @@ System.register(['angular2/core', 'rxjs/add/operator/map'], function(exports_1, 
                 FileMapService.prototype.destroyTree = function () {
                     d3.select("svg").remove();
                 };
-                FileMapService.prototype.renderTree = function () {
+                FileMapService.prototype.renderTree = function (partnerid) {
                     var margin = { top: 20, right: 120, bottom: 20, left: 120 }, width = 960 - margin.right - margin.left, height = 800 - margin.top - margin.bottom;
                     var i = 0, duration = 750, root;
                     var tree = d3.layout.tree()

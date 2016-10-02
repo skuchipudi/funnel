@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'angular2/router', './auditlogger.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'angular2/router', './auditlogger.service', '../filemap/filemap.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', './auditlo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, router_1, auditlogger_service_1;
+    var core_1, http_1, router_1, auditlogger_service_1, filemap_service_1;
     var AuditDetailComponent;
     return {
         setters:[
@@ -25,11 +25,15 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', './auditlo
             },
             function (auditlogger_service_1_1) {
                 auditlogger_service_1 = auditlogger_service_1_1;
+            },
+            function (filemap_service_1_1) {
+                filemap_service_1 = filemap_service_1_1;
             }],
         execute: function() {
             AuditDetailComponent = (function () {
-                function AuditDetailComponent(_auditLoggerService, _routeParms) {
+                function AuditDetailComponent(_auditLoggerService, _filemapService, _routeParms) {
                     this._auditLoggerService = _auditLoggerService;
+                    this._filemapService = _filemapService;
                     this._routeParms = _routeParms;
                     this._isLoading = true;
                 }
@@ -41,13 +45,24 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', './auditlo
                         _this._auditDetail = auditDetail;
                     });
                 };
+                AuditDetailComponent.prototype.ngAfterViewInit = function () {
+                    console.log('Filemap: ngAfterViewInit() called');
+                    // TODO - Pass the id to retrieve the 
+                    this._filemapService.renderTree("partnerId");
+                };
+                // Note: you need to call this and clear svg
+                // or else the graph will appear in every page.
+                AuditDetailComponent.prototype.ngOnDestroy = function () {
+                    console.log('Filemap: noOnDestroy() called');
+                    this._filemapService.destroyTree();
+                };
                 AuditDetailComponent = __decorate([
                     core_1.Component({
-                        template: "\n        <h1>Log Details</h1>\n        <div *ngIf=\"_isLoading\">\n            <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        </div>  \n        <table class=\"table table-striped table-hover \">\n         <thead>\n            <tr>\n             <th>Partner Id</th>\n             <th>User Id</th>\n             <th>Log Event</th>\n             <th>Time Stamp</th>\n             <th>Origin IP Address</th>\n             <th>Destination IP Address</th>\n            </tr>\n         </thead>\n         <tbody>\n          <tr *ngFor = \"#detail of _auditDetail\">\n                <td>{{detail.partnerId}}</td> \n                <td>{{detail.userId}}</td> \n                <td>{{detail.logEvent}}</td> \n                <td>{{detail.timeStamp}}</td>  \n                <td>{{detail.originIPAddress}}</td>  \n                <td>{{detail.destinationIPaddress}}</td>  \n            </tr>\n        </tbody>\n        </table>\n        ",
-                        providers: [auditlogger_service_1.AuditLoggerService, http_1.HTTP_PROVIDERS],
+                        templateUrl: '/app/audit/auditdetail.component.html',
+                        providers: [auditlogger_service_1.AuditLoggerService, filemap_service_1.FileMapService, http_1.HTTP_PROVIDERS],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [auditlogger_service_1.AuditLoggerService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [auditlogger_service_1.AuditLoggerService, filemap_service_1.FileMapService, router_1.RouteParams])
                 ], AuditDetailComponent);
                 return AuditDetailComponent;
             }());

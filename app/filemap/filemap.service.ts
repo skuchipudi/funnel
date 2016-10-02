@@ -14,7 +14,7 @@ export class FileMapService {
       d3.select("svg") .remove();
     }
    
-    renderTree()
+    renderTree(partnerid:any)
     {
         var margin = {top: 20, right: 120, bottom: 20, left: 120},
         width = 960 - margin.right - margin.left,

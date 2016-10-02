@@ -29,8 +29,8 @@ export class FileMapComponent  {
     
     ngAfterViewInit() {
         console.log('Filemap: ngAfterViewInit() called');
-        this._fileMapService.renderTree();
-     
+        // TODO - Pass the id to retrieve the 
+        this._fileMapService.renderTree("partnerId");
     }
 
     // Note: you need to call this and clear svg
