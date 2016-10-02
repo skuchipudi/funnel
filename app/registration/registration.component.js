@@ -65,7 +65,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './registr
                 };
                 RegistrationComponent = __decorate([
                     core_1.Component({
-                        templateUrl: '/app/registration.component.html',
+                        templateUrl: '/app/registration/registration.component.html',
                         providers: [registration_service_1.RegistrationService, http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, registration_service_1.RegistrationService])

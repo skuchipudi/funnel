@@ -46,10 +46,9 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', './photo.s
                         providers: [photo_service_1.PhotoService, http_1.HTTP_PROVIDERS],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof photo_service_1.PhotoService !== 'undefined' && photo_service_1.PhotoService) === 'function' && _a) || Object])
+                    __metadata('design:paramtypes', [photo_service_1.PhotoService])
                 ], AlbumsComponent);
                 return AlbumsComponent;
-                var _a;
             }());
             exports_1("AlbumsComponent", AlbumsComponent);
         }

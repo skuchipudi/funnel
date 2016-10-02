@@ -3,7 +3,7 @@ import {Router,CanDeactivate} from 'angular2/router';
 
 
 @Component({
-    templateUrl: '/app/schedule.transfer.component.html'
+    templateUrl: '/app/schedule/schedule.transfer.component.html'
 })
 
 export class ScheduleTransferComponent {

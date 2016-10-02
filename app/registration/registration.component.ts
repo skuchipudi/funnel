@@ -8,7 +8,7 @@ import {RegistrationInfo} from './registrationinfo';
 import {Token} from './token';
 
 @Component({
-    templateUrl: '/app/registration.component.html',
+    templateUrl: '/app/registration/registration.component.html',
     providers: [RegistrationService, HTTP_PROVIDERS]
 })
 

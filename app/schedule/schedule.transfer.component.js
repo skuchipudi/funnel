@@ -31,7 +31,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 };
                 ScheduleTransferComponent = __decorate([
                     core_1.Component({
-                        templateUrl: '/app/schedule.transfer.component.html'
+                        templateUrl: '/app/schedule/schedule.transfer.component.html'
                     }), 
                     __metadata('design:paramtypes', [router_1.Router])
                 ], ScheduleTransferComponent);

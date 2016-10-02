@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './registration/registration.component', './registration/registrations.list.component', './registration/registrationdetail.component', './auditlog.component', './auditdetail.component', './filesentinel_splash.component', './albums.component', './album.component', './schedule.transfer.component', './maps.component', './charts.component', './filemap.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './audit/auditlog.component', './audit/auditdetail.component', './splash/filesentinel_splash.component', './registration/registration.component', './registration/registrations.list.component', './registration/registrationdetail.component', './schedule/schedule.transfer.component', './maps/maps.component', './charts/charts.component', './filemap/filemap.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './registration/registratio
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, registration_component_1, registrations_list_component_1, registrationdetail_component_1, auditlog_component_1, auditdetail_component_1, filesentinel_splash_component_1, albums_component_1, album_component_1, schedule_transfer_component_1, maps_component_1, charts_component_1, filemap_component_1;
+    var core_1, router_1, auditlog_component_1, auditdetail_component_1, filesentinel_splash_component_1, registration_component_1, registrations_list_component_1, registrationdetail_component_1, schedule_transfer_component_1, maps_component_1, charts_component_1, filemap_component_1;
     var AppComponent;
     return {
         setters:[
@@ -19,15 +19,6 @@ System.register(['angular2/core', 'angular2/router', './registration/registratio
             },
             function (router_1_1) {
                 router_1 = router_1_1;
-            },
-            function (registration_component_1_1) {
-                registration_component_1 = registration_component_1_1;
-            },
-            function (registrations_list_component_1_1) {
-                registrations_list_component_1 = registrations_list_component_1_1;
-            },
-            function (registrationdetail_component_1_1) {
-                registrationdetail_component_1 = registrationdetail_component_1_1;
             },
             function (auditlog_component_1_1) {
                 auditlog_component_1 = auditlog_component_1_1;
@@ -38,11 +29,14 @@ System.register(['angular2/core', 'angular2/router', './registration/registratio
             function (filesentinel_splash_component_1_1) {
                 filesentinel_splash_component_1 = filesentinel_splash_component_1_1;
             },
-            function (albums_component_1_1) {
-                albums_component_1 = albums_component_1_1;
+            function (registration_component_1_1) {
+                registration_component_1 = registration_component_1_1;
             },
-            function (album_component_1_1) {
-                album_component_1 = album_component_1_1;
+            function (registrations_list_component_1_1) {
+                registrations_list_component_1 = registrations_list_component_1_1;
+            },
+            function (registrationdetail_component_1_1) {
+                registrationdetail_component_1 = registrationdetail_component_1_1;
             },
             function (schedule_transfer_component_1_1) {
                 schedule_transfer_component_1 = schedule_transfer_component_1_1;
@@ -63,8 +57,6 @@ System.register(['angular2/core', 'angular2/router', './registration/registratio
                 AppComponent = __decorate([
                     router_1.RouteConfig([
                         //   { path: '/registrationlogs', name: 'RegistrationLogs', component: RegistrationLogsComponent, useAsDefault:true},
-                        { path: '/albums', name: 'Albums', component: albums_component_1.AlbumsComponent },
-                        { path: '/albums/:id', name: 'Album', component: album_component_1.AlbumComponent },
                         { path: '/filesentinelsplash', name: 'FileSentinelSplash', component: filesentinel_splash_component_1.FileSentinelSplashComponent },
                         { path: '/schedule', name: 'Schedule', component: schedule_transfer_component_1.ScheduleTransferComponent },
                         { path: '/maps', name: 'Maps', component: maps_component_1.MapsComponent },
