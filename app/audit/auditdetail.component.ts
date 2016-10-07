@@ -11,15 +11,17 @@ import {FileMapService} from '../filemap/filemap.service';
     providers: [AuditLoggerService, FileMapService, HTTP_PROVIDERS],
     directives: [ROUTER_DIRECTIVES]
 })
+
 export class AuditDetailComponent implements OnInit {
     _isLoading = true;
     _auditDetail:AuditDetail;
 
-    constructor(
+    constructor (
             private _auditLoggerService: AuditLoggerService, 
             private _filemapService: FileMapService,
             private _routeParms: RouteParams){
     }
+    
     ngOnInit(){
         this._auditLoggerService.getAuditDetail(this._routeParms.get("id")).
             subscribe(auditDetail => {
@@ -27,7 +29,6 @@ export class AuditDetailComponent implements OnInit {
                 this._auditDetail = auditDetail;
            } );
     }
-
 
     ngAfterViewInit() {
         console.log('Filemap: ngAfterViewInit() called');
