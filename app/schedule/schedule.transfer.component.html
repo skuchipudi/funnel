@@ -4,7 +4,7 @@
         <label for="name">Name</label>
         <input 
             ngControl="name" 
-            #name="ngForm" 
+            let name="ngForm" 
             id="name" 
             type="text" 
             class="form-control" 
@@ -20,7 +20,7 @@
     <div class="form-group">
         <label for="comment">Comment</label>
         <textarea 
-            #comment="ngForm" 
+            let comment="ngForm" 
             ngControl="comment" 
             id="comment" 
             cols="30" 

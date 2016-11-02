@@ -1,6 +1,5 @@
-import {Component} from 'angular2/core';
-import {Router} from 'angular2/router';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {RegistrationService} from './registration.service';
 
@@ -9,7 +8,7 @@ import {Token} from './token';
 
 @Component({
     templateUrl: '/app/registration/registration.component.html',
-    providers: [RegistrationService, HTTP_PROVIDERS]
+    providers: [RegistrationService]
 })
 
 export class RegistrationComponent {

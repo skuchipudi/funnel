@@ -1,6 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {RouteParams} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
 import {PhotoService} from './photo.service';
 
 
@@ -11,25 +9,24 @@ import {PhotoService} from './photo.service';
             <i class="fa fa-spinner fa-spin fa-3x"></i>
         </div>
         <div>
-            <img *ngFor="#photo of photos" src="{{ photo.thumbnailUrl }}">
+            <img *ngFor="let photo of photos" src="{{ photo.thumbnailUrl }}">
         </div>
     `,
-    providers: [PhotoService, HTTP_PROVIDERS]
 })
 export class AlbumComponent implements OnInit {
     isLoading = true;
     photos: any;
 
     constructor(
-            private _photoService: PhotoService, 
-            private _routeParms: RouteParams){
-    }
+            private _photoService: PhotoService) {}
+    //        private _routeParms: RouteParams){
+    
     
     ngOnInit(){
-        this._photoService.getPhotos(this._routeParms.get("id"))
-            .subscribe(photos => {
-                this.isLoading = false;
-                this.photos = photos;
-            });
+       // this._photoService.getPhotos(this._routeParms.get("id"))
+       //     .subscribe(photos => {
+       //         this.isLoading = false;
+       //         this.photos = photos;
+        //    });
     }
 }

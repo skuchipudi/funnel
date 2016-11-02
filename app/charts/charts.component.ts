@@ -1,5 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
 
 import {BarChartService} from './barchart.service';
 import {PieChartService} from './piechart.service';
@@ -25,8 +24,7 @@ declare var Highcharts:any;
 		</tr>
 		</table>
         `,
-    directives: [ROUTER_DIRECTIVES],
-	providers: [BarChartService, PieChartService, AreaChartService]
+  	providers: [BarChartService, PieChartService, AreaChartService]
    
 })
 

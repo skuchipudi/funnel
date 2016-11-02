@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {Router,CanDeactivate} from 'angular2/router';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -16,6 +16,4 @@ export class ScheduleTransferComponent {
         console.log(form);
         this._router.navigate (['Albums']);
     }
-
-  
 }

@@ -1,6 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
 import {AuditLoggerService} from './auditlogger.service';
 
 @Component({
@@ -22,11 +20,10 @@ import {AuditLoggerService} from './auditlogger.service';
             </tr>
          </thead>
         <tbody>
-            <tr *ngFor = "#auditlog of _auditlogs">
-              <a [routerLink]="['AuditDetail',{id: auditlog.partnerId}]">  
-               <td>{{auditlog.partnerId}}</td>
-              </a>
-              <td> {{auditlog.userId}}</td>
+            <tr *ngFor = "let auditlog of _auditlogs">
+              <a [routerLink]="['/auditdetail',{id:auditlog.partnerId}]">
+              <td>{{auditlog.partnerId}}</td></a>
+              <td>{{auditlog.userId}}</td>
               <td> Sender*</td>
               <td> Receiver*</td>
               <td>{{auditlog.logEvent}}</td>
@@ -36,17 +33,17 @@ import {AuditLoggerService} from './auditlogger.service';
         </tbody>
         </table>  
         `,
-    providers: [AuditLoggerService, HTTP_PROVIDERS],
-    directives: [ROUTER_DIRECTIVES]
-})
+   })
 export class AuditLogComponent implements OnInit {
     _isLoading = true;
     _auditlogs: any;
 
     constructor(
-            private _auditLoggerService: AuditLoggerService, 
-            private _routeParms: RouteParams){
+    private _auditLoggerService: AuditLoggerService)
+    {  
+
     }
+    
     
     ngOnInit(){
        // this._auditdetails = this._photoService.getAlbums();

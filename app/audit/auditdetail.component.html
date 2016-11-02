@@ -14,7 +14,7 @@
             </tr>
          </thead>
          <tbody>
-          <tr *ngFor = "#detail of _auditDetail">
+          <tr *ngFor = "let detail of _auditDetail">
                 <td>{{detail.partnerId}}</td> 
                 <td>{{detail.userId}}</td> 
                 <td>{{detail.logEvent}}</td> 

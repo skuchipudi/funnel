@@ -1,41 +1,14 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from '@angular/core';
+import { Auth }    from './auth/auth.service';
 
-import {AuditLogComponent} from './audit/auditlog.component';
-import {AuditDetailComponent} from './audit/auditdetail.component';
-import {FileSentinelSplashComponent} from './splash/filesentinel_splash.component';
-
-import {RegistrationComponent} from './registration/registration.component';
-import {RegistrationsListComponent} from './registration/registrations.list.component';
-import {RegistrationDetailComponent} from './registration/registrationdetail.component';
-
-import {ScheduleTransferComponent} from './schedule/schedule.transfer.component';
-
-import {MapsComponent} from './maps/maps.component';
-import {ChartsComponent} from './charts/charts.component';
-import {FileMapComponent} from './filemap/filemap.component';
-
-@RouteConfig([
- //   { path: '/registrationlogs', name: 'RegistrationLogs', component: RegistrationLogsComponent, useAsDefault:true},
-    { path: '/filesentinelsplash', name: 'FileSentinelSplash', component: FileSentinelSplashComponent},
-    { path: '/schedule', name: 'Schedule', component: ScheduleTransferComponent},
-    { path: '/maps', name: 'Maps', component: MapsComponent},
-    { path: '/charts', name: 'Charts', component: ChartsComponent},
-   
-    { path: '/auditlog', name: 'AuditLog', component: AuditLogComponent},
-    { path: '/auditdetail/:id', name: 'AuditDetail', component: AuditDetailComponent },
-    { path: '/registrationslist/', name: 'RegistrationsList', component: RegistrationsListComponent },
-    { path: '/register', name: 'Register', component: RegistrationComponent},
-    { path: '/registrationresponse', name: 'RegistrationDetail', component: RegistrationDetailComponent},
-    { path: '/filemap', name: 'FileMap', component: FileMapComponent},
-    { path: '/*other', name: 'Other', redirectTo:['FileSentinelSplash']}
-     
-])
-
-@Component({ 
+@Component ({
     selector: 'my-app',
-    templateUrl: '/app/app.component.html',
-    directives: [ROUTER_DIRECTIVES]
+   providers: [Auth],
+    templateUrl: './app/app.component.html'
 })
+
+
+
 export class AppComponent {
+  constructor(private auth: Auth) {}
 }

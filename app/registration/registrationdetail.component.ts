@@ -1,6 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
 import {RegistrationService} from './registration.service';
 import {RegistrationInfo} from './registrationinfo';
 
@@ -23,7 +21,7 @@ import {RegistrationInfo} from './registrationinfo';
             </tr>
          </thead>
         <tbody>
-            <tr *ngFor = "#all_registrations of _all_registrations">
+            <tr *ngFor = "let all_registrations of _all_registrations">
               <td> {{all_registrations.partnerId}}</td>
               <td> {{all_registrations.serverAddress}}</td>
               <td> {{all_registrations.userId}}</td>
@@ -36,7 +34,7 @@ import {RegistrationInfo} from './registrationinfo';
 
         
         <h1>Registration Details</h1>
-        <div *ngFor = "#registrationDetail of _registrationDetail">
+        <div *ngFor = "let registrationDetail of _registrationDetail">
         Token Status  = {{registrationDetail.token.status}}<p>
         <p>
         Token Secret Key = {{registrationDetail.token.secretKey}}<p>
@@ -51,8 +49,7 @@ import {RegistrationInfo} from './registrationinfo';
 
 
         `,
-    providers: [RegistrationService, HTTP_PROVIDERS],
-    directives: [ROUTER_DIRECTIVES]
+ 
 })
 
 export class RegistrationDetailComponent implements OnInit {
@@ -61,9 +58,10 @@ export class RegistrationDetailComponent implements OnInit {
     _all_registrations: any; // Array of RegistrationInfo
 
     constructor(
-            private _registrationService: RegistrationService, 
-            private _routeParms: RouteParams){
-    }
+            private _registrationService: RegistrationService 
+            //private _routeParms: RouteParams
+            )
+            { }
     
     ngOnInit(){
         let partnerid = "BREAK_ANKLES";

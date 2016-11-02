@@ -1,6 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
 import {RegistrationService} from './registration.service';
 import {RegistrationInfo} from './registrationinfo';
 
@@ -22,7 +20,7 @@ import {RegistrationInfo} from './registrationinfo';
             </tr>
          </thead>
         <tbody>
-            <tr *ngFor = "#registrations_list of _registrations_list">
+            <tr *ngFor = "let registrations_list of _registrations_list">
               <td> {{ registrations_list.partnerName}}</td>
               <td> {{ registrations_list.serverAddress}}</td>
               <td> {{ registrations_list.userId}}</td>
@@ -33,18 +31,18 @@ import {RegistrationInfo} from './registrationinfo';
         </tbody>
         </table>  
         `,
-    providers: [RegistrationService, HTTP_PROVIDERS],
-    directives: [ROUTER_DIRECTIVES]
-})
+    providers: [RegistrationService ],
+ })
 
 export class RegistrationsListComponent implements OnInit {
     _isLoading = true;
     _registrations_list: any; // Array of RegistrationInfo
 
     constructor(
-            private _registrationService: RegistrationService, 
-            private _routeParms: RouteParams){
-    }
+            private _registrationService: RegistrationService )
+            //private _routeParms: RouteParams){
+            {}
+    
     
     ngOnInit(){
        

@@ -1,5 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
 
 
 declare var jQuery:any;
@@ -12,8 +11,7 @@ declare var Highcharts:any;
            <div id="mapcontainer" style="height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto"></div> 
            <div id="googlemaps" style="width: 900px; height: 300px;"></div> 
         `,
-    directives: [ROUTER_DIRECTIVES]
-})
+ })
 
 export class MapsComponent { 
     
