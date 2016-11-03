@@ -15,6 +15,7 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var angular2_jwt_1 = require('angular2-jwt');
 var app_routing_1 = require('./app.routing');
+var index_1 = require('./guards/index');
 // component imports
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./home.component');
@@ -29,6 +30,7 @@ var maps_component_1 = require('./maps/maps.component');
 var charts_component_1 = require('./charts/charts.component');
 var filemap_component_1 = require('./filemap/filemap.component');
 var not_found_component_1 = require('./not-found.component');
+var index_2 = require('./login/index');
 // service imports
 var auditlogger_service_1 = require('./audit/auditlogger.service');
 var registration_service_1 = require('./registration/registration.service');
@@ -44,6 +46,7 @@ var AppModule = (function () {
                 auditlog_component_1.AuditLogComponent,
                 auditdetail_component_1.AuditDetailComponent,
                 filesentinel_splash_component_1.FileSentinelSplashComponent,
+                index_2.LoginComponent,
                 registration_component_1.RegistrationComponent,
                 registrationdetail_component_1.RegistrationDetailComponent,
                 registrations_list_component_1.RegistrationsListComponent,
@@ -58,7 +61,8 @@ var AppModule = (function () {
                 angular2_jwt_1.AUTH_PROVIDERS,
                 auditlogger_service_1.AuditLoggerService,
                 registration_service_1.RegistrationService,
-                filemap_service_1.FileMapService
+                filemap_service_1.FileMapService,
+                index_1.AuthGuard
             ],
             imports: [
                 platform_browser_1.BrowserModule,

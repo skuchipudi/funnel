@@ -6,8 +6,10 @@ import {HttpModule}        from '@angular/http';
 import { AUTH_PROVIDERS }      from 'angular2-jwt';
 import { routing, appRoutingProviders} from './app.routing';
 
-// component imports
+import {AuthGuard} from './guards/index';
 
+
+// component imports
 import { AppComponent }        from './app.component';
 import { HomeComponent }       from './home.component';
 
@@ -25,6 +27,8 @@ import {MapsComponent} from './maps/maps.component';
 import {ChartsComponent} from './charts/charts.component';
 import {FileMapComponent} from './filemap/filemap.component';
 import {NotFoundComponent} from './not-found.component';
+import {LoginComponent} from './login/index';
+
 
 // service imports
 import {AuditLoggerService} from './audit/auditlogger.service';
@@ -39,6 +43,7 @@ import {FileMapService} from './filemap/filemap.service';
         AuditLogComponent,
         AuditDetailComponent,
         FileSentinelSplashComponent,
+        LoginComponent,
         RegistrationComponent,
         RegistrationDetailComponent,
         RegistrationsListComponent,
@@ -53,7 +58,8 @@ import {FileMapService} from './filemap/filemap.service';
         AUTH_PROVIDERS,
         AuditLoggerService,
         RegistrationService,
-        FileMapService
+        FileMapService,
+        AuthGuard
     ],
     imports:      [
         BrowserModule,

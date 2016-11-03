@@ -8,18 +8,21 @@ import {FileSentinelSplashComponent} from './splash/filesentinel_splash.componen
 import {RegistrationComponent} from './registration/registration.component';
 import {RegistrationsListComponent} from './registration/registrations.list.component';
 import {ScheduleTransferComponent} from './schedule/schedule.transfer.component';
-
+import {LoginComponent} from './login/login.component';
 
 import {MapsComponent} from './maps/maps.component';
 import {ChartsComponent} from './charts/charts.component';
 import {FileMapComponent} from './filemap/filemap.component';
 import {NotFoundComponent} from './not-found.component';
 
+import { AuthGuard } from './guards/index';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  //{ path: '', component: LoginComponent},
+  //{ path: 'filesentinelsplash', component: FileSentinelSplashComponent},
+  { path: '', component: FileSentinelSplashComponent},
   { path: 'filesentinelsplash', component: FileSentinelSplashComponent},
-  
+
   { path: 'auditlog', component: AuditLogComponent},
   { path: 'auditdetail',  component: AuditDetailComponent },
   

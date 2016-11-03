@@ -1,6 +1,5 @@
 "use strict";
 var router_1 = require('@angular/router');
-var home_component_1 = require('./home.component');
 var auditlog_component_1 = require('./audit/auditlog.component');
 var auditdetail_component_1 = require('./audit/auditdetail.component');
 var filesentinel_splash_component_1 = require('./splash/filesentinel_splash.component');
@@ -12,7 +11,9 @@ var charts_component_1 = require('./charts/charts.component');
 var filemap_component_1 = require('./filemap/filemap.component');
 var not_found_component_1 = require('./not-found.component');
 var appRoutes = [
-    { path: '', component: home_component_1.HomeComponent },
+    //{ path: '', component: LoginComponent},
+    //{ path: 'filesentinelsplash', component: FileSentinelSplashComponent},
+    { path: '', component: filesentinel_splash_component_1.FileSentinelSplashComponent },
     { path: 'filesentinelsplash', component: filesentinel_splash_component_1.FileSentinelSplashComponent },
     { path: 'auditlog', component: auditlog_component_1.AuditLogComponent },
     { path: 'auditdetail', component: auditdetail_component_1.AuditDetailComponent },
@@ -28,5 +29,5 @@ var appRoutes = [
 ];
 exports.appRoutingProviders = [];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
-//export const routing = RouterModule.forRoot(appRoutes); 
+//export const routing = RouterModule.forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map

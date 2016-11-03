@@ -9,15 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import {Auth} from './../auth/auth.service'; 
+var auth_service_1 = require('./../auth/auth.service');
 var FileSentinelSplashComponent = (function () {
-    function FileSentinelSplashComponent() {
+    function FileSentinelSplashComponent(auth) {
+        this.auth = auth;
     }
     FileSentinelSplashComponent = __decorate([
         core_1.Component({
             templateUrl: './app/splash/filesentinel_splash.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [auth_service_1.Auth])
     ], FileSentinelSplashComponent);
     return FileSentinelSplashComponent;
 }());

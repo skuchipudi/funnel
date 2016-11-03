@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Auth }       from './auth/auth.service';
-
+// NOT USED
 
 @Component({
   selector: 'home',
