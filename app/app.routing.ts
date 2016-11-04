@@ -21,20 +21,21 @@ const appRoutes: Routes = [
   //{ path: '', component: LoginComponent},
   //{ path: 'filesentinelsplash', component: FileSentinelSplashComponent},
   { path: '', component: FileSentinelSplashComponent},
+  // This routes to login
   { path: 'filesentinelsplash', component: FileSentinelSplashComponent},
 
-  { path: 'auditlog', component: AuditLogComponent},
-  { path: 'auditdetail',  component: AuditDetailComponent },
+  { path: 'auditlog', component: AuditLogComponent, canActivate: [AuthGuard] },
+  { path: 'auditdetail',  component: AuditDetailComponent, canActivate: [AuthGuard]},
   
-  { path: 'registrationslist', component: RegistrationsListComponent},
-  { path: 'registration', component: RegistrationComponent},
-  { path: 'maps', component: MapsComponent},
-  { path: 'charts', component: ChartsComponent},
-  { path: 'register', component: RegistrationComponent},
-  { path: 'schedule', component: ScheduleTransferComponent},
-  { path: 'filemap', component: FileMapComponent},
+  { path: 'registrationslist', component: RegistrationsListComponent, canActivate: [AuthGuard]},
+  { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
+  { path: 'maps', component: MapsComponent,canActivate: [AuthGuard]},
+  { path: 'charts', component: ChartsComponent, canActivate: [AuthGuard]},
+  { path: 'register', component: RegistrationComponent, canActivate: [AuthGuard]},
+  { path: 'schedule', component: ScheduleTransferComponent,canActivate: [AuthGuard]},
+  { path: 'filemap', component: FileMapComponent,canActivate: [AuthGuard]},
   // Catch all
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent,canActivate: [AuthGuard] }
 ];
 
 export const appRoutingProviders: any[] = [

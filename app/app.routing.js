@@ -10,22 +10,24 @@ var maps_component_1 = require('./maps/maps.component');
 var charts_component_1 = require('./charts/charts.component');
 var filemap_component_1 = require('./filemap/filemap.component');
 var not_found_component_1 = require('./not-found.component');
+var index_1 = require('./guards/index');
 var appRoutes = [
     //{ path: '', component: LoginComponent},
     //{ path: 'filesentinelsplash', component: FileSentinelSplashComponent},
     { path: '', component: filesentinel_splash_component_1.FileSentinelSplashComponent },
+    // This routes to login
     { path: 'filesentinelsplash', component: filesentinel_splash_component_1.FileSentinelSplashComponent },
-    { path: 'auditlog', component: auditlog_component_1.AuditLogComponent },
-    { path: 'auditdetail', component: auditdetail_component_1.AuditDetailComponent },
-    { path: 'registrationslist', component: registrations_list_component_1.RegistrationsListComponent },
-    { path: 'registration', component: registration_component_1.RegistrationComponent },
-    { path: 'maps', component: maps_component_1.MapsComponent },
-    { path: 'charts', component: charts_component_1.ChartsComponent },
-    { path: 'register', component: registration_component_1.RegistrationComponent },
-    { path: 'schedule', component: schedule_transfer_component_1.ScheduleTransferComponent },
-    { path: 'filemap', component: filemap_component_1.FileMapComponent },
+    { path: 'auditlog', component: auditlog_component_1.AuditLogComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'auditdetail', component: auditdetail_component_1.AuditDetailComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'registrationslist', component: registrations_list_component_1.RegistrationsListComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'registration', component: registration_component_1.RegistrationComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'maps', component: maps_component_1.MapsComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'charts', component: charts_component_1.ChartsComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'register', component: registration_component_1.RegistrationComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'schedule', component: schedule_transfer_component_1.ScheduleTransferComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'filemap', component: filemap_component_1.FileMapComponent, canActivate: [index_1.AuthGuard] },
     // Catch all
-    { path: '**', component: not_found_component_1.NotFoundComponent }
+    { path: '**', component: not_found_component_1.NotFoundComponent, canActivate: [index_1.AuthGuard] }
 ];
 exports.appRoutingProviders = [];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

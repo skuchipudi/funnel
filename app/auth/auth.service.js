@@ -28,11 +28,13 @@ var Auth = (function () {
     Auth.prototype.authenticated = function () {
         // Check if there's an unexpired JWT
         // This searches for an item in localStorage with key == 'id_token'
+        console.log("AuthService.tokenNotExpired()" + angular2_jwt_1.tokenNotExpired());
         return angular2_jwt_1.tokenNotExpired();
     };
     ;
     Auth.prototype.logout = function () {
         // Remove token from localStorage
+        console.log("AuthService.logout called");
         localStorage.removeItem('id_token');
     };
     ;

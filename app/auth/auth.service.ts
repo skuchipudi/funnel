@@ -26,11 +26,13 @@ export class Auth {
   public authenticated() {
     // Check if there's an unexpired JWT
     // This searches for an item in localStorage with key == 'id_token'
+    console.log("AuthService.tokenNotExpired()" + tokenNotExpired());
     return tokenNotExpired();
   };
 
   public logout() {
     // Remove token from localStorage
+    console.log("AuthService.logout called");
     localStorage.removeItem('id_token');
   };
 }
