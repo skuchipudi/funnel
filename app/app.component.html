@@ -34,8 +34,8 @@
         </form>
         -->
            <div class="nav navbar-nav navbar-right">
-            <button class="btn btn-primary btn-default center-block" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
-            <button class="btn btn-primary btn-default center-block" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>   
+              <button class="btn btn-primary btn-default" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+              <button class="btn btn-primary btn-default" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>   
            </div>
         </div>   
         <!-- /.navbar-collapse -->
