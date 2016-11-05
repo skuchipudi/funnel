@@ -13,13 +13,13 @@ import {RegistrationInfo} from './registrationinfo';
 @Injectable()
 export class RegistrationService {
     private _create_registration_url  = 
-        "http://ec2-54-174-128-188.compute-1.amazonaws.com:8082/registrationentity/create/registrationInfo/";
+        "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/create/registrationInfo/";
 
     private _get_registration_url  = 
-        "http://ec2-54-174-128-188.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/token/BREAK_ANKLES";
+        "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/token/BREAK_ANKLES";
    
     private _get_all_registrations_url =
-       "http://ec2-54-174-128-188.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/entries/";
+       "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/entries/";
 
     constructor(private _http: Http){}
     

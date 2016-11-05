@@ -14,8 +14,8 @@ require('rxjs/add/operator/map');
 var AuditLoggerService = (function () {
     function AuditLoggerService(_http) {
         this._http = _http;
-        this._url = "http://ec2-54-174-128-188.compute-1.amazonaws.com:8081/auditlogger/entries/";
-        this._auditDetailUrl = "http://ec2-54-174-128-188.compute-1.amazonaws.com:8081/auditlogger/getentry/partnerId/";
+        this._url = "http://ec2-54-210-61-136.compute-1.amazonaws.com:8081/auditlogger/entries/";
+        this._auditDetailUrl = "http://ec2-54-210-61-136.compute-1.amazonaws.com:8081/auditlogger/getentry/partnerId/";
         this._url2 = "http://jsonplaceholder.typicode.com/albums";
     }
     AuditLoggerService.prototype.getAlbums = function () {

@@ -6,10 +6,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuditLoggerService {
     private _url = 
-         "http://ec2-54-174-128-188.compute-1.amazonaws.com:8081/auditlogger/entries/";
+         "http://ec2-54-210-61-136.compute-1.amazonaws.com:8081/auditlogger/entries/";
     
     private _auditDetailUrl = 
-         "http://ec2-54-174-128-188.compute-1.amazonaws.com:8081/auditlogger/getentry/partnerId/";
+         "http://ec2-54-210-61-136.compute-1.amazonaws.com:8081/auditlogger/getentry/partnerId/";
     
     private _url2 = "http://jsonplaceholder.typicode.com/albums";
     

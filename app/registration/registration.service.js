@@ -17,9 +17,9 @@ require('rxjs/add/operator/catch');
 var RegistrationService = (function () {
     function RegistrationService(_http) {
         this._http = _http;
-        this._create_registration_url = "http://ec2-54-174-128-188.compute-1.amazonaws.com:8082/registrationentity/create/registrationInfo/";
-        this._get_registration_url = "http://ec2-54-174-128-188.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/token/BREAK_ANKLES";
-        this._get_all_registrations_url = "http://ec2-54-174-128-188.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/entries/";
+        this._create_registration_url = "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/create/registrationInfo/";
+        this._get_registration_url = "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/token/BREAK_ANKLES";
+        this._get_all_registrations_url = "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/entries/";
     }
     RegistrationService.prototype.getRegistrationDetails = function (partnerid) {
         return this._http.get(this._get_registration_url)
