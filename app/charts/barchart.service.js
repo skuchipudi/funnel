@@ -14,7 +14,7 @@ var BarChartService = (function () {
     function BarChartService() {
     }
     // private _url = "http://jsonplaceholder.typicode.com/albums";
-    // use this to hit the service 
+    // use this to hit the service
     BarChartService.prototype.renderChart = function () {
         jQuery('#barchartcontainer').highcharts({
             chart: {

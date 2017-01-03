@@ -20,9 +20,9 @@ export class AlbumComponent implements OnInit {
     constructor(
             private _photoService: PhotoService) {}
     //        private _routeParms: RouteParams){
-    
-    
-    ngOnInit(){
+
+
+    ngOnInit() {
        // this._photoService.getPhotos(this._routeParms.get("id"))
        //     .subscribe(photos => {
        //         this.isLoading = false;

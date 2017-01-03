@@ -7,13 +7,11 @@ import {Router,CanDeactivate} from '@angular/router';
 })
 
 export class ContactComponent {
-    
+
    constructor (private _router: Router){
 
    }
 
-   
-    
     onSubmit(form :any){
         console.log(form);
         this._router.navigate (['Albums']);

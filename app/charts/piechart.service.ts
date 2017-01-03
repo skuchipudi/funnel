@@ -4,14 +4,14 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 
-declare var jQuery:any;
-declare var Highcharts:any;
+declare var jQuery: any;
+declare var Highcharts: any;
 
 @Injectable()
 export class PieChartService {
    // private _url = "http://jsonplaceholder.typicode.com/albums";
-   // use this to hit the service 
-   
+   // use this to hit the service
+
 
    renderPie() {
             jQuery('#piecontainer').highcharts({
@@ -24,11 +24,11 @@ export class PieChartService {
 			title: {
 				text: 'Browser market shares January, 2015 to May, 2015'
 			},
-			
+
 			tooltip: {
 				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
 			},
-			
+
 			plotOptions: {
 				pie: {
 					allowPointSelect: true,

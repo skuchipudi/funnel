@@ -20,12 +20,12 @@ var ChartsComponent = (function () {
     }
     ChartsComponent.prototype.ngAfterViewInit = function () {
         this._areaChartService.renderChart();
-        //this._barChartService.renderChart();
+        // this._barChartService.renderChart();
         this._pieChartService.renderPie();
     };
     ChartsComponent = __decorate([
         core_1.Component({
-            template: "\n        <h1>Log Charts</h1>\n\t\t<table>\n\t\t<tr>\n        \t<td>\n\t\t\t\t<div style=\"width:40%\" id=\"areachartcontainer\"></div>\n\t\t\t</td>\n\t\t\t<td>\n\t\t\t\t<div style=\"width:55%\" id=\"piecontainer\"></div>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t<!-- TODO move to another page later\t<div style=\"width:100%\" id=\"barchartcontainer\"></div> -->\n\t\t</tr>\n\t\t</table>\n        ",
+            template: "\n        <h1>Log Charts</h1>\n\t\t<table>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t<div style=\"width:40%\" id=\"areachartcontainer\"></div>\n\t\t\t</td>\n\t\t\t<td>\n\t\t\t\t<div style=\"width:55%\" id=\"piecontainer\"></div>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t<!-- TODO move to another page later\t<div style=\"width:100%\" id=\"barchartcontainer\"></div> -->\n\t\t</tr>\n\t\t</table>\n        ",
             providers: [barchart_service_1.BarChartService, piechart_service_1.PieChartService, areachart_service_1.AreaChartService]
         }), 
         __metadata('design:paramtypes', [barchart_service_1.BarChartService, piechart_service_1.PieChartService, areachart_service_1.AreaChartService])

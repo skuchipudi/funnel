@@ -14,14 +14,14 @@ require('rxjs/add/operator/map');
 var PhotoService = (function () {
     function PhotoService(_http) {
         this._http = _http;
-        this._url = "http://jsonplaceholder.typicode.com/albums";
+        this._url = 'http://jsonplaceholder.typicode.com/albums';
     }
     PhotoService.prototype.getAlbums = function () {
         return this._http.get(this._url)
             .map(function (res) { return res.json(); });
     };
     PhotoService.prototype.getPhotos = function (id) {
-        return this._http.get(this._url + "/" + id + "/photos")
+        return this._http.get(this._url + '/' + id + '/photos')
             .map(function (res) { return res.json(); });
     };
     PhotoService = __decorate([

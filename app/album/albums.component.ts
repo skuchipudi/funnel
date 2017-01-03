@@ -9,7 +9,7 @@ import {PhotoService} from './photo.service';
         </div>
         <ul>
              <li *ngFor = "#album of albums">
-                <a [routerLink]="['Album', { id: album.id }]"> 
+                <a [routerLink]="['Album', { id: album.id }]">
                   {{ album.title }}
                 </a>
             </li>
@@ -19,10 +19,7 @@ import {PhotoService} from './photo.service';
 export class AlbumsComponent implements OnInit {
     isLoading = true;
     albums: any;
-
-    constructor(private _photoService: PhotoService){
-    }
-    
+    constructor(private _photoService: PhotoService){}
     ngOnInit(){
         this._photoService.getAlbums()
             .subscribe(albums => {

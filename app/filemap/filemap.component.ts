@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FileMapService} from './filemap.service';
 
 
-declare var jQuery:any;
+declare var jQuery: any;
 declare var d3: any;
 
 
@@ -15,20 +15,20 @@ declare var d3: any;
 })
 
 export class FileMapComponent  {
-    
+
     constructor( private _fileMapService: FileMapService) {
         console.log('FileMap constructor');
     }
 
 
-    ngOnInit() { 
+    ngOnInit() {
         console.log('Filemap: ngOnInit() called');
     }
-    
+
     ngAfterViewInit() {
         console.log('Filemap: ngAfterViewInit() called');
-        // TODO - Pass the id to retrieve the 
-        this._fileMapService.renderTree("partnerId");
+        // TODO - Pass the id to retrieve the
+        this._fileMapService.renderTree('partnerId');
     }
 
     // Note: you need to call this and clear svg
@@ -39,5 +39,5 @@ export class FileMapComponent  {
         this._fileMapService.destroyTree();
     }
 
-   
+
 }

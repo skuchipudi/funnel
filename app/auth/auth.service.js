@@ -10,13 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var angular2_jwt_1 = require('angular2-jwt');
-//let Auth0Lock = require('auth0-lock').default;
+// let Auth0Lock = require('auth0-lock').default;
 var Auth = (function () {
     function Auth() {
         // Configure Auth0
         this.lock = new Auth0Lock('hNLdWzSYlWoQQHuyZyY5xiUjdv7yxmgu', 'spntr.auth0.com', {});
         // Add callback for lock `authenticated` event
-        this.lock.on("authenticated", function (authResult) {
+        this.lock.on('authenticated', function (authResult) {
             localStorage.setItem('id_token', authResult.idToken);
         });
     }
@@ -28,13 +28,13 @@ var Auth = (function () {
     Auth.prototype.authenticated = function () {
         // Check if there's an unexpired JWT
         // This searches for an item in localStorage with key == 'id_token'
-        console.log("AuthService.tokenNotExpired()" + angular2_jwt_1.tokenNotExpired());
+        //console.log('AuthService.tokenNotExpired()' + tokenNotExpired());
         return angular2_jwt_1.tokenNotExpired();
     };
     ;
     Auth.prototype.logout = function () {
         // Remove token from localStorage
-        console.log("AuthService.logout called");
+        console.log('AuthService.logout called');
         localStorage.removeItem('id_token');
     };
     ;

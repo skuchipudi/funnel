@@ -9,6 +9,10 @@ import {RegistrationComponent} from './registration/registration.component';
 import {RegistrationsListComponent} from './registration/registrations.list.component';
 import {ScheduleTransferComponent} from './schedule/schedule.transfer.component';
 import {LoginComponent} from './login/login.component';
+import {PartnerComponent} from './partners/partner.component';
+import {PartnerDetailComponent} from './partner-detail/partner.detail.component';
+import {PartnerRegistrationComponent} from './partner-registration/partner.registration.component';
+
 
 import {MapsComponent} from './maps/maps.component';
 import {ChartsComponent} from './charts/charts.component';
@@ -18,14 +22,19 @@ import {NotFoundComponent} from './not-found.component';
 import { AuthGuard } from './guards/index';
 
 const appRoutes: Routes = [
-  //{ path: '', component: LoginComponent},
-  //{ path: 'filesentinelsplash', component: FileSentinelSplashComponent},
+  { path: '', component: LoginComponent},
+  { path: 'filesentinelsplash', component: FileSentinelSplashComponent},
   { path: '', component: FileSentinelSplashComponent},
   // This routes to login
   { path: 'filesentinelsplash', component: FileSentinelSplashComponent},
 
   { path: 'auditlog', component: AuditLogComponent, canActivate: [AuthGuard] },
   { path: 'auditdetail',  component: AuditDetailComponent, canActivate: [AuthGuard]},
+
+  { path: 'partners', component: PartnerComponent, canActivate: [AuthGuard]},
+  { path: 'partnerdetail/:partnerId', component: PartnerDetailComponent, canActivate: [AuthGuard]},
+
+  { path: 'registerpartner', component: PartnerRegistrationComponent, canActivate: [AuthGuard]},
   
   { path: 'registrationslist', component: RegistrationsListComponent, canActivate: [AuthGuard]},
   { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },

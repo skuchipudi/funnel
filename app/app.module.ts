@@ -17,9 +17,15 @@ import {AuditLogComponent} from './audit/auditlog.component';
 import {AuditDetailComponent} from './audit/auditdetail.component';
 import {FileSentinelSplashComponent} from './splash/filesentinel_splash.component';
 
+import {PartnerComponent} from  './partners/partner.component';
+import {PartnerDetailComponent} from  './partner-detail/partner.detail.component';
+
+import {PartnerRegistrationComponent} from  './partner-registration/partner.registration.component';
+
 import {RegistrationComponent} from './registration/registration.component';
 import {RegistrationsListComponent} from './registration/registrations.list.component';
 import {RegistrationDetailComponent} from './registration/registrationdetail.component';
+
 
 import {ScheduleTransferComponent} from './schedule/schedule.transfer.component';
 
@@ -33,6 +39,8 @@ import {LoginComponent} from './login/index';
 // service imports
 import {AuditLoggerService} from './audit/auditlogger.service';
 import {RegistrationService} from './registration/registration.service';
+import {PartnerServices} from  './partners/partner.services';
+import {PartnerDetailServices} from './partner-detail/partner.detail.services';
 import {FileMapService} from './filemap/filemap.service';
 
 
@@ -44,9 +52,12 @@ import {FileMapService} from './filemap/filemap.service';
         AuditDetailComponent,
         FileSentinelSplashComponent,
         LoginComponent,
+        PartnerComponent,
+        PartnerDetailComponent,
         RegistrationComponent,
         RegistrationDetailComponent,
         RegistrationsListComponent,
+        PartnerRegistrationComponent,
         ScheduleTransferComponent,
         MapsComponent,
         ChartsComponent,
@@ -58,6 +69,8 @@ import {FileMapService} from './filemap/filemap.service';
         AUTH_PROVIDERS,
         AuditLoggerService,
         RegistrationService,
+        PartnerServices,
+        PartnerDetailServices,
         FileMapService,
         AuthGuard
     ],

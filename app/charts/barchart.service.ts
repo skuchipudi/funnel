@@ -4,14 +4,14 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 
-declare var jQuery:any;
-declare var Highcharts:any;
+declare var jQuery: any;
+declare var Highcharts: any;
 
 @Injectable()
 export class BarChartService {
    // private _url = "http://jsonplaceholder.typicode.com/albums";
-   // use this to hit the service 
-  
+   // use this to hit the service
+
     renderChart() {
         jQuery('#barchartcontainer').highcharts({
         chart: {
@@ -264,6 +264,6 @@ export class BarChartService {
         }
     });
     }
-    
-    
+
+
 }

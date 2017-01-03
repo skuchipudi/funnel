@@ -12,24 +12,24 @@ import {RegistrationInfo} from './registrationinfo';
 
 @Injectable()
 export class RegistrationService {
-    private _create_registration_url  = 
+    private _create_registration_url  =
         "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/create/registrationInfo/";
 
-    private _get_registration_url  = 
+    private _get_registration_url  =
         "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/token/BREAK_ANKLES";
-   
+
     private _get_all_registrations_url =
        "http://ec2-54-210-61-136.compute-1.amazonaws.com:8082/registrationentity/get/registrationInfo/entries/";
 
     constructor(private _http: Http){}
-    
+
     getRegistrationDetails(partnerid: string)
     {
         return this._http.get(this._get_registration_url)
-                    .map(res => res.json());  
+                    .map(res => res.json());
     }
 
-    getAllRegistrations() 
+    getAllRegistrations()
     {
         return this._http.get(this._get_all_registrations_url)
                    .map(res => res.json());
@@ -41,6 +41,7 @@ export class RegistrationService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
         let registrationInfoJSON = JSON.stringify(registrationInfo);
+        
         return this._http.post(this._create_registration_url, registrationInfoJSON, options)
                      .map((response:Response) => response.json())
                      .catch(this.handleError);

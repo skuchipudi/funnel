@@ -25,7 +25,7 @@ var AlbumsComponent = (function () {
     };
     AlbumsComponent = __decorate([
         core_1.Component({
-            template: "\n        <h1>Albums</h1>\n        <div *ngIf=\"isLoading\">\n            <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        </div>\n        <ul>\n             <li *ngFor = \"#album of albums\">\n                <a [routerLink]=\"['Album', { id: album.id }]\"> \n                  {{ album.title }}\n                </a>\n            </li>\n        </ul>\n    ",
+            template: "\n        <h1>Albums</h1>\n        <div *ngIf=\"isLoading\">\n            <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        </div>\n        <ul>\n             <li *ngFor = \"#album of albums\">\n                <a [routerLink]=\"['Album', { id: album.id }]\">\n                  {{ album.title }}\n                </a>\n            </li>\n        </ul>\n    ",
         }), 
         __metadata('design:paramtypes', [photo_service_1.PhotoService])
     ], AlbumsComponent);

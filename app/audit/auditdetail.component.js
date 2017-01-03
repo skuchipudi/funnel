@@ -34,14 +34,14 @@ var AuditDetailComponent = (function () {
     };
     AuditDetailComponent.prototype.ngAfterViewInit = function () {
         console.log('Filemap: ngAfterViewInit() called');
-        // TODO - Pass the id to retrieve the 
+        // TODO - Pass the id to retrieve the
         this._filemapService.renderTree("partnerId");
     };
     // Note: you need to call this and clear svg
     // or else the graph will appear in every page.
     AuditDetailComponent.prototype.ngOnDestroy = function () {
         console.log('Filemap: noOnDestroy() called');
-        // you need to unsubscribe from the service 
+        // you need to unsubscribe from the service
         // you subscribed in the ngInit()
         this._subscription.unsubscribe();
         this._filemapService.destroyTree();

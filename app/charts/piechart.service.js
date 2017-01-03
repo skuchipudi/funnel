@@ -14,7 +14,7 @@ var PieChartService = (function () {
     function PieChartService() {
     }
     // private _url = "http://jsonplaceholder.typicode.com/albums";
-    // use this to hit the service 
+    // use this to hit the service
     PieChartService.prototype.renderPie = function () {
         jQuery('#piecontainer').highcharts({
             chart: {

@@ -1,6 +1,6 @@
-export class AuditDetail 
+export class AuditDetail
 {
-    partnerId: string; 
+    partnerId: string;
     logEvent: string;
     timeStamp: string;
     originIPAddress:string;

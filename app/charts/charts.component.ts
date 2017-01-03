@@ -4,15 +4,15 @@ import {BarChartService} from './barchart.service';
 import {PieChartService} from './piechart.service';
 import {AreaChartService} from './areachart.service';
 
-declare var jQuery:any;
-declare var Highcharts:any;
+declare var jQuery: any;
+declare var Highcharts: any;
 
 @Component({
     template: `
         <h1>Log Charts</h1>
 		<table>
 		<tr>
-        	<td>
+			<td>
 				<div style="width:40%" id="areachartcontainer"></div>
 			</td>
 			<td>
@@ -24,22 +24,22 @@ declare var Highcharts:any;
 		</tr>
 		</table>
         `,
-  	providers: [BarChartService, PieChartService, AreaChartService]
-   
+		providers: [BarChartService, PieChartService, AreaChartService]
+
 })
 
-export class ChartsComponent { 
-	
+export class ChartsComponent {
+
 	constructor(private _barChartService:  BarChartService,
 				private _pieChartService:  PieChartService,
-				private _areaChartService: AreaChartService){
+				private _areaChartService: AreaChartService) {
     }
 
     ngAfterViewInit() {
-    	this._areaChartService.renderChart();
-		//this._barChartService.renderChart();
+		this._areaChartService.renderChart();
+		// this._barChartService.renderChart();
 		this._pieChartService.renderPie();
     }
- 
+
 }
-	
+

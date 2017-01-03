@@ -4,7 +4,7 @@ import { myConfig }        from './auth.config';
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
-//let Auth0Lock = require('auth0-lock').default;
+// let Auth0Lock = require('auth0-lock').default;
 
 @Injectable()
 export class Auth {
@@ -13,7 +13,7 @@ export class Auth {
 
   constructor() {
     // Add callback for lock `authenticated` event
-    this.lock.on("authenticated", (authResult) => {
+    this.lock.on('authenticated', (authResult) => {
       localStorage.setItem('id_token', authResult.idToken);
     });
   }
@@ -26,13 +26,13 @@ export class Auth {
   public authenticated() {
     // Check if there's an unexpired JWT
     // This searches for an item in localStorage with key == 'id_token'
-    console.log("AuthService.tokenNotExpired()" + tokenNotExpired());
+    //console.log('AuthService.tokenNotExpired()' + tokenNotExpired());
     return tokenNotExpired();
   };
 
   public logout() {
     // Remove token from localStorage
-    console.log("AuthService.logout called");
+    console.log('AuthService.logout called');
     localStorage.removeItem('id_token');
   };
 }

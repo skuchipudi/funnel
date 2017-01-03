@@ -16,18 +16,18 @@ var AuthGuard = (function () {
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function () {
-        console.log("AUTHGUARD -- canActivate() called");
+        console.log('AUTHGUARD -- canActivate() called');
         // if (localStorage.getItem('id_token')) {
         // logged in so return true
         //     return true;
-        //}
-        console.log("AuthGuard.tokenNotExpired()" + angular2_jwt_1.tokenNotExpired());
+        // }
+        console.log('AuthGuard.tokenNotExpired()' + angular2_jwt_1.tokenNotExpired());
         if (angular2_jwt_1.tokenNotExpired()) {
-            console.log("tokenNotExpired" + angular2_jwt_1.tokenNotExpired());
+            console.log('tokenNotExpired' + angular2_jwt_1.tokenNotExpired());
             return true;
         }
         // not logged in so redirect to login page
-        //this.router.navigate(['/login']);
+        // this.router.navigate(['/login']);
         this.router.navigate(['/filesentinelsplash']);
         return false;
     };

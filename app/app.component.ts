@@ -3,7 +3,7 @@ import { Auth }    from './auth/auth.service';
 
 @Component ({
     selector: 'my-app',
-   providers: [Auth],
+    providers: [Auth],
     templateUrl: './app/app.component.html'
 })
 

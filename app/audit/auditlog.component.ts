@@ -31,7 +31,7 @@ import {AuditLoggerService} from './auditlogger.service';
               <td>PASS*</td>
             </tr>
         </tbody>
-        </table>  
+        </table>
         `,
    })
 export class AuditLogComponent implements OnInit {
@@ -40,11 +40,9 @@ export class AuditLogComponent implements OnInit {
 
     constructor(
     private _auditLoggerService: AuditLoggerService)
-    {  
+    {
 
     }
-    
-    
     ngOnInit(){
        // this._auditdetails = this._photoService.getAlbums();
        // this._isLoading = false;

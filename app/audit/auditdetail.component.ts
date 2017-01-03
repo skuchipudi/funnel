@@ -14,17 +14,17 @@ export class AuditDetailComponent implements OnInit {
     _auditDetail:AuditDetail;
     _id;
     _subscription;
-        
+
     constructor (
             private _activatedRoute: ActivatedRoute,
             private _router: Router,
-            private _auditLoggerService: AuditLoggerService, 
+            private _auditLoggerService: AuditLoggerService,
             private _filemapService: FileMapService
             ){ }
-    
+
     ngOnInit(){
        this._subscription = this._activatedRoute.params.subscribe((params: Params) => {
-        let id = params['id']; 
+        let id = params['id'];
        // console.log("id=" + id);
         this._auditLoggerService.getAuditDetail(id).
             subscribe(auditDetail => {
@@ -37,7 +37,7 @@ export class AuditDetailComponent implements OnInit {
 
     ngAfterViewInit() {
         console.log('Filemap: ngAfterViewInit() called');
-        // TODO - Pass the id to retrieve the 
+        // TODO - Pass the id to retrieve the
         this._filemapService.renderTree("partnerId");
     }
 
@@ -46,11 +46,11 @@ export class AuditDetailComponent implements OnInit {
     ngOnDestroy()
     {
         console.log('Filemap: noOnDestroy() called');
-        // you need to unsubscribe from the service 
+        // you need to unsubscribe from the service
         // you subscribed in the ngInit()
         this._subscription.unsubscribe();
         this._filemapService.destroyTree();
-       
+
     }
-     
+
 }

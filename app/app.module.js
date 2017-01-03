@@ -22,6 +22,8 @@ var home_component_1 = require('./home.component');
 var auditlog_component_1 = require('./audit/auditlog.component');
 var auditdetail_component_1 = require('./audit/auditdetail.component');
 var filesentinel_splash_component_1 = require('./splash/filesentinel_splash.component');
+var partner_component_1 = require('./partners/partner.component');
+var partner_detail_component_1 = require('./partner-detail/partner.detail.component');
 var registration_component_1 = require('./registration/registration.component');
 var registrations_list_component_1 = require('./registration/registrations.list.component');
 var registrationdetail_component_1 = require('./registration/registrationdetail.component');
@@ -34,6 +36,8 @@ var index_2 = require('./login/index');
 // service imports
 var auditlogger_service_1 = require('./audit/auditlogger.service');
 var registration_service_1 = require('./registration/registration.service');
+var partner_services_1 = require('./partners/partner.services');
+var partner_detail_services_1 = require('./partner-detail/partner.detail.services');
 var filemap_service_1 = require('./filemap/filemap.service');
 var AppModule = (function () {
     function AppModule() {
@@ -47,6 +51,8 @@ var AppModule = (function () {
                 auditdetail_component_1.AuditDetailComponent,
                 filesentinel_splash_component_1.FileSentinelSplashComponent,
                 index_2.LoginComponent,
+                partner_component_1.PartnerComponent,
+                partner_detail_component_1.PartnerDetailComponent,
                 registration_component_1.RegistrationComponent,
                 registrationdetail_component_1.RegistrationDetailComponent,
                 registrations_list_component_1.RegistrationsListComponent,
@@ -61,6 +67,8 @@ var AppModule = (function () {
                 angular2_jwt_1.AUTH_PROVIDERS,
                 auditlogger_service_1.AuditLoggerService,
                 registration_service_1.RegistrationService,
+                partner_services_1.PartnerServices,
+                partner_detail_services_1.PartnerDetailServices,
                 filemap_service_1.FileMapService,
                 index_1.AuthGuard
             ],

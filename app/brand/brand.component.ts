@@ -14,16 +14,16 @@ import {PhotoService} from '../album/photo.service';
         <div>
             <img *ngFor="let photo of photos" src="{{ photo.thumbnailUrl }}">
         </div>
-    `,    
+    `,
 })
 export class BrandComponent implements OnInit {
     isLoading = true;
     photos: any;
 
-    constructor(private _photoService: PhotoService){
+    constructor(private _photoService: PhotoService) {
     }
-    
-    ngOnInit(){
+
+    ngOnInit() {
         this._photoService.getPhotos(2)
             .subscribe(photos => {
                 this.isLoading = false;
