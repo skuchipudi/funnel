@@ -24,6 +24,7 @@ var auditdetail_component_1 = require('./audit/auditdetail.component');
 var filesentinel_splash_component_1 = require('./splash/filesentinel_splash.component');
 var partner_component_1 = require('./partners/partner.component');
 var partner_detail_component_1 = require('./partner-detail/partner.detail.component');
+var partner_registration_component_1 = require('./partner-registration/partner.registration.component');
 var registration_component_1 = require('./registration/registration.component');
 var registrations_list_component_1 = require('./registration/registrations.list.component');
 var registrationdetail_component_1 = require('./registration/registrationdetail.component');
@@ -56,6 +57,7 @@ var AppModule = (function () {
                 registration_component_1.RegistrationComponent,
                 registrationdetail_component_1.RegistrationDetailComponent,
                 registrations_list_component_1.RegistrationsListComponent,
+                partner_registration_component_1.PartnerRegistrationComponent,
                 schedule_transfer_component_1.ScheduleTransferComponent,
                 maps_component_1.MapsComponent,
                 charts_component_1.ChartsComponent,
