@@ -1,0 +1,48 @@
+
+
+<h1>Partner List</h1>
+        <div *ngIf="_isLoading">
+            <i class="fa fa-spinner fa-spin fa-3x"></i>
+        </div>
+       <!-- 
+        <table id="partnerstable"  class="table table-striped table-hover" cellspacing=0 width="100%">
+        <thead>
+            <tr>
+             <th>Partner Name</th>
+             <th>Partner Id</th>
+             <th>Partner Description</th>
+             <th>Email Address</th>
+             </tr>
+        </thead>
+       <tfoot>
+            <tr>
+             <th>Partner Name</th>
+             <th>Partner Id</th>
+             <th>Partner Description</th>
+             <th>Email Address</th>
+            </tr>
+        </tfoot>
+    </table>
+    -->
+
+    <table class="table table-striped table-hover">
+         <thead>
+            <tr>
+              <th>Partner Id</th>
+              <th>Partner Name</th>
+              <th>Partner Description</th>
+              <th>Phone Number</th>
+              <th>Email Address</th>
+             </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let entries of _entries">
+                <td><a [routerLink]="['/partnerdetail',entries.partnerId]">{{entries.partnerId}}</a></td>
+                <td>{{entries.partnerName}}</td>
+                <td>{{entries.partnerDescription}}</td>
+                <td>(813) 999-8423</td>
+                <td>{{entries.emailAddress.emailAddress}}</td>
+         </tr>
+          </tbody>
+   </table>
+
