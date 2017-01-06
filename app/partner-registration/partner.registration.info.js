@@ -1,7 +1,6 @@
 "use strict";
 var PartnerRegistrationInfo = (function () {
-    function PartnerRegistrationInfo(token) {
-        this.token = token;
+    function PartnerRegistrationInfo() {
     }
     return PartnerRegistrationInfo;
 }());

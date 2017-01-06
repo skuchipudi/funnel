@@ -22,8 +22,6 @@ import {NotFoundComponent} from './not-found.component';
 import { AuthGuard } from './guards/index';
 
 const appRoutes: Routes = [
-  { path: '', component: LoginComponent},
-  { path: 'filesentinelsplash', component: FileSentinelSplashComponent},
   { path: '', component: FileSentinelSplashComponent},
   // This routes to login
   { path: 'filesentinelsplash', component: FileSentinelSplashComponent},

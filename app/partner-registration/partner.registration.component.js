@@ -12,33 +12,29 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var partner_registration_service_1 = require('./partner.registration.service');
 var partner_registration_info_1 = require('./partner.registration.info');
-var token_1 = require('./token');
 var PartnerRegistrationComponent = (function () {
     function PartnerRegistrationComponent(_router, _registrationService) {
         this._router = _router;
         this._registrationService = _registrationService;
+        this._partnerRegistrationInfo = new partner_registration_info_1.PartnerRegistrationInfo();
+        this._partnerRegistrationInfo.partnerId = "partnerId";
+        this._partnerRegistrationInfo.partnerName = "Partner Name";
+        this._partnerRegistrationInfo.partnerDescription = "Partner Description";
     }
-    PartnerRegistrationComponent.prototype.onSubmit = function (form) {
-        var _this = this;
-        var regInfo = this.makeRegistrationInfo(form);
-        this._registrationService.createRegistration(regInfo)
-            .subscribe(function (registration) {
-            _this._registration = registration;
-        });
-        this._router.navigate(['RegistrationDetail']);
+    PartnerRegistrationComponent.prototype.onSubmit = function () {
+        console.log('PartnerRegistration.onSubmit()');
+        //this._router.navigate (['RegistrationDetail']);
+        console.log('Partner Name  ==> ' + this._partnerRegistrationInfo.partnerName);
+        console.log('Partner Id ==> ' + this._partnerRegistrationInfo.partnerId);
+        console.log('Partner Description ==> ' + this._partnerRegistrationInfo.partnerDescription);
+        // console.log ('f.name ==> ' + form.value.name);
+        //  this._router.navigate (['partners']);
     };
-    PartnerRegistrationComponent.prototype.makeRegistrationInfo = function (form) {
-        // return regInfo: RegistrationInfo;
-        var token = new token_1.Token("secretKey", "status");
-        var registrationInfo = new partner_registration_info_1.PartnerRegistrationInfo(token);
-        // TODO - this should be auto created
-        registrationInfo.partnerId = form.value.partnerid;
-        console.log('form.value.partnerid =>' + form.value.partnerid);
-        registrationInfo.partnerName = form.value.partnername;
-        console.log('form.value.partnername =>' + form.value.partnername);
-        registrationInfo.partnerDescription = form.value.partnerdescription;
-        console.log('form.value.partnerdescription =>' + form.value.partnerdescription);
-        return registrationInfo;
+    PartnerRegistrationComponent.prototype.addHero = function () {
+        console.log('PartnerRegistration.addHero() called');
+        console.log('Partner Name  ==> ' + this._partnerRegistrationInfo.partnerName);
+        console.log('Partner Id ==> ' + this._partnerRegistrationInfo.partnerId);
+        console.log('Partner Description ==> ' + this._partnerRegistrationInfo.partnerDescription);
     };
     PartnerRegistrationComponent = __decorate([
         core_1.Component({

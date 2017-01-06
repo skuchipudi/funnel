@@ -12,12 +12,12 @@ import {Token} from './token';
 })
 
 export class RegistrationComponent {
-   
+
    private _registration : RegistrationInfo;
-    
+
    constructor (private _router: Router,  private _registrationService: RegistrationService ){
     }
-    
+
     onSubmit(form:any) {
         let regInfo = this.makeRegistrationInfo(form);
         this._registrationService.createRegistration(regInfo)
@@ -47,5 +47,3 @@ export class RegistrationComponent {
   
 }
 
-
-       

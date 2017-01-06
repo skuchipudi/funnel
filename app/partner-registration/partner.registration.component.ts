@@ -12,34 +12,34 @@ import {Token} from './token';
 })
 
 export class PartnerRegistrationComponent {
-    private _registration: PartnerRegistrationInfo;
+    private _partnerRegistrationInfo: PartnerRegistrationInfo;
+    
 
-   constructor (private _router: Router,  private _registrationService: PartnerRegistrationService ){}
-
-    onSubmit(form:any) {
-        let regInfo = this.makeRegistrationInfo(form);
-        this._registrationService.createRegistration(regInfo)
-            .subscribe (registration => {
-                this._registration = registration;
-        });
-
-        this._router.navigate (['RegistrationDetail']);
+   constructor (private _router: Router,  private _registrationService: PartnerRegistrationService ){
+       this._partnerRegistrationInfo =  new PartnerRegistrationInfo();
+       this._partnerRegistrationInfo.partnerId = "partnerId";
+       this._partnerRegistrationInfo.partnerName = "Partner Name";
+       this._partnerRegistrationInfo.partnerDescription = "Partner Description";
     }
 
-    private  makeRegistrationInfo(form: any) {
-           // return regInfo: RegistrationInfo;
-            let token: Token  = new Token("secretKey", "status");
-            let registrationInfo = new PartnerRegistrationInfo(token);
-             // TODO - this should be auto created
-            registrationInfo.partnerId = form.value.partnerid;
-            console.log('form.value.partnerid =>' + form.value.partnerid);
 
-            registrationInfo.partnerName = form.value.partnername;
-            console.log('form.value.partnername =>' + form.value.partnername);
-
-            registrationInfo.partnerDescription = form.value.partnerdescription;
-            console.log('form.value.partnerdescription =>' + form.value.partnerdescription);
-
-            return registrationInfo;
+    onSubmit() {
+        console.log('PartnerRegistration.onSubmit()');
+        //this._router.navigate (['RegistrationDetail']);
+        console.log ('Partner Name  ==> ' +  this._partnerRegistrationInfo.partnerName);
+        console.log ('Partner Id ==> ' +  this._partnerRegistrationInfo.partnerId);
+        console.log ('Partner Description ==> ' +  this._partnerRegistrationInfo.partnerDescription);
+       // console.log ('f.name ==> ' + form.value.name);
+       //  this._router.navigate (['partners']);
     }
+
+    addHero()
+    {
+        console.log('PartnerRegistration.addHero() called');
+        console.log ('Partner Name  ==> ' +  this._partnerRegistrationInfo.partnerName);
+        console.log ('Partner Id ==> ' +  this._partnerRegistrationInfo.partnerId);
+        console.log ('Partner Description ==> ' +  this._partnerRegistrationInfo.partnerDescription);
+
+    }
+
 }
