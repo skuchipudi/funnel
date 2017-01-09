@@ -1,7 +1,6 @@
 "use strict";
 var RegistrationInfo = (function () {
     function RegistrationInfo(token) {
-        this.token = token;
     }
     return RegistrationInfo;
 }());

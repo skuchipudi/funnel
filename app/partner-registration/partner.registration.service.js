@@ -18,19 +18,26 @@ var PartnerRegistrationService = (function () {
     function PartnerRegistrationService(_http) {
         this._http = _http;
         this._create_partner_registration_url = "http://localhost:8080/partnerservices/create/";
+        this._url = "http://localhost:8080/partnerservices/entries/";
     }
     PartnerRegistrationService.prototype.createRegistration = function (registrationInfo) {
-        console.log('createRegistration invoked!');
+        console.log('createRegistration ENTER');
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         var registrationInfoJSON = JSON.stringify(registrationInfo);
+        console.log("createRegistration()=>" + registrationInfoJSON);
         return this._http.post(this._create_partner_registration_url, registrationInfoJSON, options)
             .map(function (response) { return response.json(); })
-            .catch(this.handleError);
+            .catch(function (error) { return Observable_1.Observable.throw(error.json().error || 'Server error'); }); //...errors if any
     };
     PartnerRegistrationService.prototype.handleError = function (error) {
-        console.error(error);
+        console.error("handleError()" + error);
         return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    PartnerRegistrationService.prototype.extractData = function (res) {
+        var body = res.json();
+        console.log('extractData=>' + body);
+        return body.data || {};
     };
     PartnerRegistrationService = __decorate([
         core_1.Injectable(), 

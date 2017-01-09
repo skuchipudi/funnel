@@ -22,7 +22,7 @@ var appRoutes = [
     { path: 'auditdetail', component: auditdetail_component_1.AuditDetailComponent, canActivate: [index_1.AuthGuard] },
     { path: 'partners', component: partner_component_1.PartnerComponent, canActivate: [index_1.AuthGuard] },
     { path: 'partnerdetail/:partnerId', component: partner_detail_component_1.PartnerDetailComponent, canActivate: [index_1.AuthGuard] },
-    { path: 'registerpartner', component: partner_registration_component_1.PartnerRegistrationComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'registerpartner', component: partner_registration_component_1.PartnerRegistrationComponent },
     { path: 'registrationslist', component: registrations_list_component_1.RegistrationsListComponent, canActivate: [index_1.AuthGuard] },
     { path: 'registration', component: registration_component_1.RegistrationComponent, canActivate: [index_1.AuthGuard] },
     { path: 'maps', component: maps_component_1.MapsComponent, canActivate: [index_1.AuthGuard] },

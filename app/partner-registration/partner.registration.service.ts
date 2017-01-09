@@ -13,26 +13,37 @@ import {PartnerRegistrationInfo} from './partner.registration.info';
 @Injectable()
 export class PartnerRegistrationService {
     private _create_partner_registration_url  =
-        "http://localhost:8080/partnerservices/create/";
+       "http://localhost:8080/partnerservices/create/";
 
+    private _url =  "http://localhost:8080/partnerservices/entries/";
 
     constructor(private _http: Http){}
 
-
     createRegistration(registrationInfo: PartnerRegistrationInfo)
     {
-        console.log('createRegistration invoked!');
+        console.log('createRegistration ENTER');
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
         let registrationInfoJSON = JSON.stringify(registrationInfo);
+        console.log("createRegistration()=>"+ registrationInfoJSON);
+
         return this._http.post(this._create_partner_registration_url, registrationInfoJSON, options)
                      .map((response:Response) => response.json())
-                     .catch(this.handleError);
-    }
+                     .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+    }   
+
+
+
+   
 
     private handleError(error: Response) {
-        console.error(error);
+        console.error("handleError()" + error);
         return Observable.throw(error.json().error || 'Server error');
     }
 
+     private extractData(res: Response) {
+        let body = res.json();
+        console.log('extractData=>' + body);
+        return body.data || { };
+     }
 }
