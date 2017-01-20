@@ -13,6 +13,5 @@ export class RegistrationInfo
 		partnerId: string;
 		partnerName:string;
 		partnerDescription:string;
-
 		constructor( token:Token){ }
 }

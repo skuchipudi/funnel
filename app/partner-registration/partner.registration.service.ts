@@ -31,11 +31,7 @@ export class PartnerRegistrationService {
                      .map((response:Response) => response.json())
                      .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     }   
-
-
-
-   
-
+    
     private handleError(error: Response) {
         console.error("handleError()" + error);
         return Observable.throw(error.json().error || 'Server error');

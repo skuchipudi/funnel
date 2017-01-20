@@ -1,3 +1,4 @@
+
 export class EmailAddress{
-    constructor(private emailAddress: string) {}
+    constructor(public email: string) {}
 }

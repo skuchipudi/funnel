@@ -1,11 +1,19 @@
 import {EmailAddress} from './partner.registration.emailaddress';
-import {Token} from './token';
+import {Client} from './partner.registration.client';
+
 export class PartnerRegistrationInfo
 {
-	    public partnerName:string;
-		public partnerId:string;
-		public partnerDescription:string;
-		public phoneNumber: string;
-		public emailAddress: EmailAddress;
-		
+
+		constructor ( public partnerName: string,
+					  public partnerDescription:string,
+					  public phoneNumber: string,
+	    			  public emailAddress: EmailAddress,
+					  public clientName: string,
+					  public clients : Client []
+		) { }
 }
+
+
+
+
+
