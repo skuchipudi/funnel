@@ -1,0 +1,23 @@
+{
+ "name": "US-001-Deposit Money",
+ "children": [
+  {
+   "name": "TC-001-Deposit Money Test Case", "size": 3938,
+   "children": [
+     {
+     "name": "Test Script",
+     "children": [
+              {"name": "Authenticate User", "size": 3938},
+              {"name": "Verify Balance", "size": 3812},
+              { "name": "Transfer Money",
+               "children": [
+                   {"name": "Test Result ", "size": 3938},
+                   {"name": "Test Result", "size": 3812}
+                  ]
+              }
+     ]
+     }
+    ]
+   }
+  ]
+}

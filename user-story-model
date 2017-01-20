@@ -1,0 +1,21 @@
+Use Jira as Prototype
+EPIC
+* User Story 
+ - user story
+ - user story description
+ - priority
+ - assignee
+ - sprint
+ - * Task
+    --  task id,
+    --  task description
+
+-- * Test Case
+  -- Test Script contains steps (Step1: Step 2 etc)
+  -- Test Script Status (Open |Complete | In Progress)
+  -- Test Script Results ( attach results or evidence)
+
+Each User Story ---->  Multiple Tasks
+                ---->  Multiple Test Cases
+
+Tracebility -- US1 --> TC1, TC2, TC3 ....--

@@ -1,0 +1,42 @@
+[
+    {
+        // PARTNER REGISTRATION INFO
+        "partnerId": "currency_partnerid", // UNIQUE
+
+         "token": {
+          "secretKey": "asdfasdf123ashashedkey",
+          "status": null
+         },
+
+        "partnerName": "Currency Partner", // make this is text index searchable
+        "partnerDescription": "Currency Partner Description",
+        "serverAddress": "ec2-54-174-128-182",
+        "userId": "currency_id",
+        "password": "password",
+        "remoteFilePath": "/home/currency/32",
+        "localFilePath": "/home/remote/currency/feeds",
+        "filename": "currency_daily_feed",
+     
+        // PARTNER one to many CLIENTS
+        "*clientid": "current_partner_receiver", // CLIENT ID is UNIQUE
+           // linked to PartnerId partnerId
+                        "audit_entry1": {
+                            "logEvent": "logEvent", // Make this text ind for searchable
+                            "timestamp": "timeStamp",
+                            "originIPAddress": "10.23.32.32/3",
+	                        "destinationIPaddress": "10.23.32.32",
+	                        "userId": "userId"
+                        },
+
+                        "audit_entry2" : {
+                            "logEvent": "logEvent",
+                            "timestamp": "timeStamp",
+                            "originIPAddress": "10.23.32.32/3",
+	                        "destinationIPaddress": "10.23.32.32",
+	                        "userId": "userId"
+                     }  
+
+    }
+]
+
+               

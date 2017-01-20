@@ -1,0 +1,25 @@
+{
+ "name": "Main Street Partner LLC",
+ "children": [
+  {
+   "name": "Clients", "size": 3938,
+   "children": [
+     {
+     "name": "Bank of America",
+     "children": [
+       {"name": "Daily Securities Exchange ", "size": 3938},
+       {"name": "Weekly Auto Load Securities", "size": 3812},
+       {
+        "name": "Euro Exchange",
+         "children": [
+              {"name": "Daily Securities Exchange ", "size": 3938},
+              {"name": "Weekly Auto Load Securities", "size": 3812}
+          ]
+       }
+     ]
+     }
+    ]
+
+   }
+  ]
+}
