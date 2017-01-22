@@ -5,7 +5,7 @@ import {PartnerRegistrationInfo} from './partner.registration.info';
 import {Token} from './token';
 import {EmailAddress} from './partner.registration.emailaddress';
 import {Client} from './partner.registration.client';
-
+import {NgForm} from  '@angular/forms';
 
 @Component({
     templateUrl: '/app/partner-registration/partner.registration.component.html',
@@ -13,19 +13,16 @@ import {Client} from './partner.registration.client';
 })
 
 
-
 export class PartnerRegistrationComponent {
     private _partnerRegistrationInfo: PartnerRegistrationInfo;
-
-
+    
    constructor (private _router: Router,  private _registrationService: PartnerRegistrationService ){
 
-      let languages = [ "English", "Telugu", "Hindi"]; 
-      let clients : Client [] = [ new Client("client1"), new Client("client2"), new Client("client3") ];
+      //let clients : Client [] = [ new Client("client1"), new Client("client2"), new Client("client3") ];
+      this._partnerRegistrationInfo = new PartnerRegistrationInfo();
 
-
-       this._partnerRegistrationInfo =  new PartnerRegistrationInfo("PartnerName",
-      "PartnerDescription", "999-999-9999", new EmailAddress("emailAddress"), "clientName", clients);
+       //new PartnerRegistrationInfo("PartnerName",
+      //"PartnerDescription", "999-999-9999", new EmailAddress("emailAddress"), "clientName", clients);
 
       // this._partnerRegistrationInfo.clients  = [ new Client("client")]
        //this._partnerRegistrationInfo.clients = [ new Client("clientName")];
@@ -37,20 +34,51 @@ export class PartnerRegistrationComponent {
        //this._partnerRegistrationInfo.partnerDescription = "Partner Description";
     }
 
-    onSubmit() {
+    validatePhoneNumber(phonenumber)
+    {
+        console.log("validatePhoneNumber called");
+        console.log("value=>" + phonenumber.value);
+        if(phonenumber.value == "8134281428"){
+            console.log("value true");
+              this._partnerRegistrationInfo.hasPhoneNumberError = false;
+        } else  
+             this._partnerRegistrationInfo.hasPhoneNumberError = true;
+          
+        //if(phonenumber.value == "asd")
+        //    this._partnerRegistrationInfo.hasPhoneNumberError = "true";
+        //    else
+        //    this._partnerRegistrationInfo.hasPhoneNumberError = "false";
+    }
+
+
+    onSubmit(partnerForm: NgForm) {
         console.log('PartnerRegistration.onSubmit() - ENTER');
         //this._router.navigate (['RegistrationDetail']);
-        //console.log ('Partner Name  ==> ' +  this._partnerRegistrationInfo.partnerName);
+        console.log ('Partner Name  ==> ' +  this._partnerRegistrationInfo.partnerName);
         //console.log ('Partner Id ==> ' +  this._partnerRegistrationInfo.partnerId);
-        //console.log ('Partner Description ==> ' +  this._partnerRegistrationInfo.partnerDescription);
-        //console.log ('Client  Name ==> ' +  this._partnerRegistrationInfo.clients);
+        console.log ('Partner Description ==> ' +  this._partnerRegistrationInfo.partnerDescription);
+        console.log ('Client  Name ==> ' +  this._partnerRegistrationInfo.clientName);
         //this._registrationService.createRegistration(this._partnerRegistrationInfo).subscribe(registrationInfo => {
          //   return this._partnerRegistrationInfo = registrationInfo;
         //});
+
+        console.log("form.name =>" + partnerForm.value.name);
+        // TODO add validators
+        this.validateEmail(this._partnerRegistrationInfo.emailAddress);
+
         console.log('PartnerRegistration.onSubmit() - EXIT');
         //this._router.navigate (['partners']);
        // post to the webservice
     }
+
+        validateEmail(value)
+        {
+            if(value="joe.for@banter.com")
+                return true;
+            else
+                return false;
+
+        }
 
 /*
      onSubmit(form:any) {
@@ -64,5 +92,4 @@ export class PartnerRegistrationComponent {
     }
     */
 
-  
 }

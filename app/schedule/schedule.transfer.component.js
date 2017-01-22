@@ -10,13 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var Schedule = (function () {
+    function Schedule() {
+    }
+    return Schedule;
+}());
+exports.Schedule = Schedule;
 var ScheduleTransferComponent = (function () {
     function ScheduleTransferComponent(_router) {
         this._router = _router;
+        this._model = new Schedule();
     }
     ScheduleTransferComponent.prototype.onSubmit = function (form) {
         console.log(form);
-        this._router.navigate(['Albums']);
+        console.log(this._model);
+        // this._router.navigate (['Albums']);
     };
     ScheduleTransferComponent = __decorate([
         core_1.Component({

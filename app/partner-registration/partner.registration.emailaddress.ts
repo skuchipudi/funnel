@@ -1,4 +1,5 @@
 
 export class EmailAddress{
-    constructor(public email: string) {}
+    public email:string;
+    constructor() {}
 }

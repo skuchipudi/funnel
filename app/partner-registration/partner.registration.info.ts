@@ -3,14 +3,19 @@ import {Client} from './partner.registration.client';
 
 export class PartnerRegistrationInfo
 {
+		public partnerName: string;
+		public partnerDescription:string;
+		public phoneNumber: string;
+	    public emailAddress: EmailAddress;
+		public clientName: string;
+		public clients : Client [];
+		public hasPhoneNumberError: boolean;
 
-		constructor ( public partnerName: string,
-					  public partnerDescription:string,
-					  public phoneNumber: string,
-	    			  public emailAddress: EmailAddress,
-					  public clientName: string,
-					  public clients : Client []
-		) { }
+		constructor (
+
+		) {
+				this.emailAddress = new EmailAddress();
+		}
 }
 
 

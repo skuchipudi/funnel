@@ -1,12 +1,8 @@
 "use strict";
+var partner_registration_emailaddress_1 = require('./partner.registration.emailaddress');
 var PartnerRegistrationInfo = (function () {
-    function PartnerRegistrationInfo(partnerName, partnerDescription, phoneNumber, emailAddress, clientName, clients) {
-        this.partnerName = partnerName;
-        this.partnerDescription = partnerDescription;
-        this.phoneNumber = phoneNumber;
-        this.emailAddress = emailAddress;
-        this.clientName = clientName;
-        this.clients = clients;
+    function PartnerRegistrationInfo() {
+        this.emailAddress = new partner_registration_emailaddress_1.EmailAddress();
     }
     return PartnerRegistrationInfo;
 }());

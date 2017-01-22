@@ -1,7 +1,6 @@
 "use strict";
 var EmailAddress = (function () {
-    function EmailAddress(email) {
-        this.email = email;
+    function EmailAddress() {
     }
     return EmailAddress;
 }());

@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {NgForm} from  '@angular/forms';
+export class Schedule
 
 
 @Component({
@@ -7,13 +9,17 @@ import {Router} from '@angular/router';
 })
 
 export class ScheduleTransferComponent {
-    
+    _model: Schedule;
    constructor (private _router: Router){
+        this._model = new Schedule();
 
    }
+
+
     
-    onSubmit(form :any){
+    onSubmit(form :NgForm){
         console.log(form);
-        this._router.navigate (['Albums']);
+        console.log(this._model);
+       // this._router.navigate (['Albums']);
     }
 }
