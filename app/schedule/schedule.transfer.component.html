@@ -22,11 +22,10 @@
                [(ngModel)]="_model.description"
                #description="ngModel">
            <div *ngIf="description.errors && (description.dirty || description.touched)"
-                class="alert alert-danger">
+                 class="alert alert-danger">
                 Description is Required
            </div>
      </div>
-
      <button type="submit" class="btn btn-default"
              [disabled]="!form.form.valid">Submit</button>
 </form>

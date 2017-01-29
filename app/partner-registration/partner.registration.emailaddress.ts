@@ -1,5 +1,5 @@
 
 export class EmailAddress{
-    public email:string;
+    public emailAddress:string;
     constructor() {}
 }

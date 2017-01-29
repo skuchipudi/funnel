@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from  '@angular/forms';
-export class Schedule
+import {Schedule} from  './schedule.transfer.model';
 
 
 @Component({
@@ -15,8 +15,6 @@ export class ScheduleTransferComponent {
 
    }
 
-
-    
     onSubmit(form :NgForm){
         console.log(form);
         console.log(this._model);

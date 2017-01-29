@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import {PartnerRegistrationInfo} from './partner.registration.info';
+import {Partner} from './partner.registration.info';
 
 
 //https://scotch.io/tutorials/angular-2-http-requests-with-observables
@@ -19,7 +19,7 @@ export class PartnerRegistrationService {
 
     constructor(private _http: Http){}
 
-    createRegistration(registrationInfo: PartnerRegistrationInfo)
+    createRegistration(registrationInfo: Partner)
     {
         console.log('createRegistration ENTER');
         let headers = new Headers({'Content-Type': 'application/json'});

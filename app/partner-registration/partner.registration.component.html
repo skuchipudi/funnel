@@ -7,7 +7,8 @@ enter partner infomation. All transfers are completed through a secure file tran
       <div class="form-group">
         <label>Partner Name</label>
         <input type="text" class="form-control"
-               name="name" required
+               name="name" required 
+               placeholder = "Enter a Partner name"
                [(ngModel)]="_partnerRegistrationInfo.partnerName"
                #name="ngModel">
            <div *ngIf="name.errors && (name.dirty || name.touched)"
@@ -18,7 +19,7 @@ enter partner infomation. All transfers are completed through a secure file tran
      <div class="form-group" [class.has-error]="_partnerRegistrationInfo.hasPhoneNumberError">
         <label class="control-label">Phone Number</label>
         <input type="text"   class="form-control"
-               name="phonenumber" required placeholder="Enter a valid phone number"
+               name="phonenumber" required placeholder="Enter a valid phonenumberr"
                [(ngModel)]="_partnerRegistrationInfo.phoneNumber"
                (blur)="validatePhoneNumber(phonenumber)"
                (change)="validatePhoneNumber(phonenumber)"
@@ -32,12 +33,12 @@ enter partner infomation. All transfers are completed through a secure file tran
                 Phone Number is Required
                </div>
      </div>
-     
+
      <div class="form-group">
         <label>Email Address</label>
         <input type="email"  class="form-control"
                name="emailaddress" required placeholder="Enter a valid email address"
-               [(ngModel)]="_partnerRegistrationInfo.emailAddress.email"
+               [(ngModel)]="_partnerRegistrationInfo.emailAddress.emailAddress"
                #emailaddress="ngModel">
        <div *ngIf="emailaddress.errors && (emailaddress.dirty || emailaddress.touched)"
                 class="alert alert-danger">
@@ -49,6 +50,7 @@ enter partner infomation. All transfers are completed through a secure file tran
        <textarea
             id="description" class="form-control"
             name="description" required
+            placeholder = "Enter Partner Description"
             class="form-control"
             [(ngModel)]="_partnerRegistrationInfo.partnerDescription"
             #description="ngModel">
@@ -59,22 +61,11 @@ enter partner infomation. All transfers are completed through a secure file tran
            </div>
      </div>
 
-     <div class="form-group">
-        <label for="clientname">Client Name</label>
-        <input type="text" id="clientname" class="form-control"
-               name="clientname" required  placeholder="Enter a Client Name"
-               [(ngModel)]="_partnerRegistrationInfo.clientName"
-               #clientname="ngModel">
-           <div *ngIf="clientname.errors && (clientname.dirty || clientname.touched)"
-                class="alert alert-danger">
-                Client Name is Required
-           </div>
-     </div>
-
+    
      <button type="submit" class="btn btn-default"
              [disabled]="!partnerForm.form.valid">Submit</button>
   </form>
-
+<!--
 <div>
 <br>
   Model: {{ _partnerRegistrationInfo | json}}
@@ -82,7 +73,4 @@ enter partner infomation. All transfers are completed through a secure file tran
   Angular: {{ partnerForm.value | json  }}
 <br>
 </div>
-
-<footer>
-© 2016
-</footer>
+-->
