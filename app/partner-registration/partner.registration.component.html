@@ -19,7 +19,7 @@ enter partner infomation. All transfers are completed through a secure file tran
      <div class="form-group" [class.has-error]="_partnerRegistrationInfo.hasPhoneNumberError">
         <label class="control-label">Phone Number</label>
         <input type="text"   class="form-control"
-               name="phonenumber" required placeholder="Enter a valid phonenumberr"
+               name="phonenumber" required placeholder="Enter a valid phonenumber"
                [(ngModel)]="_partnerRegistrationInfo.phoneNumber"
                (blur)="validatePhoneNumber(phonenumber)"
                (change)="validatePhoneNumber(phonenumber)"
