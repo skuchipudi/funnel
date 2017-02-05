@@ -19,8 +19,7 @@ var index_1 = require('./guards/index');
 // component imports
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./home.component');
-var auditlog_component_1 = require('./audit/auditlog.component');
-var auditdetail_component_1 = require('./audit/auditdetail.component');
+var auditlogs_component_1 = require('./auditlogs/auditlogs.component');
 var filesentinel_splash_component_1 = require('./splash/filesentinel_splash.component');
 var partner_component_1 = require('./partners/partner.component');
 var partner_detail_component_1 = require('./partner-detail/partner.detail.component');
@@ -35,7 +34,6 @@ var filemap_component_1 = require('./filemap/filemap.component');
 var not_found_component_1 = require('./not-found.component');
 var index_2 = require('./login/index');
 // service imports
-var auditlogger_service_1 = require('./audit/auditlogger.service');
 var registration_service_1 = require('./registration/registration.service');
 var partner_services_1 = require('./partners/partner.services');
 var partner_detail_services_1 = require('./partner-detail/partner.detail.services');
@@ -48,8 +46,7 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
-                auditlog_component_1.AuditLogComponent,
-                auditdetail_component_1.AuditDetailComponent,
+                auditlogs_component_1.AuditLogComponent,
                 filesentinel_splash_component_1.FileSentinelSplashComponent,
                 index_2.LoginComponent,
                 partner_component_1.PartnerComponent,
@@ -67,7 +64,6 @@ var AppModule = (function () {
             providers: [
                 app_routing_1.appRoutingProviders,
                 angular2_jwt_1.AUTH_PROVIDERS,
-                auditlogger_service_1.AuditLoggerService,
                 registration_service_1.RegistrationService,
                 partner_services_1.PartnerServices,
                 partner_detail_services_1.PartnerDetailServices,

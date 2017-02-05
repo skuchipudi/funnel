@@ -2,8 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders }         from '@angular/core';
 
 import {HomeComponent} from './home.component';
-import {AuditLogComponent} from './audit/auditlog.component';
-import {AuditDetailComponent} from './audit/auditdetail.component';
+import {AuditLogComponent} from './auditlogs/auditlogs.component';
 import {FileSentinelSplashComponent} from './splash/filesentinel_splash.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {RegistrationsListComponent} from './registration/registrations.list.component';
@@ -26,14 +25,11 @@ const appRoutes: Routes = [
   // This routes to login
   { path: 'filesentinelsplash', component: FileSentinelSplashComponent},
 
-  { path: 'auditlog', component: AuditLogComponent, canActivate: [AuthGuard] },
-  { path: 'auditdetail',  component: AuditDetailComponent, canActivate: [AuthGuard]},
-
+  { path: 'auditlogs', component: AuditLogComponent, canActivate: [AuthGuard] },
   { path: 'partners', component: PartnerComponent, canActivate: [AuthGuard]},
   { path: 'partnerdetail/:partnerId', component: PartnerDetailComponent, canActivate: [AuthGuard]},
 
   { path: 'registerpartner', component: PartnerRegistrationComponent},
-  
   { path: 'registrationslist', component: RegistrationsListComponent, canActivate: [AuthGuard]},
   { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
   { path: 'maps', component: MapsComponent,canActivate: [AuthGuard]},

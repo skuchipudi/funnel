@@ -1,7 +1,6 @@
 "use strict";
 var router_1 = require('@angular/router');
-var auditlog_component_1 = require('./audit/auditlog.component');
-var auditdetail_component_1 = require('./audit/auditdetail.component');
+var auditlogs_component_1 = require('./auditlogs/auditlogs.component');
 var filesentinel_splash_component_1 = require('./splash/filesentinel_splash.component');
 var registration_component_1 = require('./registration/registration.component');
 var registrations_list_component_1 = require('./registration/registrations.list.component');
@@ -18,8 +17,7 @@ var appRoutes = [
     { path: '', component: filesentinel_splash_component_1.FileSentinelSplashComponent },
     // This routes to login
     { path: 'filesentinelsplash', component: filesentinel_splash_component_1.FileSentinelSplashComponent },
-    { path: 'auditlog', component: auditlog_component_1.AuditLogComponent, canActivate: [index_1.AuthGuard] },
-    { path: 'auditdetail', component: auditdetail_component_1.AuditDetailComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'auditlogs', component: auditlogs_component_1.AuditLogComponent, canActivate: [index_1.AuthGuard] },
     { path: 'partners', component: partner_component_1.PartnerComponent, canActivate: [index_1.AuthGuard] },
     { path: 'partnerdetail/:partnerId', component: partner_detail_component_1.PartnerDetailComponent, canActivate: [index_1.AuthGuard] },
     { path: 'registerpartner', component: partner_registration_component_1.PartnerRegistrationComponent },

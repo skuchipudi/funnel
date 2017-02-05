@@ -14,6 +14,17 @@ export class PartnerDetailComponent implements OnInit {
     private _partners: any;
     private _clients:any;
 
+/*
+ <tbody>
+         <tr *ngFor = "let p of _clients; let i=index;">
+                 <td>{{c.clientName}}</td>
+                 <td>{{c.clientDescription}}<td>
+                 <tr *ngFor = "let a of c.auditEntries; let j=index;">
+                    <td>{{a.logEntry}}
+                 </tr>
+         </tr>
+        </tbody>
+        */
 
     constructor (
             private _activatedRoute: ActivatedRoute,
@@ -23,9 +34,7 @@ export class PartnerDetailComponent implements OnInit {
 
     ngOnInit() {
        console.log('PartnerDetailComponent. ngOnit() called');
-       //this.sub = this.route.params.subscribe(params => {
-       //this.id = +params['id'];
-      //this._subscription = 
+
       this._activatedRoute.params.subscribe((params: Params) => {
            console.log( 'PartnerDetailComponent().partnerId =>' + params['partnerId']);
             this._partnerDetailServices.getPartnerDetails( params['partnerId']).
@@ -33,6 +42,7 @@ export class PartnerDetailComponent implements OnInit {
                     this._isLoading = false;
                     this._partners = partners;
                 } );
+
 
             this._partnerDetailServices.getClients( params['partnerId']).
                 subscribe(clients => {

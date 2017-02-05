@@ -13,8 +13,7 @@ import {AuthGuard} from './guards/index';
 import { AppComponent }        from './app.component';
 import { HomeComponent }       from './home.component';
 
-import {AuditLogComponent} from './audit/auditlog.component';
-import {AuditDetailComponent} from './audit/auditdetail.component';
+import {AuditLogComponent} from './auditlogs/auditlogs.component';
 import {FileSentinelSplashComponent} from './splash/filesentinel_splash.component';
 
 import {PartnerComponent} from  './partners/partner.component';
@@ -37,7 +36,6 @@ import {LoginComponent} from './login/index';
 
 
 // service imports
-import {AuditLoggerService} from './audit/auditlogger.service';
 import {RegistrationService} from './registration/registration.service';
 import {PartnerServices} from  './partners/partner.services';
 import {PartnerDetailServices} from './partner-detail/partner.detail.services';
@@ -49,7 +47,6 @@ import {FileMapService} from './filemap/filemap.service';
         AppComponent,
         HomeComponent,
         AuditLogComponent,
-        AuditDetailComponent,
         FileSentinelSplashComponent,
         LoginComponent,
         PartnerComponent,
@@ -67,7 +64,6 @@ import {FileMapService} from './filemap/filemap.service';
     providers:    [
         appRoutingProviders,
         AUTH_PROVIDERS,
-        AuditLoggerService,
         RegistrationService,
         PartnerServices,
         PartnerDetailServices,

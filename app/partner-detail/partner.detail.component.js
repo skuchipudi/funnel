@@ -12,6 +12,17 @@ var core_1 = require('@angular/core');
 var partner_detail_services_1 = require('./partner.detail.services');
 var router_1 = require('@angular/router');
 var PartnerDetailComponent = (function () {
+    /*
+     <tbody>
+             <tr *ngFor = "let p of _clients; let i=index;">
+                     <td>{{c.clientName}}</td>
+                     <td>{{c.clientDescription}}<td>
+                     <tr *ngFor = "let a of c.auditEntries; let j=index;">
+                        <td>{{a.logEntry}}
+                     </tr>
+             </tr>
+            </tbody>
+            */
     function PartnerDetailComponent(_activatedRoute, _router, _partnerDetailServices) {
         this._activatedRoute = _activatedRoute;
         this._router = _router;
@@ -21,9 +32,6 @@ var PartnerDetailComponent = (function () {
     PartnerDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log('PartnerDetailComponent. ngOnit() called');
-        //this.sub = this.route.params.subscribe(params => {
-        //this.id = +params['id'];
-        //this._subscription = 
         this._activatedRoute.params.subscribe(function (params) {
             console.log('PartnerDetailComponent().partnerId =>' + params['partnerId']);
             _this._partnerDetailServices.getPartnerDetails(params['partnerId']).
