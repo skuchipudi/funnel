@@ -21,7 +21,7 @@ export class PartnerDetailServices {
 
     constructor(private _http: Http) { }
 
-    getPartnerDetails( partnerId: String) {
+    getPartnerDetailsByPartnerId( partnerId: String) {
         console.log('PartnerDetailServices.getPartnerDetails() called ' + partnerId);
         return this._http.get(this.find_partner_url + partnerId)
             .map(res => res.json());

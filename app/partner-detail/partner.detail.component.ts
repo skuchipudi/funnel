@@ -37,7 +37,7 @@ export class PartnerDetailComponent implements OnInit {
 
       this._activatedRoute.params.subscribe((params: Params) => {
            console.log( 'PartnerDetailComponent().partnerId =>' + params['partnerId']);
-            this._partnerDetailServices.getPartnerDetails( params['partnerId']).
+            this._partnerDetailServices.getPartnerDetailsByPartnerId( params['partnerId']).
                 subscribe(partners => {
                     this._isLoading = false;
                     this._partners = partners;

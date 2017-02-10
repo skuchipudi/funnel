@@ -15,18 +15,17 @@ export class AuditLogComponent  implements OnInit {
     private _subscription;
     private _clients: any;
     private _activatedRoute: ActivatedRoute;
-    private _partnerName: string;
+    private _partnerId: string;
     constructor (
             private _router: Router,
             private _partnerDetailServices:  PartnerDetailServices
              ) { 
-                 this._partnerName="world_bank";
+                 this._partnerId="world_bank";
              }
-
 
      ngOnInit() {
         console.log('Audit Component.ngOnInit() - ENTER');
-        this._partnerDetailServices.getClients(this._partnerName).
+        this._partnerDetailServices.getClients(this._partnerId).
                 subscribe(clients => {
                   this._clients=clients;
                   this._isLoading = false;
@@ -35,7 +34,7 @@ export class AuditLogComponent  implements OnInit {
      onSubmit(form: NgForm) {
         console.log('Audit Component.onSubmit() - ENTER');
         console.log("form value " + form.value.name);
-         this._partnerDetailServices.getClients(this._partnerName).
+         this._partnerDetailServices.getClients(this._partnerId).
                 subscribe(clients => {
                   this._clients=clients;
           })

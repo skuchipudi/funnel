@@ -5,8 +5,8 @@
         <label>Enter Partner Name</label>
         <input type="text"  class="form-control"
                name="name" required 
-               placeholder="Enter a Valid PartnerName"
-               [(ngModel)]="_partnerName"
+               placeholder="Enter a Valid PartnerId"
+               [(ngModel)]="_partnerId"
                #name="ngModel">
        </div>
         <div *ngIf="name.errors && (name.dirty || name.touched)"
@@ -28,34 +28,79 @@
             </tr>
         </thead>
         <tbody>
-
                <tr *ngFor = "let c of _clients">
                <td>{{c.clientName}}</td>
                <td>{{c.clientDescription}}</td>
                <td>
                     <tr *ngFor = "let a of c.auditEntries">
-                      {{a.logEntry}}
+                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
                      </tr>
                 </td>
                 </tr>
-                <tr *ngFor = "let c of _clients">
+                 <tr *ngFor = "let c of _clients">
                <td>{{c.clientName}}</td>
                <td>{{c.clientDescription}}</td>
                <td>
                     <tr *ngFor = "let a of c.auditEntries">
-                      {{a.logEntry}}
+                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
                      </tr>
                 </td>
                 </tr>
-                <tr *ngFor = "let c of _clients">
+                 <tr *ngFor = "let c of _clients">
                <td>{{c.clientName}}</td>
                <td>{{c.clientDescription}}</td>
                <td>
                     <tr *ngFor = "let a of c.auditEntries">
-                      {{a.logEntry}}
+                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
                      </tr>
                 </td>
                 </tr>
+                 <tr *ngFor = "let c of _clients">
+               <td>{{c.clientName}}</td>
+               <td>{{c.clientDescription}}</td>
+               <td>
+                    <tr *ngFor = "let a of c.auditEntries">
+                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
+                     </tr>
+                </td>
+                </tr>
+                 <tr *ngFor = "let c of _clients">
+               <td>{{c.clientName}}</td>
+               <td>{{c.clientDescription}}</td>
+               <td>
+                    <tr *ngFor = "let a of c.auditEntries">
+                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
+                     </tr>
+                </td>
+                </tr>
+                 <tr *ngFor = "let c of _clients">
+               <td>{{c.clientName}}</td>
+               <td>{{c.clientDescription}}</td>
+               <td>
+                    <tr *ngFor = "let a of c.auditEntries">
+                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
+                     </tr>
+                </td>
+                </tr>
+                 <tr *ngFor = "let c of _clients">
+               <td>{{c.clientName}}</td>
+               <td>{{c.clientDescription}}</td>
+               <td>
+                    <tr *ngFor = "let a of c.auditEntries">
+                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
+                     </tr>
+                </td>
+                </tr>
+                 <tr *ngFor = "let c of _clients">
+               <td>{{c.clientName}}</td>
+               <td>{{c.clientDescription}}</td>
+               <td>
+                    <tr *ngFor = "let a of c.auditEntries">
+                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
+                     </tr>
+                </td>
+                </tr>
+               
         </tbody>
     </table>
     <div>

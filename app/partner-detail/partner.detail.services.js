@@ -18,7 +18,7 @@ var PartnerDetailServices = (function () {
         this.find_partner_url = 'http://localhost:8080/partnerservices/findbypartnerid/';
         this.get_client_url = 'http://localhost:8080/partnerservices/getclients/';
     }
-    PartnerDetailServices.prototype.getPartnerDetails = function (partnerId) {
+    PartnerDetailServices.prototype.getPartnerDetailsByPartnerId = function (partnerId) {
         console.log('PartnerDetailServices.getPartnerDetails() called ' + partnerId);
         return this._http.get(this.find_partner_url + partnerId)
             .map(function (res) { return res.json(); });

@@ -16,12 +16,12 @@ var AuditLogComponent = (function () {
         this._router = _router;
         this._partnerDetailServices = _partnerDetailServices;
         this._isLoading = true;
-        this._partnerName = "world_bank";
+        this._partnerId = "world_bank";
     }
     AuditLogComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log('Audit Component.ngOnInit() - ENTER');
-        this._partnerDetailServices.getClients(this._partnerName).
+        this._partnerDetailServices.getClients(this._partnerId).
             subscribe(function (clients) {
             _this._clients = clients;
             _this._isLoading = false;
@@ -31,7 +31,7 @@ var AuditLogComponent = (function () {
         var _this = this;
         console.log('Audit Component.onSubmit() - ENTER');
         console.log("form value " + form.value.name);
-        this._partnerDetailServices.getClients(this._partnerName).
+        this._partnerDetailServices.getClients(this._partnerId).
             subscribe(function (clients) {
             _this._clients = clients;
         });

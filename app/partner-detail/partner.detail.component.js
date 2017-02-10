@@ -34,7 +34,7 @@ var PartnerDetailComponent = (function () {
         console.log('PartnerDetailComponent. ngOnit() called');
         this._activatedRoute.params.subscribe(function (params) {
             console.log('PartnerDetailComponent().partnerId =>' + params['partnerId']);
-            _this._partnerDetailServices.getPartnerDetails(params['partnerId']).
+            _this._partnerDetailServices.getPartnerDetailsByPartnerId(params['partnerId']).
                 subscribe(function (partners) {
                 _this._isLoading = false;
                 _this._partners = partners;
