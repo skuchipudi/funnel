@@ -29,8 +29,8 @@ var FileMapService = (function () {
             .attr('height', height + margin.top + margin.bottom)
             .append('g')
             .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-        // d3.json("https://bl.ocks.org/mbostock/raw/4063550/flare.json", function(error:any, flare:any) {
-        d3.json('d3/flare.short.json', function (error, flare) {
+        //d3.json("https://bl.ocks.org/mbostock/raw/4063550/flare.json", function(error:any, flare:any) {
+        d3.json('d3/flare.json', function (error, flare) {
             if (error)
                 throw error;
             root = flare;

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var partner_detail_services_1 = require('./partner.detail.services');
 var router_1 = require('@angular/router');
+var filemap_service_1 = require('../filemap/filemap.service');
 var PartnerDetailComponent = (function () {
     /*
      <tbody>
@@ -23,10 +24,11 @@ var PartnerDetailComponent = (function () {
              </tr>
             </tbody>
             */
-    function PartnerDetailComponent(_activatedRoute, _router, _partnerDetailServices) {
+    function PartnerDetailComponent(_activatedRoute, _router, _partnerDetailServices, _fileMapService) {
         this._activatedRoute = _activatedRoute;
         this._router = _router;
         this._partnerDetailServices = _partnerDetailServices;
+        this._fileMapService = _fileMapService;
         this._isLoading = true;
     }
     PartnerDetailComponent.prototype.ngOnInit = function () {
@@ -46,12 +48,23 @@ var PartnerDetailComponent = (function () {
         });
         //   this._partnerDetailServices.getDetailTable();
     };
+    PartnerDetailComponent.prototype.ngAfterViewInit = function () {
+        console.log('Filemap: ngAfterViewInit() called');
+        // TODO - Pass the id to retrieve the
+        this._fileMapService.renderTree('partnerId');
+    };
+    // Note: you need to call this and clear svg
+    // or else the graph will appear in every page.
+    PartnerDetailComponent.prototype.ngOnDestroy = function () {
+        console.log('Filemap: noOnDestroy() called');
+        this._fileMapService.destroyTree();
+    };
     PartnerDetailComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/partner-detail/partner.detail.component.html',
-            providers: [partner_detail_services_1.PartnerDetailServices]
+            providers: [partner_detail_services_1.PartnerDetailServices, filemap_service_1.FileMapService]
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, partner_detail_services_1.PartnerDetailServices])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, partner_detail_services_1.PartnerDetailServices, filemap_service_1.FileMapService])
     ], PartnerDetailComponent);
     return PartnerDetailComponent;
 }());

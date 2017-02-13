@@ -3,9 +3,17 @@ import {PartnerDetailServices} from './partner.detail.services';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {Partner} from './partner.detail';
 
+import {FileMapService} from '../filemap/filemap.service';
+
+
+
+declare var jQuery: any;
+declare var d3: any;
+
+
 @Component({
    templateUrl: '/app/partner-detail/partner.detail.component.html',
-     providers: [PartnerDetailServices]
+     providers: [PartnerDetailServices,FileMapService]
  })
 
 export class PartnerDetailComponent implements OnInit {
@@ -13,6 +21,7 @@ export class PartnerDetailComponent implements OnInit {
     private _subscription;
     private _partners: any;
     private _clients:any;
+
 
 /*
  <tbody>
@@ -29,7 +38,8 @@ export class PartnerDetailComponent implements OnInit {
     constructor (
             private _activatedRoute: ActivatedRoute,
             private _router: Router,
-            private _partnerDetailServices:  PartnerDetailServices
+            private _partnerDetailServices:  PartnerDetailServices,
+            private _fileMapService: FileMapService
             ) { }
 
     ngOnInit() {
@@ -52,6 +62,21 @@ export class PartnerDetailComponent implements OnInit {
             });
          //   this._partnerDetailServices.getDetailTable();
     }
+
+     ngAfterViewInit() {
+        console.log('Filemap: ngAfterViewInit() called');
+        // TODO - Pass the id to retrieve the
+        this._fileMapService.renderTree('partnerId');
+    }
+
+    // Note: you need to call this and clear svg
+    // or else the graph will appear in every page.
+    ngOnDestroy()
+    {
+        console.log('Filemap: noOnDestroy() called');
+        this._fileMapService.destroyTree();
+    }
+
 }
 
 
