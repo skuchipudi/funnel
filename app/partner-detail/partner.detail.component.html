@@ -29,6 +29,10 @@
              <th>Client Description</th>
              <th>Phone Number</th>
              <th>Client Email Address</th>
+             <th>Registered Partner</th>
+             <th>Registered Partner File Path</th>
+             <th>Client File Path</th>
+             <th>Client File</th>
              </tr>
         </thead>
         <tbody>
@@ -37,6 +41,10 @@
                <td>{{c.clientDescription}}</td>
                <td>(913) 989 0343</td>
                <td>{{c.emailAddress.emailAddress}}</td>
+               <td>{{c.registrationInfo.partnerAddress}}</td>
+               <td>{{c.registrationInfo.partnerFilePath}}</td>
+               <td>{{c.registrationInfo.clientFilePath}}</td>
+               <td>{{c.registrationInfo.clientFile}}</td>
          </tr>
         </tbody>
     </table>

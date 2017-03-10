@@ -18,7 +18,6 @@ export class PartnerDetailServices {
     private get_client_url =
          'http://localhost:8080/partnerservices/getclients/';
 
-
     constructor(private _http: Http) { }
 
     getPartnerDetailsByPartnerId( partnerId: String) {
@@ -26,7 +25,6 @@ export class PartnerDetailServices {
         return this._http.get(this.find_partner_url + partnerId)
             .map(res => res.json());
     }
-
 
     getClients( partnerId: String) {
         console.log('PartnerDetailServices.getClients() called ' + partnerId);

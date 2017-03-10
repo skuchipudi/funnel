@@ -23,7 +23,6 @@ export class PartnerComponent implements OnInit {
             ) { }
 
 
-
     ngOnInit() {
        console.log('PartnerComponent. ngOnit() called');
        
