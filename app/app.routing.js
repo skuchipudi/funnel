@@ -8,6 +8,7 @@ var schedule_transfer_component_1 = require('./schedule/schedule.transfer.compon
 var partner_component_1 = require('./partners/partner.component');
 var partner_detail_component_1 = require('./partner-detail/partner.detail.component');
 var partner_registration_component_1 = require('./partner-registration/partner.registration.component');
+var client_registration_component_1 = require('./client-registration/client.registration.component');
 var maps_component_1 = require('./maps/maps.component');
 var charts_component_1 = require('./charts/charts.component');
 var filemap_component_1 = require('./filemap/filemap.component');
@@ -21,6 +22,7 @@ var appRoutes = [
     { path: 'partners', component: partner_component_1.PartnerComponent, canActivate: [index_1.AuthGuard] },
     { path: 'partnerdetail/:partnerId', component: partner_detail_component_1.PartnerDetailComponent, canActivate: [index_1.AuthGuard] },
     { path: 'registerpartner', component: partner_registration_component_1.PartnerRegistrationComponent },
+    { path: 'registerclient', component: client_registration_component_1.ClientRegistrationComponent },
     { path: 'registrationslist', component: registrations_list_component_1.RegistrationsListComponent, canActivate: [index_1.AuthGuard] },
     { path: 'registration', component: registration_component_1.RegistrationComponent, canActivate: [index_1.AuthGuard] },
     { path: 'maps', component: maps_component_1.MapsComponent, canActivate: [index_1.AuthGuard] },

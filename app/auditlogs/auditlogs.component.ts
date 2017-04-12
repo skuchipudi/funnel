@@ -20,7 +20,7 @@ export class AuditLogComponent  implements OnInit {
             private _router: Router,
             private _partnerDetailServices:  PartnerDetailServices
              ) { 
-                 this._partnerId="world_bank";
+                 this._partnerId="maker_bank";
              }
 
      ngOnInit() {

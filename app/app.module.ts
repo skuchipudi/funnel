@@ -3,8 +3,8 @@ import {NgModule}          from '@angular/core';
 import {BrowserModule}     from '@angular/platform-browser';
 import {FormsModule}       from '@angular/forms';
 import {HttpModule}        from '@angular/http';
-import { AUTH_PROVIDERS }      from 'angular2-jwt';
-import { routing, appRoutingProviders} from './app.routing';
+import {AUTH_PROVIDERS }      from 'angular2-jwt';
+import {routing, appRoutingProviders} from './app.routing';
 
 import {AuthGuard} from './guards/index';
 
@@ -20,6 +20,7 @@ import {PartnerComponent} from  './partners/partner.component';
 import {PartnerDetailComponent} from  './partner-detail/partner.detail.component';
 
 import {PartnerRegistrationComponent} from  './partner-registration/partner.registration.component';
+import {ClientRegistrationComponent} from './client-registration/client.registration.component';
 
 import {RegistrationComponent} from './registration/registration.component';
 import {RegistrationsListComponent} from './registration/registrations.list.component';
@@ -37,6 +38,7 @@ import {LoginComponent} from './login/index';
 
 // service imports
 import {RegistrationService} from './registration/registration.service';
+import {ClientRegistrationService} from './client-registration/client.registration.service';
 import {PartnerServices} from  './partners/partner.services';
 import {PartnerDetailServices} from './partner-detail/partner.detail.services';
 import {FileMapService} from './filemap/filemap.service';
@@ -55,6 +57,7 @@ import {FileMapService} from './filemap/filemap.service';
         RegistrationDetailComponent,
         RegistrationsListComponent,
         PartnerRegistrationComponent,
+        ClientRegistrationComponent,
         ScheduleTransferComponent,
         MapsComponent,
         ChartsComponent,
@@ -67,6 +70,7 @@ import {FileMapService} from './filemap/filemap.service';
         RegistrationService,
         PartnerServices,
         PartnerDetailServices,
+        ClientRegistrationService,
         FileMapService,
         AuthGuard
     ],

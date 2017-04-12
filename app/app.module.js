@@ -24,6 +24,7 @@ var filesentinel_splash_component_1 = require('./splash/filesentinel_splash.comp
 var partner_component_1 = require('./partners/partner.component');
 var partner_detail_component_1 = require('./partner-detail/partner.detail.component');
 var partner_registration_component_1 = require('./partner-registration/partner.registration.component');
+var client_registration_component_1 = require('./client-registration/client.registration.component');
 var registration_component_1 = require('./registration/registration.component');
 var registrations_list_component_1 = require('./registration/registrations.list.component');
 var registrationdetail_component_1 = require('./registration/registrationdetail.component');
@@ -35,6 +36,7 @@ var not_found_component_1 = require('./not-found.component');
 var index_2 = require('./login/index');
 // service imports
 var registration_service_1 = require('./registration/registration.service');
+var client_registration_service_1 = require('./client-registration/client.registration.service');
 var partner_services_1 = require('./partners/partner.services');
 var partner_detail_services_1 = require('./partner-detail/partner.detail.services');
 var filemap_service_1 = require('./filemap/filemap.service');
@@ -55,6 +57,7 @@ var AppModule = (function () {
                 registrationdetail_component_1.RegistrationDetailComponent,
                 registrations_list_component_1.RegistrationsListComponent,
                 partner_registration_component_1.PartnerRegistrationComponent,
+                client_registration_component_1.ClientRegistrationComponent,
                 schedule_transfer_component_1.ScheduleTransferComponent,
                 maps_component_1.MapsComponent,
                 charts_component_1.ChartsComponent,
@@ -67,6 +70,7 @@ var AppModule = (function () {
                 registration_service_1.RegistrationService,
                 partner_services_1.PartnerServices,
                 partner_detail_services_1.PartnerDetailServices,
+                client_registration_service_1.ClientRegistrationService,
                 filemap_service_1.FileMapService,
                 index_1.AuthGuard
             ],

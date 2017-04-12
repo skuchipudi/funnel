@@ -16,7 +16,7 @@ var AuditLogComponent = (function () {
         this._router = _router;
         this._partnerDetailServices = _partnerDetailServices;
         this._isLoading = true;
-        this._partnerId = "world_bank";
+        this._partnerId = "maker_bank";
     }
     AuditLogComponent.prototype.ngOnInit = function () {
         var _this = this;

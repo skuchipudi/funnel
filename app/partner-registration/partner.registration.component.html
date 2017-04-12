@@ -1,6 +1,6 @@
 <h1>Partner Registration</h1>
 This is the screen to register a partner to transfer files between parties. Please 
-enter partner infomation. All transfers are completed through a secure file transfer protocol
+enter partner infomation. All transfers are completed using a multi layered secure file transfer protocol
 <p>
 
 <form #partnerForm="ngForm"  (submit)="onSubmit(partnerForm)" name="form" novalidate>
@@ -27,7 +27,7 @@ enter partner infomation. All transfers are completed through a secure file tran
                 <div *ngIf="_partnerRegistrationInfo.hasPhoneNumberError"
                 class="alert alert-danger">
                 Please Enter a Valid Phone Number
-               </div>
+               </div> 
                 <div *ngIf="phonenumber.errors && (phonenumber.dirty || phonenumber.touched)"
                 class="alert alert-danger">
                 Phone Number is Required
@@ -38,8 +38,8 @@ enter partner infomation. All transfers are completed through a secure file tran
         <label>Server Hostname</label>
         <input type="text" class="form-control"
                name="servername" required 
-               placeholder = "Enter Server Host NameName"
-               [(ngModel)]="_partnerRegistrationInfo.serverName"
+               placeholder = "Enter Server Host Name"
+               [(ngModel)]="_partnerRegistrationInfo.hostname"
                #servername="ngModel">
            <div *ngIf="servername.errors && (servername.dirty || servername.touched)"
                 class="alert alert-danger">
@@ -51,7 +51,7 @@ enter partner infomation. All transfers are completed through a secure file tran
         <label>UserId</label>
         <input type="text" class="form-control"
                name="userid" required 
-               placeholder = "Enter Partner Hostname"
+               placeholder = "Enter Partner UserId"
                [(ngModel)]="_partnerRegistrationInfo.userId"
                #userid="ngModel">
            <div *ngIf="userid.errors && (userid.dirty || userid.touched)"
@@ -72,8 +72,6 @@ enter partner infomation. All transfers are completed through a secure file tran
            </div>
      </div>
 
-
-		
      <div class="form-group">
         <label>Email Address</label>
         <input type="email"  class="form-control"

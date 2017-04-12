@@ -11,7 +11,7 @@ import {LoginComponent} from './login/login.component';
 import {PartnerComponent} from './partners/partner.component';
 import {PartnerDetailComponent} from './partner-detail/partner.detail.component';
 import {PartnerRegistrationComponent} from './partner-registration/partner.registration.component';
-
+import {ClientRegistrationComponent} from './client-registration/client.registration.component';
 
 import {MapsComponent} from './maps/maps.component';
 import {ChartsComponent} from './charts/charts.component';
@@ -30,6 +30,8 @@ const appRoutes: Routes = [
   { path: 'partnerdetail/:partnerId', component: PartnerDetailComponent, canActivate: [AuthGuard]},
 
   { path: 'registerpartner', component: PartnerRegistrationComponent},
+  { path: 'registerclient', component: ClientRegistrationComponent},
+ 
   { path: 'registrationslist', component: RegistrationsListComponent, canActivate: [AuthGuard]},
   { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
   { path: 'maps', component: MapsComponent,canActivate: [AuthGuard]},
