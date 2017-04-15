@@ -1,52 +1,81 @@
 
 <h1>Audit Details</h1>
 <form #auditForm="ngForm"  (submit)="onSubmit(auditForm)" name="form" novalidate>
-       <div class="form-group">
-        <label>Enter Partner Name</label>
-        <input type="text"  class="form-control"
-               name="name" required 
-               placeholder="Enter a Valid PartnerId"
+
+<div class="form-group">
+         <label>Enter Partner Name</label>
+            <input type="text"  class="form-control"
+               name="partnerid" required 
+               placeholder="Enter a valid Partner Id"
                [(ngModel)]="_partnerId"
-               #name="ngModel">
-       </div>
-        <div *ngIf="name.errors && (name.dirty || name.touched)"
+               #partnerid="ngModel">
+
+            <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
                 class="alert alert-danger">
                 Partner Name is Required
-        </div>
+            </div>
+   <label>Client Id</label>
+        <input type="text" class="form-control"
+               name="clientid" required 
+               placeholder = "Enter Client Hostname"
+               [(ngModel)]="_clientId"
+               #clientid="ngModel">
+           <div *ngIf="clientid.errors && (clientid.dirty || clientid.touched)"
+                class="alert alert-danger">
+                Client Id is Required
+           </div>
+</div>     
+
          <button type="submit" class="btn btn-default"  [disabled]="!auditForm.form.valid">Submit</button>
 </form>
 
 <div *ngIf="_isLoading">
             <i class="fa fa-spinner fa-spin fa-3x"></i>
         </div>
-      <table id="clientstable"  class="table table-striped table-hover">
+      <!--<table id="#exampletable"  class="table table-striped table-hover"> -->
+          <table id= "exampletable" class="table table-striped table-hover" cellspacing="10%" width="100%">
           <thead>
             <tr>
-             <th>Client Name</th>
-             <th>Client Description</th>
-             <th>Audit Logs</th>
+            <th>Partner Id</th>
+            <th>Client Id</th>
+            <th>Audit Entry</th>
+            <th>Audit Timestamp</th>
             </tr>
         </thead>
+         <tfoot>
+            <tr>
+            <th>Partner Id</th>
+            <th>Client Id</th>
+            <th>Audit Entry</th>
+            <th>Audit Timestamp</th>
+            </tr>
+        </tfoot>
+        
         <tbody>
-               <tr *ngFor = "let c of _clients">
-               <td>{{c.clientName}}</td>
-               <td>{{c.clientDescription}}</td>
-               <td>
-                    <tr *ngFor = "let a of c.auditEntries">
-                      {{a.logEntry}} &nbsp; | &nbsp; {{a.timeStamp}}
-                     </tr>
+               <tr *ngFor = "let a of _entries">
+                  <td>
+                     {{_partnerId}}
+                 </td> 
+                 <td>
+                     {{_clientId}}
+                 </td>    
+                 <td>
+                      {{a.logEntry}}&nbsp;&nbsp;&nbsp;
                 </td>
+                <td>
+                      {{a.timeStamp}}
+                 </td>
                 </tr>
         </tbody>
+    
     </table>
     <div>
     <p>
- <!--
-    client:  {{ _clients | json }}
+   <!-- client:  {{ _clients | json }}-->
     </p>
     <p>
-     form: {{ auditForm.value | json }}
+     form:  {{ auditForm.value | json }}
     </p>
 </div>
--->
+
 

@@ -31,7 +31,7 @@
               <th>Partner Name</th>
               <th>Partner Description</th>
               <th>Phone Number</th>
-              <th>Partner Hostname</th>
+              <th>Partner Server Address</th>
               <th>Email Address</th>
             </tr>
         </thead>
@@ -41,7 +41,7 @@
                 <td><a [routerLink]="['/partnerdetail',entries.partnerId]">{{entries.partnerName}}</a></td>
                 <td>{{entries.partnerDescription}}</td>
                 <td>{{entries.phoneNumber}}</td>
-                 <td>{{entries.hostname}}</td>
+                 <td>{{entries.serverAddress}}</td>
                 <td>{{entries.emailAddress.emailAddress}}</td>
               </tr>
           </tbody>

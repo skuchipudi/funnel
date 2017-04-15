@@ -25,12 +25,12 @@ var PartnerRegistrationComponent = (function () {
         // TODO write the function to validate
         console.log('phonenumber.value=>' + phonenumber.value.length);
         // TODO add additional validations
-        if (phonenumber.value.length != 14) {
-            console.log("value true");
-            this._partnerRegistrationInfo.hasPhoneNumberError = true;
-        }
-        else
-            this._partnerRegistrationInfo.hasPhoneNumberError = false;
+        //if(phonenumber.value.length != 14){
+        //    console.log("value true");
+        //    this._partnerRegistrationInfo.hasPhoneNumberError = true;
+        //} else
+        //       this._partnerRegistrationInfo.hasPhoneNumberError = false;
+        return true;
     };
     PartnerRegistrationComponent.prototype.onSubmit = function (partnerForm) {
         var _this = this;

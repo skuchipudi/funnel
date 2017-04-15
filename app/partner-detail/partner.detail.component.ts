@@ -21,7 +21,7 @@ export class PartnerDetailComponent implements OnInit {
     private _subscription;
     private _partners: any;
     private _clients:any;
-
+    private _partnerId: string;
 
 /*
  <tbody>
@@ -40,6 +40,7 @@ export class PartnerDetailComponent implements OnInit {
             private _router: Router,
             private _partnerDetailServices:  PartnerDetailServices,
             private _fileMapService: FileMapService
+           
             ) { }
 
     ngOnInit() {
@@ -47,6 +48,7 @@ export class PartnerDetailComponent implements OnInit {
 
       this._activatedRoute.params.subscribe((params: Params) => {
            console.log( 'PartnerDetailComponent().partnerId =>' + params['partnerId']);
+            this._partnerId = params['partnerId'];
             this._partnerDetailServices.getPartnerDetailsByPartnerId( params['partnerId']).
                 subscribe(partners => {
                     this._isLoading = false;

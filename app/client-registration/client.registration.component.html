@@ -53,6 +53,19 @@ enter partner infomation. All transfers are completed using a multi layered secu
            </div>
      </div>
 
+      <div class="form-group">
+        <label>Client Hostname Userid</label>
+        <input type="text" class="form-control"
+               name="userid" required 
+               placeholder = "Enter Client Hostname Userid"
+               [(ngModel)]="_model.userid"
+               #hostname="ngModel">
+           <div *ngIf="userid.errors && (userid.dirty || userid.touched)"
+                class="alert alert-danger">
+                Client HostName UserId is Required
+           </div>
+     </div>
+
      <div class="form-group">
         <label>Client Password</label>
         <input type="text" class="form-control"

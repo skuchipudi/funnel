@@ -9,21 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var partner_detail_services_1 = require('../partner-detail/partner.detail.services');
+var auditlogs_service_1 = require('./auditlogs.service');
 var router_1 = require('@angular/router');
 var AuditLogComponent = (function () {
-    function AuditLogComponent(_router, _partnerDetailServices) {
+    function AuditLogComponent(_router, _auditLogService) {
         this._router = _router;
-        this._partnerDetailServices = _partnerDetailServices;
+        this._auditLogService = _auditLogService;
         this._isLoading = true;
+        // TODO - Change this
         this._partnerId = "maker_bank";
+        this._clientId = "guardian_client_id";
     }
     AuditLogComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log('Audit Component.ngOnInit() - ENTER');
-        this._partnerDetailServices.getClients(this._partnerId).
-            subscribe(function (clients) {
-            _this._clients = clients;
+        // this._auditLogService.getTable( this._partnerId, this._clientId);
+        this._auditLogService.getAuditLogsByPartnerAndClientID(this._partnerId, this._clientId).
+            subscribe(function (entries) {
+            _this._entries = entries;
             _this._isLoading = false;
         });
     };
@@ -31,17 +34,20 @@ var AuditLogComponent = (function () {
         var _this = this;
         console.log('Audit Component.onSubmit() - ENTER');
         console.log("form value " + form.value.name);
-        this._partnerDetailServices.getClients(this._partnerId).
-            subscribe(function (clients) {
-            _this._clients = clients;
+        //this._auditLogService.getTable( this._partnerId, this._clientId);
+        // Use this if you want to use the Angular2 paradigm
+        this._auditLogService.getAuditLogsByPartnerAndClientID(this._partnerId, this._clientId).
+            subscribe(function (entries) {
+            _this._entries = entries;
+            _this._isLoading = false;
         });
     };
     AuditLogComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/auditlogs/auditlogs.component.html',
-            providers: [partner_detail_services_1.PartnerDetailServices]
+            providers: [auditlogs_service_1.AuditLogsService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, partner_detail_services_1.PartnerDetailServices])
+        __metadata('design:paramtypes', [router_1.Router, auditlogs_service_1.AuditLogsService])
     ], AuditLogComponent);
     return AuditLogComponent;
 }());

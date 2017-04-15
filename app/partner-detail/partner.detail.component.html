@@ -1,5 +1,6 @@
 
-<h1>Partner's Client Detail</h1>
+<!--<h1>Partner's Client Detail - {{_partnerId}}</h1> -->
+<h1> Partner's Client Detail </h1>
     <div *ngIf="_isLoading">
             <i class="fa fa-spinner fa-spin fa-3x"></i>
         </div>
@@ -42,7 +43,7 @@
                <td>1 (888) GUARDIAN </td>
                <td>{{c.emailAddress.emailAddress}}</td>
                <td>{{c.filePath}}</td>
-                <td>{{c.userId}}</td>
+               <td>{{c.userId}}</td>
             </tr>
         </tbody>
     </table>
