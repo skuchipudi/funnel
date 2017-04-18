@@ -30,7 +30,7 @@ export class PartnerRegistrationService {
         return this._http.post(this._create_partner_registration_url, registrationInfoJSON, options)
                      .map((response:Response) => response.json())
                      .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
-    }   
+    }
     
     private handleError(error: Response) {
         console.error("handleError()" + error);

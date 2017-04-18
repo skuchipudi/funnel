@@ -35,15 +35,15 @@ enter partner infomation. All transfers are completed using a multi layered secu
      </div>
 
       <div class="form-group">
-        <label>Server Hostname</label>
+        <label>Server Address</label>
         <input type="text" class="form-control"
-               name="servername" required 
-               placeholder = "Enter Server Host Name"
-               [(ngModel)]="_partnerRegistrationInfo.hostname"
-               #servername="ngModel">
-           <div *ngIf="servername.errors && (servername.dirty || servername.touched)"
+               name="serveraddress" required 
+               placeholder = "Enter Server Address Host Name"
+               [(ngModel)]="_partnerRegistrationInfo.serverAddress"
+               #serveraddress="ngModel">
+           <div *ngIf="serveraddress.errors && (serveraddress.dirty || serveraddress.touched)"
                 class="alert alert-danger">
-                Server hostname is required
+                Server hostname address is required
            </div>
      </div>
 
@@ -69,6 +69,19 @@ enter partner infomation. All transfers are completed using a multi layered secu
            <div *ngIf="password.errors && (password.dirty || password.touched)"
                 class="alert alert-danger">
                 Password is required
+           </div>
+     </div>
+
+      <div class="form-group">
+        <label>File Path</label>
+        <input type="text" class="form-control"
+               name="filepath" required 
+               placeholder = "Enter Partner File Path to be downloaded or uploaded"
+               [(ngModel)]="_partnerRegistrationInfo.filePath"
+               #filepath="ngModel">
+           <div *ngIf="filepath.errors && (filepath.dirty || filepath.touched)"
+                class="alert alert-danger">
+                File Path to be uploaded or downnloaded is required
            </div>
      </div>
 

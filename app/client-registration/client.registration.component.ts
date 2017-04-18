@@ -12,21 +12,27 @@ import {NgForm} from  '@angular/forms';
 
 export class ClientRegistrationComponent {
 
-    private _model: ClientRegistrationModel;
+    private _clientRegistrationModel: ClientRegistrationModel;
+    
+
     // TODO: populate this later using a Service
     public languages = ['maker_bank', 'euro_banc', 'bank_usa'];
 
-
-    constructor (private _router: Router )
+    constructor (private _router: Router, private _registrationService: ClientRegistrationService )
     { 
-        this._model = new ClientRegistrationModel;
-
+        this._clientRegistrationModel = new ClientRegistrationModel();
     }
 
 
     onSubmit(clientForm: NgForm) {
-        console.log('Client Registration.onSubmit() - ENTER');
-        console.log('Client Registration.onSubmit() - EXIT');
+        
+         console.log('ClientRegistration.onSubmit() - ENTER');
+        this._registrationService.createRegistration(this._clientRegistrationModel).subscribe(registrationInfo => {
+            return this._clientRegistrationModel = registrationInfo;
+       });
+        //this._router.navigate(['/partners']);
+       console.log('ClientRegistration.onSubmit() - EXIT');
+  
     }
 
 

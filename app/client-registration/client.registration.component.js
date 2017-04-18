@@ -13,22 +13,28 @@ var router_1 = require('@angular/router');
 var client_registration_service_1 = require('./client.registration.service');
 var client_registration_model_1 = require('./client.registration.model');
 var ClientRegistrationComponent = (function () {
-    function ClientRegistrationComponent(_router) {
+    function ClientRegistrationComponent(_router, _registrationService) {
         this._router = _router;
+        this._registrationService = _registrationService;
         // TODO: populate this later using a Service
         this.languages = ['maker_bank', 'euro_banc', 'bank_usa'];
-        this._model = new client_registration_model_1.ClientRegistrationModel;
+        this._clientRegistrationModel = new client_registration_model_1.ClientRegistrationModel();
     }
     ClientRegistrationComponent.prototype.onSubmit = function (clientForm) {
-        console.log('Client Registration.onSubmit() - ENTER');
-        console.log('Client Registration.onSubmit() - EXIT');
+        var _this = this;
+        console.log('ClientRegistration.onSubmit() - ENTER');
+        this._registrationService.createRegistration(this._clientRegistrationModel).subscribe(function (registrationInfo) {
+            return _this._clientRegistrationModel = registrationInfo;
+        });
+        //this._router.navigate(['/partners']);
+        console.log('ClientRegistration.onSubmit() - EXIT');
     };
     ClientRegistrationComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/client-registration/client.registration.component.html',
             providers: [client_registration_service_1.ClientRegistrationService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router, client_registration_service_1.ClientRegistrationService])
     ], ClientRegistrationComponent);
     return ClientRegistrationComponent;
 }());

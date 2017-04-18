@@ -9,7 +9,8 @@ export class Partner
 	    public emailAddress: EmailAddress;
 		private userid:string;
 		private password:string;
-		private hostname:string;
+		private serverAddress:string;
+		private filePath:string;
 		public client : Client [];
 		public hasPhoneNumberError: boolean;
 

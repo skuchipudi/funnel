@@ -1,12 +1,16 @@
 export class ClientRegistrationModel
 {
 		public partnerId:string;
-		public clientId:   string;
+		
+		public clientId: string;
 		public clientName: string;
-		public hostname: string;
-		public userid:string;
+		public clientAddress: string;
+		public userId:string;
 		public password: string;
+		public filePath: string;
 		public emailaddress: string;
+		
+	
 
 }
 

@@ -35,7 +35,7 @@ export class PartnerRegistrationComponent {
         //    this._partnerRegistrationInfo.hasPhoneNumberError = true;
      //} else
       //       this._partnerRegistrationInfo.hasPhoneNumberError = false;
-      return true;
+      return false;
     }
 
 
@@ -44,8 +44,8 @@ export class PartnerRegistrationComponent {
         this._registrationService.createRegistration(this._partnerRegistrationInfo).subscribe(registrationInfo => {
             return this._partnerRegistrationInfo = registrationInfo;
         });
-        this._router.navigate(['partners']);
-        console.log('PartnerRegistration.onSubmit() - EXIT');
+        this._router.navigate(['/partners']);
+       console.log('PartnerRegistration.onSubmit() - EXIT');
     }
 
 

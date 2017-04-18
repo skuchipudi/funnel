@@ -30,7 +30,7 @@ var PartnerRegistrationComponent = (function () {
         //    this._partnerRegistrationInfo.hasPhoneNumberError = true;
         //} else
         //       this._partnerRegistrationInfo.hasPhoneNumberError = false;
-        return true;
+        return false;
     };
     PartnerRegistrationComponent.prototype.onSubmit = function (partnerForm) {
         var _this = this;
@@ -38,7 +38,7 @@ var PartnerRegistrationComponent = (function () {
         this._registrationService.createRegistration(this._partnerRegistrationInfo).subscribe(function (registrationInfo) {
             return _this._partnerRegistrationInfo = registrationInfo;
         });
-        this._router.navigate(['partners']);
+        this._router.navigate(['/partners']);
         console.log('PartnerRegistration.onSubmit() - EXIT');
     };
     PartnerRegistrationComponent = __decorate([

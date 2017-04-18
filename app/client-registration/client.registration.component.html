@@ -1,17 +1,23 @@
 <h1>Client Registration</h1>
-This is the screen to register a partner to transfer files between parties. Please 
+This is the screen to register a client to the Partner entity for file transfers. Please 
 enter partner infomation. All transfers are completed using a multi layered secure file transfer protocol
 <p>
 
-
-
 <form #clientForm="ngForm"  (submit)="onSubmit(clientForm)" name="form" novalidate>
+      
       
       <div class="form-group">
       <label>PartnerId</label>
-      <select name="partnerid"  [(ngModel)]="_model.partnerId" class="form-control">
-              <option  *ngFor = "let lang of languages"> {{lang}}</option>
-       </select>
+       <select name="partnerid"  
+               [(ngModel)]="_clientRegistrationModel.partnerId"  
+               #partnerid= "ngModel">
+              <option  *ngFor = "let lang of languages">{{lang}}</option>
+       </select> 
+
+       <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
+                class="alert alert-danger">
+                Partner Id is Required
+           </div>
       </div>
 
       <div class="form-group">
@@ -19,7 +25,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="clientid" required 
                placeholder = "Enter a Client Id. Autogenerate"
-               [(ngModel)]="_model.clientId"
+               [(ngModel)]="_clientRegistrationModel.clientId"
                #clientid="ngModel">
            <div *ngIf="clientid.errors && (clientid.dirty || clientid.touched)"
                 class="alert alert-danger">
@@ -32,24 +38,23 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="name" required 
                placeholder = "Enter a Client name"
-               [(ngModel)]="_model.clientName"
+               [(ngModel)]="_clientRegistrationModel.clientName"
                #name="ngModel">
            <div *ngIf="name.errors && (name.dirty || name.touched)"
                 class="alert alert-danger">
                 Client Name is required
            </div>
      </div>
-
      <div class="form-group">
-        <label>Client Hostname</label>
+        <label>Client Address</label>
         <input type="text" class="form-control"
-               name="hostname" required 
+               name="clientaddress" required 
                placeholder = "Enter Client Hostname"
-               [(ngModel)]="_model.hostName"
-               #hostname="ngModel">
-           <div *ngIf="hostname.errors && (hostname.dirty || hostname.touched)"
+               [(ngModel)]="_clientRegistrationModel.clientAddress"
+               #clientaddress="ngModel">
+           <div *ngIf="clientaddress.errors && (clientaddress.dirty || clientaddress.touched)"
                 class="alert alert-danger">
-                Client HostName is Required
+                Client hostname address is Required
            </div>
      </div>
 
@@ -58,11 +63,11 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="userid" required 
                placeholder = "Enter Client Hostname Userid"
-               [(ngModel)]="_model.userid"
-               #hostname="ngModel">
+               [(ngModel)]="_clientRegistrationModel.userid"
+               #userid="ngModel">
            <div *ngIf="userid.errors && (userid.dirty || userid.touched)"
                 class="alert alert-danger">
-                Client HostName UserId is Required
+                Client  UserId is Required
            </div>
      </div>
 
@@ -71,11 +76,24 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="password" required 
                placeholder = "Enter Client Password"
-               [(ngModel)]="_model.password"
+               [(ngModel)]="_clientRegistrationModel.password"
                #password="ngModel">
            <div *ngIf="password.errors && (password.dirty || password.touched)"
                 class="alert alert-danger">
                 * Client Password is Required - Encrypted
+           </div>
+     </div>
+
+      <div class="form-group">
+        <label>Client File Path</label>
+        <input type="text" class="form-control"
+               name="filepath" required 
+               placeholder = "Enter path of the file that is to be transferred"
+               [(ngModel)]="_clientRegistrationModel.filePath"
+               #filepath="ngModel">
+           <div *ngIf="filepath.errors && (filepath.dirty || filepath.touched)"
+                class="alert alert-danger">
+                * Path to the Client File is required
            </div>
      </div>
 
@@ -85,7 +103,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="emailaddress" required 
                placeholder = "Enter Client Email Address"
-               [(ngModel)]="_model.emailaddress"
+               [(ngModel)]="_clientRegistrationModel.emailaddress"
                #emailaddress="ngModel">
            <div *ngIf="emailaddress.errors && (emailaddress.dirty || emailaddress.touched)"
                 class="alert alert-danger">
@@ -97,7 +115,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
 </form>
 
 <br>
-  Model: {{ _model | json}}
+  Model: {{ _clientRegistrationModel | json}}
 <br>
   Angular: {{ clientForm.value | json  }}
 <br>
