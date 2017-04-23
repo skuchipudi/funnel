@@ -17,7 +17,7 @@ require('rxjs/add/operator/catch');
 var ClientRegistrationService = (function () {
     function ClientRegistrationService(_http) {
         this._http = _http;
-        this._create_partner_client_registration_url = "http://localhost:8080/partnerservices/create/";
+        this._create_partner_client_registration_url = "http://localhost:8080/partnerservices/addclient/";
     }
     ClientRegistrationService.prototype.createRegistration = function (_clientRegistrationModel) {
         console.log('createRegistration ENTER');

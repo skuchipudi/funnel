@@ -11,7 +11,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
        <select name="partnerid"  
                [(ngModel)]="_clientRegistrationModel.partnerId"  
                #partnerid= "ngModel">
-              <option  *ngFor = "let lang of languages">{{lang}}</option>
+              <option *ngFor = "let lang of languages">{{lang}}</option>
        </select> 
 
        <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
@@ -19,13 +19,13 @@ enter partner infomation. All transfers are completed using a multi layered secu
                 Partner Id is Required
            </div>
       </div>
-
+  
       <div class="form-group">
         <label>Client Id</label>
         <input type="text" class="form-control"
                name="clientid" required 
                placeholder = "Enter a Client Id. Autogenerate"
-               [(ngModel)]="_clientRegistrationModel.clientId"
+               [(ngModel)]="_clientRegistrationModel.client.clientId"
                #clientid="ngModel">
            <div *ngIf="clientid.errors && (clientid.dirty || clientid.touched)"
                 class="alert alert-danger">
@@ -38,19 +38,47 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="name" required 
                placeholder = "Enter a Client name"
-               [(ngModel)]="_clientRegistrationModel.clientName"
+               [(ngModel)]="_clientRegistrationModel.client.clientName"
                #name="ngModel">
            <div *ngIf="name.errors && (name.dirty || name.touched)"
                 class="alert alert-danger">
                 Client Name is required
            </div>
      </div>
+
+     <div class="form-group">
+        <label>Client Description</label>
+        <input type="text" class="form-control"
+               name="description" required 
+               placeholder = "Enter a Client Description"
+               [(ngModel)]="_clientRegistrationModel.client.clientDescription"
+               #description="ngModel">
+           <div *ngIf="description.errors && (description.dirty || description.touched)"
+                class="alert alert-danger">
+                Client Description is required
+           </div>
+     </div>
+     <div class="form-group">
+        <label>Client Description</label>
+        <input type="text" class="form-control"
+               name="phonenumber" required 
+               placeholder = "Enter a Client Phone Number"
+               [(ngModel)]="_clientRegistrationModel.client.phoneNumber"
+               #phonenumber="ngModel">
+           <div *ngIf="phonenumber.errors && (phonenumber.dirty || phonenumber.touched)"
+                class="alert alert-danger">
+                Client Phone is required
+           </div>
+     </div>
+     
+
+
      <div class="form-group">
         <label>Client Address</label>
         <input type="text" class="form-control"
                name="clientaddress" required 
                placeholder = "Enter Client Hostname"
-               [(ngModel)]="_clientRegistrationModel.clientAddress"
+               [(ngModel)]="_clientRegistrationModel.client.clientAddress"
                #clientaddress="ngModel">
            <div *ngIf="clientaddress.errors && (clientaddress.dirty || clientaddress.touched)"
                 class="alert alert-danger">
@@ -63,7 +91,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="userid" required 
                placeholder = "Enter Client Hostname Userid"
-               [(ngModel)]="_clientRegistrationModel.userid"
+               [(ngModel)]="_clientRegistrationModel.client.userId"
                #userid="ngModel">
            <div *ngIf="userid.errors && (userid.dirty || userid.touched)"
                 class="alert alert-danger">
@@ -76,7 +104,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="password" required 
                placeholder = "Enter Client Password"
-               [(ngModel)]="_clientRegistrationModel.password"
+               [(ngModel)]="_clientRegistrationModel.client.password"
                #password="ngModel">
            <div *ngIf="password.errors && (password.dirty || password.touched)"
                 class="alert alert-danger">
@@ -89,7 +117,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="filepath" required 
                placeholder = "Enter path of the file that is to be transferred"
-               [(ngModel)]="_clientRegistrationModel.filePath"
+               [(ngModel)]="_clientRegistrationModel.client.filePath"
                #filepath="ngModel">
            <div *ngIf="filepath.errors && (filepath.dirty || filepath.touched)"
                 class="alert alert-danger">
@@ -103,7 +131,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="emailaddress" required 
                placeholder = "Enter Client Email Address"
-               [(ngModel)]="_clientRegistrationModel.emailaddress"
+               [(ngModel)]="_clientRegistrationModel.client.emailAddress.emailAddress"
                #emailaddress="ngModel">
            <div *ngIf="emailaddress.errors && (emailaddress.dirty || emailaddress.touched)"
                 class="alert alert-danger">

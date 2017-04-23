@@ -26,7 +26,7 @@ var ClientRegistrationComponent = (function () {
         this._registrationService.createRegistration(this._clientRegistrationModel).subscribe(function (registrationInfo) {
             return _this._clientRegistrationModel = registrationInfo;
         });
-        //this._router.navigate(['/partners']);
+        this._router.navigate(['/partners']);
         console.log('ClientRegistration.onSubmit() - EXIT');
     };
     ClientRegistrationComponent = __decorate([
