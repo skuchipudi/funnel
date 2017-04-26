@@ -40,7 +40,7 @@ export class PartnerDetailComponent implements OnInit {
             private _router: Router,
             private _partnerDetailServices:  PartnerDetailServices,
             private _fileMapService: FileMapService
-           
+
             ) { }
 
     ngOnInit() {

@@ -18,6 +18,7 @@ var ClientRegistrationService = (function () {
     function ClientRegistrationService(_http) {
         this._http = _http;
         this._create_partner_client_registration_url = "http://localhost:8080/partnerservices/addclient/";
+        this._partner_url = 'http://localhost:8080/partnerservices/entries/';
     }
     ClientRegistrationService.prototype.createRegistration = function (_clientRegistrationModel) {
         console.log('createRegistration ENTER');
@@ -28,6 +29,10 @@ var ClientRegistrationService = (function () {
         return this._http.post(this._create_partner_client_registration_url, clientRegistrationInfoJSON, options)
             .map(function (response) { return response.json(); })
             .catch(function (error) { return Observable_1.Observable.throw(error.json().error || 'Server error'); }); //...errors if any
+    };
+    ClientRegistrationService.prototype.getPartnerList = function () {
+        return this._http.get(this._partner_url)
+            .map(function (res) { return res.json(); });
     };
     ClientRegistrationService.prototype.handleError = function (error) {
         console.error("handleError()" + error);

@@ -16,6 +16,9 @@ export class ClientRegistrationService {
     private _create_partner_client_registration_url  =
        "http://localhost:8080/partnerservices/addclient/";
 
+    private _partner_url =
+         'http://localhost:8080/partnerservices/entries/';
+
     constructor(private _http: Http){}
 
      createRegistration(_clientRegistrationModel: ClientRegistrationModel)
@@ -23,7 +26,6 @@ export class ClientRegistrationService {
         console.log('createRegistration ENTER');
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
-       
 
         let clientRegistrationInfoJSON = JSON.stringify(_clientRegistrationModel);
         console.log("createClientRegistration()=>"+ clientRegistrationInfoJSON);
@@ -31,6 +33,13 @@ export class ClientRegistrationService {
                      .map((response:Response) => response.json())
                      .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     }
+
+
+    getPartnerList() {
+        return this._http.get(this._partner_url)
+            .map(res => res.json());
+    }
+
 
      private handleError(error: Response) {
         console.error("handleError()" + error);

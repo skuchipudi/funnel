@@ -11,7 +11,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
        <select name="partnerid"  
                [(ngModel)]="_clientRegistrationModel.partnerId"  
                #partnerid= "ngModel">
-              <option *ngFor = "let lang of languages">{{lang}}</option>
+              <option *ngFor = "let p of _partners">{{p.partnerId}}</option>
        </select> 
 
        <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
@@ -19,7 +19,8 @@ enter partner infomation. All transfers are completed using a multi layered secu
                 Partner Id is Required
            </div>
       </div>
-  
+
+
       <div class="form-group">
         <label>Client Id</label>
         <input type="text" class="form-control"
@@ -59,7 +60,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
            </div>
      </div>
      <div class="form-group">
-        <label>Client Description</label>
+        <label>Client phonenumber</label>
         <input type="text" class="form-control"
                name="phonenumber" required 
                placeholder = "Enter a Client Phone Number"
