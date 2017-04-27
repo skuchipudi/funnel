@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -23,7 +23,8 @@ export class PartnerDetailServices {
     getPartnerDetailsByPartnerId( partnerId: String) {
         console.log('PartnerDetailServices.getPartnerDetails() called ' + partnerId);
         return this._http.get(this.find_partner_url + partnerId)
-            .map(res => res.json());
+            .map(res => res.json())
+            .catch(this.handleError);
     }
 
     getClients( partnerId: String) {
@@ -33,8 +34,8 @@ export class PartnerDetailServices {
             .catch(this.handleError);
     }
 
-    handleError(error: any){
-        console.error(error);
+    handleError(error: Response){
+        //console.error(error);
         return  Observable.throw(error.json().error || 'Server Error');
     }
 

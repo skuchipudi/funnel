@@ -29,6 +29,7 @@
          <thead>
             <tr>
               <th>Partner Name</th>
+              <th>Partner Id</th>
               <th>Partner Description</th>
               <th>Phone Number</th>
               <th>Partner Server Address</th>
@@ -39,6 +40,7 @@
           <tr *ngFor = "let entries of _entries">
                 <!--<td><a [routerLink]="['/partnerdetail',entries.partnerId]">{{entries.partnerId}}</a></td> -->
                 <td><a [routerLink]="['/partnerdetail',entries.partnerId]">{{entries.partnerName}}</a></td>
+                <td>{{entries.partnerId}}</td>
                 <td>{{entries.partnerDescription}}</td>
                 <td>{{entries.phoneNumber}}</td>
                  <td>{{entries.serverAddress}}</td>

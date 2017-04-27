@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import {Partner} from './partner.registration.info';
+import {PartnerDetailServices} from '../partner-detail/partner.detail.services'
 
 
 //https://scotch.io/tutorials/angular-2-http-requests-with-observables

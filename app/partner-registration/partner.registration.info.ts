@@ -13,6 +13,9 @@ export class Partner
 		private filePath:string;
 		public client : Client [];
 		public hasPhoneNumberError: boolean;
+		// this is indicate and validate
+		// partnerid at the user interface
+		public partnerAlreadyExists: boolean;
 
 		constructor (
 

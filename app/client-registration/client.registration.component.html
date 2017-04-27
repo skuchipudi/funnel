@@ -6,14 +6,25 @@ enter partner infomation. All transfers are completed using a multi layered secu
 <form #clientForm="ngForm"  (submit)="onSubmit(clientForm)" name="form" novalidate>
       
       
-      <div class="form-group">
+      <!--<div class="form-group">
       <label>PartnerId</label>
-       <select name="partnerid"  
+       <select name="partnerid"  required
                [(ngModel)]="_clientRegistrationModel.partnerId"  
                #partnerid= "ngModel">
               <option *ngFor = "let p of _partners">{{p.partnerId}}</option>
        </select> 
 
+       <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
+                class="alert alert-danger">
+                Partner Id is Required
+           </div>
+      </div> -->
+
+      <div class="form-group">
+      <label>PartnerId</label>
+       <input type = "text" name="partnerid" class="form-control"  required
+               [(ngModel)]="_clientRegistrationModel.partnerId"  
+               #partnerid= "ngModel">
        <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
                 class="alert alert-danger">
                 Partner Id is Required

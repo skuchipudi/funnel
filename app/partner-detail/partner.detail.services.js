@@ -21,7 +21,8 @@ var PartnerDetailServices = (function () {
     PartnerDetailServices.prototype.getPartnerDetailsByPartnerId = function (partnerId) {
         console.log('PartnerDetailServices.getPartnerDetails() called ' + partnerId);
         return this._http.get(this.find_partner_url + partnerId)
-            .map(function (res) { return res.json(); });
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
     };
     PartnerDetailServices.prototype.getClients = function (partnerId) {
         console.log('PartnerDetailServices.getClients() called ' + partnerId);
@@ -30,7 +31,7 @@ var PartnerDetailServices = (function () {
             .catch(this.handleError);
     };
     PartnerDetailServices.prototype.handleError = function (error) {
-        console.error(error);
+        //console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server Error');
     };
     // jQuery Service Impl  commented out in the html page

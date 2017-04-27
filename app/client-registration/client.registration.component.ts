@@ -5,12 +5,12 @@ import { PartnerServices} from '../partners/partner.services';
 import {Partner} from '../partner-detail/partner.detail';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 
-
 import {NgForm} from  '@angular/forms';
 
 @Component({
     templateUrl: '/app/client-registration/client.registration.component.html',
-    providers: [ClientRegistrationService, PartnerServices]
+    providers: [ClientRegistrationService,  PartnerServices]
+ 
 })
 
 export class ClientRegistrationComponent {
