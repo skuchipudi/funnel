@@ -24,11 +24,18 @@ enter partner infomation. All transfers are completed using a multi layered secu
       <label>PartnerId</label>
        <input type = "text" name="partnerid" class="form-control"  required
                [(ngModel)]="_clientRegistrationModel.partnerId"  
+               (blur)="validatePartnerId(partnerid)"
+               (change)="validatePartnerId(partnerid)"
                #partnerid= "ngModel">
-       <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
+            <div *ngIf="_partnerDoesNotExist"
+                class="alert alert-danger">
+                PartnerId does not exist. Please choose a valid partner
+               </div>
+           <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
                 class="alert alert-danger">
                 Partner Id is Required
            </div>
+
       </div>
 
 
@@ -36,7 +43,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <label>Client Id</label>
         <input type="text" class="form-control"
                name="clientid" required 
-               placeholder = "Enter a Client Id. Autogenerate"
+               placeholder = "Enter a Client Id"
                [(ngModel)]="_clientRegistrationModel.client.clientId"
                #clientid="ngModel">
            <div *ngIf="clientid.errors && (clientid.dirty || clientid.touched)"

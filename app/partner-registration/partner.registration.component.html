@@ -14,7 +14,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
                (blur)="validatePartnerId(partnerid)"
                (change)="validatePartnerId(partnerid)"
                #partnerid="ngModel">
-               <div *ngIf="_partnerRegistrationInfo.partnerAlreadyExists"
+               <div *ngIf="_partnerAlreadyExists"
                 class="alert alert-danger">
                 PartnerId already exists. Please select another one
                </div> 

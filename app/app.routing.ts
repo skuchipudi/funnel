@@ -29,8 +29,8 @@ const appRoutes: Routes = [
   { path: 'partners', component: PartnerComponent, canActivate: [AuthGuard]},
   { path: 'partnerdetail/:partnerId', component: PartnerDetailComponent, canActivate: [AuthGuard]},
 
-  { path: 'registerpartner', component: PartnerRegistrationComponent},
-  { path: 'registerclient', component: ClientRegistrationComponent},
+  { path: 'registerpartner', component: PartnerRegistrationComponent, canActivate: [AuthGuard]},
+  { path: 'registerclient', component: ClientRegistrationComponent, canActivate: [AuthGuard]},
  
   { path: 'registrationslist', component: RegistrationsListComponent, canActivate: [AuthGuard]},
   { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },

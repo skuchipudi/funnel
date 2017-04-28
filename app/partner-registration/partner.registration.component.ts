@@ -16,6 +16,7 @@ import {PartnerDetailServices} from '../partner-detail/partner.detail.services'
 
 export class PartnerRegistrationComponent {
     private _partnerRegistrationInfo: Partner;
+    private _partnerAlreadyExists = false;
     
    constructor (private _router: Router,  
                 private _registrationService: PartnerRegistrationService,
@@ -43,7 +44,7 @@ export class PartnerRegistrationComponent {
         console.log("validatePartnerId called=> " + partnerId.value);
         this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
               this._partnerRegistrationInfo = partnerInfo; 
-              this._partnerRegistrationInfo.partnerAlreadyExists  = true;
+              this._partnerAlreadyExists  = true;
 
         });
         this._partnerRegistrationInfo.partnerAlreadyExists  = false;

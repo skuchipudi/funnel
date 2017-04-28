@@ -13,12 +13,14 @@ var client_registration_service_1 = require('./client.registration.service');
 var client_registration_model_1 = require('./client.registration.model');
 var partner_services_1 = require('../partners/partner.services');
 var router_1 = require('@angular/router');
+var partner_detail_services_1 = require('../partner-detail/partner.detail.services');
 var ClientRegistrationComponent = (function () {
-    function ClientRegistrationComponent(_router, _activatedRoute, _registrationService, _partnerService) {
+    function ClientRegistrationComponent(_router, _activatedRoute, _registrationService, _partnerService, _partnerDetailService) {
         this._router = _router;
         this._activatedRoute = _activatedRoute;
         this._registrationService = _registrationService;
         this._partnerService = _partnerService;
+        this._partnerDetailService = _partnerDetailService;
         this._isLoading = true;
         this._clientRegistrationModel = new client_registration_model_1.ClientRegistrationModel();
     }
@@ -33,6 +35,14 @@ var ClientRegistrationComponent = (function () {
             });
         });
     };
+    ClientRegistrationComponent.prototype.validatePartnerId = function (partnerId) {
+        var _this = this;
+        console.log("validatePartnerId called=> " + partnerId.value);
+        this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(function (partnerInfo) {
+            _this._partnerDoesNotExist = false;
+        });
+        this._partnerDoesNotExist = true;
+    };
     ClientRegistrationComponent.prototype.onSubmit = function (clientForm) {
         var _this = this;
         console.log('ClientRegistration.onSubmit() - ENTER');
@@ -45,9 +55,9 @@ var ClientRegistrationComponent = (function () {
     ClientRegistrationComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/client-registration/client.registration.component.html',
-            providers: [client_registration_service_1.ClientRegistrationService, partner_services_1.PartnerServices]
+            providers: [client_registration_service_1.ClientRegistrationService, partner_detail_services_1.PartnerDetailServices, partner_services_1.PartnerServices]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, client_registration_service_1.ClientRegistrationService, partner_services_1.PartnerServices])
+        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, client_registration_service_1.ClientRegistrationService, partner_services_1.PartnerServices, partner_detail_services_1.PartnerDetailServices])
     ], ClientRegistrationComponent);
     return ClientRegistrationComponent;
 }());

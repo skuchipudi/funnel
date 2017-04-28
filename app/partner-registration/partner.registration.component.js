@@ -18,6 +18,7 @@ var PartnerRegistrationComponent = (function () {
         this._router = _router;
         this._registrationService = _registrationService;
         this._partnerDetailService = _partnerDetailService;
+        this._partnerAlreadyExists = false;
         this._partnerRegistrationInfo = new partner_registration_info_1.Partner();
         this._partnerRegistrationInfo.partnerDescription = "Partner Description";
     }
@@ -36,7 +37,7 @@ var PartnerRegistrationComponent = (function () {
         console.log("validatePartnerId called=> " + partnerId.value);
         this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(function (partnerInfo) {
             _this._partnerRegistrationInfo = partnerInfo;
-            _this._partnerRegistrationInfo.partnerAlreadyExists = true;
+            _this._partnerAlreadyExists = true;
         });
         this._partnerRegistrationInfo.partnerAlreadyExists = false;
     };
