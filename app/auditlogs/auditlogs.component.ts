@@ -45,19 +45,19 @@ export class AuditLogComponent  implements OnInit {
       {
        // for ( let entry of this._entries){
         console.log("makeData() this._entries.length=>" + this._entries.length);
-         let datam : number [][] = [];
+         let datum : number[][] = [];
+         
          for ( let i in this._entries){
            //   console.log ("entries.logEntry =>" + this._entries[i].logEntry);
                let logEntryLength =     this._entries[i].logEntry.length;
                let auditTime =     this._entries[i].timeStamp;
-               datam.push( [logEntryLength, auditTime.length]);
+               datum.push( [logEntryLength, auditTime.length]);
          }
 
-         let name: string [] = new Array ("Audit Log Series");
+         let name: string [] = [];
          name.push( "Audit Log Series");
-         datam.sort();
-         this._data = [ { data: datam }, name];
-     
+         datum.sort();
+         this._data = [ { data: datum }, name];
     }
 
      ngOnInit() {

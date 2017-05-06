@@ -33,17 +33,17 @@ var AuditLogComponent = (function () {
     AuditLogComponent.prototype.makeData = function () {
         // for ( let entry of this._entries){
         console.log("makeData() this._entries.length=>" + this._entries.length);
-        var datam = [];
+        var datum = [];
         for (var i in this._entries) {
             //   console.log ("entries.logEntry =>" + this._entries[i].logEntry);
             var logEntryLength = this._entries[i].logEntry.length;
             var auditTime = this._entries[i].timeStamp;
-            datam.push([logEntryLength, auditTime.length]);
+            datum.push([logEntryLength, auditTime.length]);
         }
-        var name = new Array("Audit Log Series");
+        var name = [];
         name.push("Audit Log Series");
-        datam.sort();
-        this._data = [{ data: datam }, name];
+        datum.sort();
+        this._data = [{ data: datum }, name];
     };
     AuditLogComponent.prototype.ngOnInit = function () {
         var _this = this;
