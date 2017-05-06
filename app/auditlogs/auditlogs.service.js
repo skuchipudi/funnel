@@ -15,6 +15,7 @@ var AuditLogsService = (function () {
     function AuditLogsService(_http) {
         this._http = _http;
         this.get_audit_logs = 'http://localhost:8080/partnerservices/getauditlogs/';
+        this.get_audit_plotdata = 'http://localhost:8080/partnerservices/plotdata/';
     }
     // Use this if you do wan to use the Angular 2 feather and not the JQuery 
     AuditLogsService.prototype.getAuditLogsByPartnerAndClientID = function (partnerId, clientId) {

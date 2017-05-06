@@ -24,11 +24,12 @@ export class BarChartService {
             text: 'Click the columns to view versions. Source: <a href="http://netmarketshare.com">netmarketshare.com</a>.'
         },
         xAxis: {
-            type: 'category'
+           // type: 'category'
+           type: 'datetime'
         },
         yAxis: {
             title: {
-                text: 'Total percent market share'
+                text: 'Audit Logs'
             }
         },
         legend: {

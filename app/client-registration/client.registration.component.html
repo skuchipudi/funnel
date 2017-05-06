@@ -24,7 +24,8 @@ enter partner infomation. All transfers are completed using a multi layered secu
       <label>PartnerId</label>
        <input type = "text" name="partnerid" class="form-control"  required
                [(ngModel)]="_clientRegistrationModel.partnerId"  
-               (blur)="validatePartnerId(partnerid)"
+               placeholder = "Enter a Partner Id"
+             (blur)="validatePartnerId(partnerid)"
                (change)="validatePartnerId(partnerid)"
                #partnerid= "ngModel">
             <div *ngIf="_partnerDoesNotExist"

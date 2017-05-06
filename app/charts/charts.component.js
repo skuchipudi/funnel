@@ -19,7 +19,18 @@ var ChartsComponent = (function () {
         this._areaChartService = _areaChartService;
     }
     ChartsComponent.prototype.ngAfterViewInit = function () {
-        this._areaChartService.renderChart();
+        // populate by call the data service																																									
+        var daata = [
+            {
+                name: 'Audit Log Time series	',
+                data: [150, 25, 5000, 120, 40000, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
+                    4238, 5221, 120, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
+                    5915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049, 33952, 35804, 120, 39197, 45000, 43000, 41000, 39000, 37000,
+                    35000, 33000, 2, 3, 4, 25000, 24000, 23000, 22000,
+                    21000, 20000, 120, 18000, 18000, 17000, 16000]
+            }
+        ];
+        this._areaChartService.renderChart(daata);
         // this._barChartService.renderChart();
         this._pieChartService.renderPie();
     };
