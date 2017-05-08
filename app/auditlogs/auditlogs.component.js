@@ -25,60 +25,62 @@ var AuditLogComponent = (function () {
         this._router = _router;
         this._auditLogService = _auditLogService;
         this._areaChartService = _areaChartService;
-        this._isLoading = true;
+        this._isLoading = false;
         // TODO - Change this
-        this._partnerId = "maker_bank_id";
-        this._clientId = "guardian_client_id";
+        //this._partnerId="maker_bank_id";
+        //this._clientId="guardian_client_id";
     }
     AuditLogComponent.prototype.makeData = function () {
         // for ( let entry of this._entries){
-        console.log("makeData() this._entries.length=>" + this._entries.length);
+        console.log("makeData() called");
         var datum = [];
+        console.log("this._entries: " + this._entries.length);
         for (var i in this._entries) {
             //   console.log ("entries.logEntry =>" + this._entries[i].logEntry);
+            var logEntry = this._entries[i].logEntry;
             var logEntryLength = this._entries[i].logEntry.length;
             var auditTime = this._entries[i].timeStamp;
-            datum.push([logEntryLength, auditTime.length]);
+            var d = new Date(auditTime);
+            datum.push([d.getTime(), 20]);
         }
-        var name = [];
-        name.push("Audit Log Series");
         datum.sort();
         this._data = [{ data: datum }, name];
     };
     AuditLogComponent.prototype.ngOnInit = function () {
-        var _this = this;
         console.log('Audit Component.ngOnInit() - ENTER');
-        this._auditLogService.getAuditLogsByPartnerAndClientID(this._partnerId, this._clientId).
-            subscribe(function (entries) {
-            _this._entries = entries;
-            _this._isLoading = false;
-            // You have to call it here as this is an async operation
-            _this.makeData();
-        });
-        this._areaChartService.renderChart(this._data);
+        //     this._auditLogService.getAuditLogsByPartnerAndClientID(this._partnerId, this._clientId).
+        //              subscribe(entries => {
+        //                this._entries=entries;
+        //                this._isLoading = false;
+        //                // You have to call it here as this is an async operation
+        //                 this.makeData();
+        //               });
+        //         this._areaChartService.renderChart(this._data);
     };
     AuditLogComponent.prototype.onSubmit = function (form) {
         var _this = this;
         console.log('Audit Component.onSubmit() - ENTER');
         // Use this if you want to use the Angular2 paradigm
+        // Remember this is an async operation
+        // so you have to call render chart within the operation
         this._auditLogService.getAuditLogsByPartnerAndClientID(this._partnerId, this._clientId).
             subscribe(function (entries) {
             _this._entries = entries;
             _this._isLoading = false;
             // make sure to call this here to populate the entries into the graph plot
             _this.makeData();
+            _this._areaChartService.renderChart(_this._data);
         });
-        // call the webservice to populate the data
-        this._areaChartService.renderChart(this._data);
     };
     AuditLogComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/auditlogs/auditlogs.component.html',
             providers: [auditlogs_service_1.AuditLogsService, areachart_service_1.AreaChartService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, auditlogs_service_1.AuditLogsService, areachart_service_1.AreaChartService])
+        __metadata('design:paramtypes', [router_1.Router, auditlogs_service_1.AuditLogsService, (typeof (_a = typeof areachart_service_1.AreaChartService !== 'undefined' && areachart_service_1.AreaChartService) === 'function' && _a) || Object])
     ], AuditLogComponent);
     return AuditLogComponent;
+    var _a;
 }());
 exports.AuditLogComponent = AuditLogComponent;
 //# sourceMappingURL=auditlogs.component.js.map
