@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var auditlogs_service_1 = require('./auditlogs.service');
 var router_1 = require('@angular/router');
-var areachart_service_1 = require('../charts/areachart.service');
+var columnchart_service_1 = require('../charts/columnchart.service');
 var AuditLogComponent = (function () {
     //private _data  =  [ {  data: [  [3,4], [4,2], [ 6,6], [7,2],[ 10,2] ]} ]
     //    {  data: [ [ 2,2], [3,4], [4,2], [ 6,6], [7,2]] } ]
@@ -21,10 +21,10 @@ var AuditLogComponent = (function () {
     //             data :  [ [ 1,2], [2,4], [3,2], [ 5.6], [6,2]]
     //  data: [ [Date.UTC(2010, 2, 1), 71.5], [Date.UTC(2010, 0, 1), 29.9],[Date.UTC(2010, 2, 1), 71.5], [Date.UTC(2010, 4, 1), 10.5]]
     //}];
-    function AuditLogComponent(_router, _auditLogService, _areaChartService) {
+    function AuditLogComponent(_router, _auditLogService, _columnChartService) {
         this._router = _router;
         this._auditLogService = _auditLogService;
-        this._areaChartService = _areaChartService;
+        this._columnChartService = _columnChartService;
         this._isLoading = false;
         // TODO - Change this
         //this._partnerId="maker_bank_id";
@@ -69,18 +69,17 @@ var AuditLogComponent = (function () {
             _this._isLoading = false;
             // make sure to call this here to populate the entries into the graph plot
             _this.makeData();
-            _this._areaChartService.renderChart(_this._data);
+            _this._columnChartService.renderChart(_this._data);
         });
     };
     AuditLogComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/auditlogs/auditlogs.component.html',
-            providers: [auditlogs_service_1.AuditLogsService, areachart_service_1.AreaChartService]
+            providers: [auditlogs_service_1.AuditLogsService, columnchart_service_1.ColumnChartService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, auditlogs_service_1.AuditLogsService, (typeof (_a = typeof areachart_service_1.AreaChartService !== 'undefined' && areachart_service_1.AreaChartService) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [router_1.Router, auditlogs_service_1.AuditLogsService, columnchart_service_1.ColumnChartService])
     ], AuditLogComponent);
     return AuditLogComponent;
-    var _a;
 }());
 exports.AuditLogComponent = AuditLogComponent;
 //# sourceMappingURL=auditlogs.component.js.map

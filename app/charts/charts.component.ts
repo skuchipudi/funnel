@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {BarChartService} from './barchart.service';
 import {PieChartService} from './piechart.service';
-import {AreaChartService} from './areachart.service';
+import {ColumnChartService} from './columnchart.service';
 
 declare var jQuery: any;
 declare var Highcharts: any;
@@ -24,7 +24,7 @@ declare var Highcharts: any;
 		</tr>
 		</table>
         `,
-		providers: [BarChartService, PieChartService, AreaChartService]
+		providers: [BarChartService, PieChartService, ColumnChartService]
 })
 
 export class ChartsComponent {
@@ -32,7 +32,7 @@ export class ChartsComponent {
 
 	constructor(private _barChartService:  BarChartService,
 				private _pieChartService:  PieChartService,
-				private _areaChartService: AreaChartService
+				private _areaChartService: ColumnChartService
 				) {
    }
     ngAfterViewInit() {
