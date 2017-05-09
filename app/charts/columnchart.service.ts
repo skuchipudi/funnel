@@ -10,7 +10,7 @@ declare var Highcharts: any;
 export class ColumnChartService {
 
       renderChart( data ) {
-		   jQuery('#areachartcontainer').highcharts({
+		   jQuery('#columnchartcontainer').highcharts({
 				 chart: {
 				 	type: 'column'
 				 },

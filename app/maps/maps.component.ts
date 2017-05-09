@@ -7,9 +7,11 @@ declare var Highcharts:any;
 @Component({
     template: `
         <h1>Map</h1>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-           <div id="mapcontainer" style="height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto"></div> 
-           <div id="googlemaps" style="width: 900px; height: 300px;"></div> 
+        This maps the flow of file data across locations and geo-graphical countries.This enables you to understand
+        not only where you data is going but what locations and countries are consuming that data. As an example,
+        this will help address cross border implications of sharing data 
+        <div id="mapcontainer" style="height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto"></div> 
+         <!--  <div id="googlemaps" style="width: 900px; height: 300px;"></div>   -->
         `,
  })
 
@@ -111,7 +113,7 @@ export class MapsComponent {
 
     ngAfterViewInit() {
      	 this.renderMap();
-         this.renderGoogleMap();
+       //  this.renderGoogleMap();
          
     }
     

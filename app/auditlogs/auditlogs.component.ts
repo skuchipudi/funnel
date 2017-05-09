@@ -85,7 +85,10 @@ export class AuditLogComponent  implements OnInit {
                   this.makeData();
                   this._columnChartService.renderChart(this._data);
                 });
+
+      
        }
+
 }
 
 

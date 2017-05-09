@@ -13,9 +13,7 @@ export class AuditLogsService {
     private get_audit_logs =
          'http://localhost:8080/partnerservices/getauditlogs/';
 
-   private get_audit_plotdata =
-         'http://localhost:8080/partnerservices/plotdata/';
-
+   
     constructor(private _http: Http) { }
 
     // Use this if you do wan to use the Angular 2 feather and not the JQuery 

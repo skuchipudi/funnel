@@ -104,7 +104,7 @@ var MapsComponent = (function () {
     }
     MapsComponent.prototype.ngAfterViewInit = function () {
         this.renderMap();
-        this.renderGoogleMap();
+        //  this.renderGoogleMap();
     };
     MapsComponent.prototype.renderGoogleMap = function () {
         jQuery('#googlemaps').googleMap({
@@ -171,7 +171,7 @@ var MapsComponent = (function () {
     };
     MapsComponent = __decorate([
         core_1.Component({
-            template: "\n        <h1>Map</h1>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\n           <div id=\"mapcontainer\" style=\"height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto\"></div> \n           <div id=\"googlemaps\" style=\"width: 900px; height: 300px;\"></div> \n        ",
+            template: "\n        <h1>Map</h1>\n        This maps the flow of file data across locations and geo-graphical countries.This enables you to understand\n        not only where you data is going but what locations and countries are consuming that data. As an example,\n        this will help address cross border implications of sharing data \n        <div id=\"mapcontainer\" style=\"height: 600px; min-width: 610px; max-width: 800px; margin: 0 auto\"></div> \n         <!--  <div id=\"googlemaps\" style=\"width: 900px; height: 300px;\"></div>   -->\n        ",
         }), 
         __metadata('design:paramtypes', [])
     ], MapsComponent);

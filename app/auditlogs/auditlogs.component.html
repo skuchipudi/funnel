@@ -24,18 +24,15 @@
                 Client Id is Required
            </div>
     </div>
-
          <button type="submit" class="btn btn-default"  [disabled]="!auditForm.form.valid">Submit</button>
     </form>
 
-		<div style="width:90%" id="areachartcontainer"></div>
-		
-      <!--<table id="#exampletable"  class="table table-striped table-hover"> -->
-       
+	<div style="width:90%" id="columnchartcontainer"></div>
+    
+    <table id="exampletable"  class="table table-striped table-hover"> 
           <div *ngIf="_isLoading">
             <i class="fa fa-spinner fa-spin fa-3x"></i>
         </div>
-          <table id= "exampletable" class="table table-striped table-hover" cellspacing="10%" width="100%">
           <thead>
             <tr>
             <th>Partner Id</th>

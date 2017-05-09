@@ -13,6 +13,7 @@ export class Partner
 		private filePath:string;
 		public client : Client [];
 		public hasPhoneNumberError: boolean;
+		public partnerAlreadyExists: boolean;
 		
 		constructor (
 

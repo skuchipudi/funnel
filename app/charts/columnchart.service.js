@@ -14,7 +14,7 @@ var ColumnChartService = (function () {
     function ColumnChartService() {
     }
     ColumnChartService.prototype.renderChart = function (data) {
-        jQuery('#areachartcontainer').highcharts({
+        jQuery('#columnchartcontainer').highcharts({
             chart: {
                 type: 'column'
             },
