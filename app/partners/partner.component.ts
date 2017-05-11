@@ -35,7 +35,7 @@ export class PartnerComponent implements OnInit {
         });
 
 
-       this._partnerServices.getTable();
+//       this._partnerServices.getTable();
     }
 
 }

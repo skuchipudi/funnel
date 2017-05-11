@@ -50,7 +50,7 @@ export class ChartsComponent {
 
 			    ];
 		this._areaChartService.renderChart(daata);
-		// this._barChartService.renderChart();
+		this._barChartService.renderChart();
 		this._pieChartService.renderPie(); // data hard coded
     }
 

@@ -56,6 +56,7 @@ var AuditLogComponent = (function () {
         //                 this.makeData();
         //               });
         //         this._areaChartService.renderChart(this._data);
+        var table = this._auditLogService.getTable(this._partnerId, this._clientId);
     };
     AuditLogComponent.prototype.onSubmit = function (form) {
         var _this = this;
@@ -71,6 +72,8 @@ var AuditLogComponent = (function () {
             _this.makeData();
             _this._columnChartService.renderChart(_this._data);
         });
+        // this is used by the Ajax service
+        var table = this._auditLogService.getTable(this._partnerId, this._clientId);
     };
     AuditLogComponent = __decorate([
         core_1.Component({

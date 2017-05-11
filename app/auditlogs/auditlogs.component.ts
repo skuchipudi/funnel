@@ -29,8 +29,6 @@ export class AuditLogComponent  implements OnInit {
     //             data :  [ [ 1,2], [2,4], [3,2], [ 5.6], [6,2]]
                 //  data: [ [Date.UTC(2010, 2, 1), 71.5], [Date.UTC(2010, 0, 1), 29.9],[Date.UTC(2010, 2, 1), 71.5], [Date.UTC(2010, 4, 1), 10.5]]
 	//}];
-
-
     constructor (
             private _router: Router,
             private _auditLogService:  AuditLogsService,
@@ -69,11 +67,12 @@ export class AuditLogComponent  implements OnInit {
     //                 this.makeData();
     //               });
     //         this._areaChartService.renderChart(this._data);
-      }
+             var table = this._auditLogService.getTable(this._partnerId, this._clientId);
+              
+     }
 
      onSubmit(form: NgForm) {
         console.log('Audit Component.onSubmit() - ENTER');
-
        // Use this if you want to use the Angular2 paradigm
        // Remember this is an async operation
        // so you have to call render chart within the operation
@@ -85,8 +84,9 @@ export class AuditLogComponent  implements OnInit {
                   this.makeData();
                   this._columnChartService.renderChart(this._data);
                 });
-
-      
+            // this is used by the Ajax service
+            var table = this._auditLogService.getTable(this._partnerId, this._clientId);
+           
        }
 
 }

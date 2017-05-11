@@ -47,7 +47,7 @@ var PartnerDetailComponent = (function () {
                 _this._clients = clients;
             });
         });
-        this._partnerDetailServices.getDetailTable();
+        //  this._partnerDetailServices.getDetailTable();
     };
     PartnerDetailComponent.prototype.ngAfterViewInit = function () {
         console.log('Filemap: ngAfterViewInit() called');

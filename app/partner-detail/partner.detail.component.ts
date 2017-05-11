@@ -62,7 +62,7 @@ export class PartnerDetailComponent implements OnInit {
                  })
 
             });
-            this._partnerDetailServices.getDetailTable();
+          //  this._partnerDetailServices.getDetailTable();
     }
 
      ngAfterViewInit() {

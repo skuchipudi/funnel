@@ -30,7 +30,7 @@ var PartnerComponent = (function () {
                 _this._entries = entries;
             });
         });
-        this._partnerServices.getTable();
+        //       this._partnerServices.getTable();
     };
     PartnerComponent = __decorate([
         core_1.Component({

@@ -31,7 +31,7 @@ var ChartsComponent = (function () {
             }
         ];
         this._areaChartService.renderChart(daata);
-        // this._barChartService.renderChart();
+        this._barChartService.renderChart();
         this._pieChartService.renderPie(); // data hard coded
     };
     ChartsComponent = __decorate([

@@ -26,20 +26,30 @@ var AuditLogsService = (function () {
     // Note using this as I am not using JQuery
     //https://datatables.net/examples/index
     AuditLogsService.prototype.getTable = function (partnerId, clientId) {
-        var table = jQuery('#exampletable').DataTable({
+        console.log("getTable() " + partnerId + "  " + clientId);
+        var table = jQuery('#auditlogstable').DataTable({
             "ajax": {
                 "url": "http://localhost:8080/partnerservices/getauditlogs/partnerId/" + partnerId +
                     "/clientId/" + clientId,
-                "type": "GET",
                 "dataSrc": "",
+                "type": "GET",
             },
             "columns": [
                 { "data": "partnerId" },
                 { "data": "clientId" },
                 { "data": "logEntry" },
-                { "data": "timeStamp" }
-            ]
+                { "data": "timeStamp" },
+            ],
+            // https://datatables.net/manual/tech-notes/3
+            // import to destroy the table or else
+            // this will give a reinitialization error
+            "destroy": true,
+            "retrieve": false,
+            "paging": true,
+            "dom": 'Bfrtip',
+            "buttons": ["copy", "csv", "excel"],
         });
+        return table;
     };
     AuditLogsService = __decorate([
         core_1.Injectable(), 
@@ -48,4 +58,9 @@ var AuditLogsService = (function () {
     return AuditLogsService;
 }());
 exports.AuditLogsService = AuditLogsService;
+// "ajax": {
+//                 "url": "http://localhost:8080/partnerservices/entries/",
+//                 "type": "GET",
+//                 "dataSrc": "",
+//            },
 //# sourceMappingURL=auditlogs.service.js.map

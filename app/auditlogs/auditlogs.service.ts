@@ -13,7 +13,6 @@ export class AuditLogsService {
     private get_audit_logs =
          'http://localhost:8080/partnerservices/getauditlogs/';
 
-   
     constructor(private _http: Http) { }
 
     // Use this if you do wan to use the Angular 2 feather and not the JQuery 
@@ -28,22 +27,41 @@ export class AuditLogsService {
     // This is the JQuery Table - has sorting and search and paging capabiliti
      // Note using this as I am not using JQuery
     //https://datatables.net/examples/index
-     getTable ( partnerId: string, clientId: string) {
-       var table =  jQuery('#exampletable').DataTable({
-             "ajax": {
-                 "url": "http://localhost:8080/partnerservices/getauditlogs/partnerId/" + partnerId + 
-                 "/clientId/" + clientId,
-                 "type": "GET",
-                 "dataSrc": "",
-            },
-            "columns":
-                [
-                    { "data": "partnerId"},
-                    { "data": "clientId" },
-                    { "data": "logEntry" },
-                    { "data": "timeStamp"}
-                ]
-            });
-    }
+     getTable (partnerId:string, clientId:string) {
 
+      console.log ("getTable() " + partnerId + "  " + clientId);
+
+       var table =  jQuery('#auditlogstable').DataTable(
+        {
+         "ajax": 
+          {
+             "url":"http://localhost:8080/partnerservices/getauditlogs/partnerId/" + partnerId + 
+                   "/clientId/" + clientId,
+             "dataSrc":"",
+             "type":"GET",
+          },
+           "columns": [
+                 {"data" : "partnerId"},
+                 {"data" : "clientId"},
+                 {"data" : "logEntry"},
+                 {"data" : "timeStamp"},
+             ],
+        // https://datatables.net/manual/tech-notes/3
+        // import to destroy the table or else
+        // this will give a reinitialization error
+         "destroy":true,
+         "retrieve": false,
+         "paging":  true, 
+         "dom": 'Bfrtip',
+         "buttons": ["copy", "csv", "excel"],
+
+        });
+        return table;
+    }
 }
+
+// "ajax": {
+//                 "url": "http://localhost:8080/partnerservices/entries/",
+//                 "type": "GET",
+//                 "dataSrc": "",
+//            },
