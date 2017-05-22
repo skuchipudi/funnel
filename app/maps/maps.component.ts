@@ -16,186 +16,125 @@ declare var Highcharts:any;
  })
 
 export class MapsComponent { 
-    
-	private data = [
-          
+      
+    //   data1 = [
+    //        ['eu', 0],
+    //        ['oc', 1],
+    //        ['af', 2],
+    //        ['as', 3],
+    //        ['na', 4],
+    //        ['sa', 5]
+    //  ]
+    // make this a service
+    data1 =  [{
+            name: 'London',
+            lat: 51.507222,
+            lon: -0.1275
+        }, 
         {
-            "hc-key": "gl",
-            "value": 0
-        },
-       
-        {
-            "hc-key": "lc",
-            "value": 1
-        },
-        {
-            "hc-key": "um",
-            "value": 2
-        },
-        {
-            "hc-key": "us",
-            "value": 3
-        },
-        {
-            "hc-key": "vi",
-            "value": 4
+            name: 'Glasgow',
+            lat: 55.858,
+            lon: -4.259
         },
         {
-            "hc-key": "ca",
-            "value": 5
+            name: 'Hyderabad',
+            lat: 17.3850,
+            lon: 78.4867
+        },  
+        {
+            name: 'Bristol',
+            lat: 51.45,
+            lon: -2.583333
+        }, {
+            name: 'Jacksonville ',
+            lat: 30.3322,
+            lon: -81.6557
         },
         {
-            "hc-key": "cu",
-            "value": 6
-        },
-        {
-            "hc-key": "kn",
-            "value": 7
-        },
-        {
-            "hc-key": "gd",
-            "value": 8
-        },
-        {
-            "hc-key": "dm",
-            "value": 9
-        },
-        {
-            "hc-key": "ag",
-            "value": 10
-        },
-        {
-            "hc-key": "tt",
-            "value": 11
-        },
-        {
-            "hc-key": "sw",
-            "value": 12
-        },
-        {
-            "hc-key": "bb",
-            "value": 13
-        },
-        {
-            "hc-key": "jm",
-            "value": 14
-        },
-        {
-            "hc-key": "bu",
-            "value": 15
-        },
-        {
-            "hc-key": "bs",
-            "value": 16
-        },
-        {
-            "hc-key": "vc",
-            "value": 17
-        },
-        {
-            "hc-key": "ht",
-            "value": 18
-        },
-        {
-            "hc-key": "do",
-            "value": 19
-        },
-        {
-            "hc-key": "mx",
-            "value": 20
-        },
-        {
-            "hc-key": "pr",
-            "value": 21
+            name: 'Frankfurt',
+            lat: 50.1109,
+            lon: 8.6821
         }
-    ]
-    
+        {
+            name: 'Beijing',
+            lat: 39.9042,
+            lon: 116.4074
+        }
+        {
+            name: 'New York',
+            lat: 40.7128,
+            lon: -74.0059
+        }
+     ]
 
     ngAfterViewInit() {
      	 this.renderMap();
-       //  this.renderGoogleMap();
-         
     }
-    
 
-    renderGoogleMap()
+    renderMap()
     {
-        jQuery('#googlemaps').googleMap({
-            zoom: 100,
-            type: "TERRAIN"
-
-        });
-        jQuery('#googlemaps').addMarker(
-        {
-                coords: [48.895651, 2.290569], // Map center (optional)        
-        });
-
-        jQuery('#googlemaps').addMarker(
-        {
-                coords:  [48.869439, 2.308664], // Map center (optional)
-                
-        });
-        jQuery('#googlemaps').addMarker(
-        {
-                coords:  [30.3322, -81.6557], // Map center (optional)
-                
-        });
-        //{
-        //  zoom: 10, // Initial zoom level (optional)
-        //  coords: [48.895651, 2.290569], // Map center (optional)
-        //  type: "TERRAIN", // Map type (optional)
-        //  id: 'marker1' ,
-        //  market: 'marker'
-        //}); 
-    }
-
- 
-    renderMap(){  
     	jQuery('#mapcontainer').highcharts('Map',
         {
             title : {
-              text : 'File Transfers'
+              text : 'DataMap'
             },
-        
-            //subtitle : {
-            //text : 'Source map: <a href="https://code.highcharts.com/mapdata/custom/world.js">World</a>'
-            //},
-            
+
+            tooltip: {
+                headerFormat: '',
+                pointFormat: '<b>{point.name}</b><br>Lat: {point.lat}, Lon: {point.lon}'
+            },
+
+           chart: {
+                map: 'custom/world-continents'
+            },
+
             mapNavigation: {
-            enabled: true,
-            buttonOptions: {
+
+             enabled: true,
+                buttonOptions: {
                 verticalAlign: 'bottom'
              }
             },
-           colorAxis: {
-                min: 0
-            },
 
-            series : [{
-                 data : this.data,
-                // mapData: Highcharts.maps['custom/north-america'],
-                 mapData: Highcharts.maps['custom/world'],
-                 joinBy: 'hc-key',
-                 name: 'Random data',
-                 states: {
-                    hover: {
-                        color: '#BADA55'
-                    }
-                 },
-                    
-                    
-                 chart: {
-                    borderWidth: 1,
-                    borderColor: 'silver',
-                    borderRadius: 3,
-                    shadow: true
-                },
+            colorAxis: {
+                    min: 1
+             },
 
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.data}'
-                }
-            }]      
-        });
+            // series: [{
+            //     data: [],
+            //     name: 'Data Drop',
+            //     states: {
+            //         hover: {
+            //         color: '#BADA55'
+            //     }
+            // },
+
+             series: [{
+                // Use the gb-all map with no data as a basemap
+               // mapData: Highcharts.maps['countries/gb/gb-all'],
+                mapData: Highcharts.maps['custom/world-continents'],
+                name: 'Basemap',
+                borderColor: '#A0A0A0',
+                nullColor: 'rgba(200, 200, 200, 0.3)',
+                showInLegend: false
+             }, 
+            {
+                name: 'Separators',
+                type: 'mapline',
+                //data: Highcharts.geojson(Highcharts.maps['countries/gb/gb-all'], 'mapline'),
+                data: Highcharts.geojson(Highcharts.maps['custom/world-continents'], 'mapline'),
+                color: '#707070',
+                showInLegend: false,
+                enableMouseTracking: true
+            }, 
+            {
+                // Specify points using lat/lon
+                type: 'mappoint',
+                name: 'Cities',
+                color: Highcharts.getOptions().colors[1],
+                data: this.data1
+             }
+    
+        } 
     }
 }

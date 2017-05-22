@@ -47,7 +47,7 @@ export class AuditLogsService {
                  {"data" : "timeStamp"},
              ],
         // https://datatables.net/manual/tech-notes/3
-        // import to destroy the table or else
+        // important  to destroy the table or else
         // this will give a reinitialization error
          "destroy":true,
          "retrieve": false,

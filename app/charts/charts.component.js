@@ -13,10 +13,10 @@ var barchart_service_1 = require('./barchart.service');
 var piechart_service_1 = require('./piechart.service');
 var columnchart_service_1 = require('./columnchart.service');
 var ChartsComponent = (function () {
-    function ChartsComponent(_barChartService, _pieChartService, _areaChartService) {
+    function ChartsComponent(_barChartService, _pieChartService, _columnChartService) {
         this._barChartService = _barChartService;
         this._pieChartService = _pieChartService;
-        this._areaChartService = _areaChartService;
+        this._columnChartService = _columnChartService;
     }
     ChartsComponent.prototype.ngAfterViewInit = function () {
         // populate by call the data service																																									
@@ -30,13 +30,13 @@ var ChartsComponent = (function () {
                     21000, 20000, 120, 18000, 18000, 17000, 16000]
             }
         ];
-        this._areaChartService.renderChart(daata);
-        this._barChartService.renderChart();
+        this._columnChartService.renderChart(daata); // data hard coded
+        //this._barChartService.renderChart();
         this._pieChartService.renderPie(); // data hard coded
     };
     ChartsComponent = __decorate([
         core_1.Component({
-            template: "\n        <h1>Log Charts</h1>\n\t\t<table>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t<div style=\"width:40%\" id=\"areachartcontainer\"></div>\n\t\t\t</td>\n\t\t\t<td>\n\t\t\t\t<div style=\"width:55%\" id=\"piecontainer\"></div>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t<!-- TODO move to another page later\t<div style=\"width:100%\" id=\"barchartcontainer\"></div> -->\n\t\t</tr>\n\t\t</table>\n        ",
+            template: "\n        <h1>Log Charts</h1>\n\t\t<table>\n\t\t<tr>\n\t\t\t<td>\n\t\t\t\t<div style=\"width:50%\" id=\"columnchartcontainer\"></div>\n\t\t\t</td>\n\t\t\t<td>&nbsp;</td>\n\t\t\t<td>\n\t\t\t\t<div style=\"width:50%\" id=\"piecontainer\"></div>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t<!-- TODO move to another page later\t<div style=\"width:100%\" id=\"barchartcontainer\"></div> -->\n\t\t</tr>\n\t\t</table>\n        ",
             providers: [barchart_service_1.BarChartService, piechart_service_1.PieChartService, columnchart_service_1.ColumnChartService]
         }), 
         __metadata('design:paramtypes', [barchart_service_1.BarChartService, piechart_service_1.PieChartService, columnchart_service_1.ColumnChartService])

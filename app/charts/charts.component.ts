@@ -13,10 +13,11 @@ declare var Highcharts: any;
 		<table>
 		<tr>
 			<td>
-				<div style="width:40%" id="areachartcontainer"></div>
+				<div style="width:50%" id="columnchartcontainer"></div>
 			</td>
+			<td>&nbsp;</td>
 			<td>
-				<div style="width:55%" id="piecontainer"></div>
+				<div style="width:50%" id="piecontainer"></div>
 			</td>
 		</tr>
 		<tr>
@@ -32,7 +33,7 @@ export class ChartsComponent {
 
 	constructor(private _barChartService:  BarChartService,
 				private _pieChartService:  PieChartService,
-				private _areaChartService: ColumnChartService
+				private _columnChartService: ColumnChartService
 				) {
    }
     ngAfterViewInit() {
@@ -49,8 +50,8 @@ export class ChartsComponent {
 			 						}
 
 			    ];
-		this._areaChartService.renderChart(daata);
-		this._barChartService.renderChart();
+		this._columnChartService.renderChart(daata);// data hard coded
+		//this._barChartService.renderChart();
 		this._pieChartService.renderPie(); // data hard coded
     }
 
