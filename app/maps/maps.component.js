@@ -9,22 +9,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var maps_service_1 = require('./maps.service');
+var mapschart_service_1 = require('../charts/mapschart.service');
 var router_1 = require('@angular/router');
 var MapsComponent = (function () {
-    function MapsComponent(_router, _mapService) {
+    function MapsComponent(_router, _mapsChartsService) {
         this._router = _router;
-        this._mapService = _mapService;
-        // TODO - Change this
-        //this._partnerId="maker_bank_id";
-        //this._clientId="guardian_client_id";
+        this._mapsChartsService = _mapsChartsService;
+        // 
+        this.data1 = [{
+                name: 'London',
+                lat: 51.507222,
+                lon: -0.1275
+            },
+            {
+                name: 'Glasgow',
+                lat: 55.858,
+                lon: -4.259
+            },
+            {
+                name: 'Hyderabad',
+                lat: 17.3850,
+                lon: 78.4867
+            },
+            {
+                name: 'Bristol',
+                lat: 51.45,
+                lon: -2.583333
+            }, {
+                name: 'Jacksonville ',
+                lat: 30.3322,
+                lon: -81.6557
+            },
+            {
+                name: 'Frankfurt',
+                lat: 50.1109,
+                lon: 8.6821
+            },
+            {
+                name: 'Beijing',
+                lat: 39.9042,
+                lon: 116.4074
+            },
+            {
+                name: 'New York',
+                lat: 40.7128,
+                lon: -74.0059
+            }
+        ];
     }
+    MapsComponent.prototype.ngOnInit = function () {
+        this._mapsChartsService.renderChart(this.data1);
+    };
     MapsComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/maps/maps.component.html',
-            providers: [maps_service_1.MapsService]
+            providers: [mapschart_service_1.MapsChartsService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, maps_service_1.MapsService])
+        __metadata('design:paramtypes', [router_1.Router, mapschart_service_1.MapsChartsService])
     ], MapsComponent);
     return MapsComponent;
 }());

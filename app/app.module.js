@@ -40,8 +40,8 @@ var client_registration_service_1 = require('./client-registration/client.regist
 var partner_services_1 = require('./partners/partner.services');
 var partner_detail_services_1 = require('./partner-detail/partner.detail.services');
 var filemap_service_1 = require('./filemap/filemap.service');
-var maps_service_1 = require('./maps/maps.service');
 var auditlogs_service_1 = require('./auditlogs/auditlogs.service');
+var mapschart_service_1 = require('./charts/mapschart.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -74,7 +74,7 @@ var AppModule = (function () {
                 partner_detail_services_1.PartnerDetailServices,
                 client_registration_service_1.ClientRegistrationService,
                 filemap_service_1.FileMapService,
-                maps_service_1.MapsService,
+                mapschart_service_1.MapsChartsService,
                 auditlogs_service_1.AuditLogsService,
                 index_1.AuthGuard
             ],

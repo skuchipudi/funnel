@@ -30,8 +30,10 @@ import {RegistrationDetailComponent} from './registration/registrationdetail.com
 import {ScheduleTransferComponent} from './schedule/schedule.transfer.component';
 
 import {MapsComponent} from './maps/maps.component';
+
 import {ChartsComponent} from './charts/charts.component';
 import {FileMapComponent} from './filemap/filemap.component';
+
 import {NotFoundComponent} from './not-found.component';
 import {LoginComponent} from './login/index';
 
@@ -42,8 +44,8 @@ import {ClientRegistrationService} from './client-registration/client.registrati
 import {PartnerServices} from  './partners/partner.services';
 import {PartnerDetailServices} from './partner-detail/partner.detail.services';
 import {FileMapService} from './filemap/filemap.service';
-import {MapsService} from './maps/maps.service';
 import {AuditLogsService} from './auditlogs/auditlogs.service';
+import {MapsChartsService} from './charts/mapschart.service';
 
 @NgModule({
     declarations: [
@@ -73,7 +75,7 @@ import {AuditLogsService} from './auditlogs/auditlogs.service';
         PartnerDetailServices,
         ClientRegistrationService,
         FileMapService,
-        MapsService,
+        MapsChartsService,
         AuditLogsService,
         AuthGuard
     ],
