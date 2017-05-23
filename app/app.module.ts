@@ -42,6 +42,7 @@ import {ClientRegistrationService} from './client-registration/client.registrati
 import {PartnerServices} from  './partners/partner.services';
 import {PartnerDetailServices} from './partner-detail/partner.detail.services';
 import {FileMapService} from './filemap/filemap.service';
+import {MapsService} from './maps/maps.service';
 import {AuditLogsService} from './auditlogs/auditlogs.service';
 
 @NgModule({
@@ -72,6 +73,7 @@ import {AuditLogsService} from './auditlogs/auditlogs.service';
         PartnerDetailServices,
         ClientRegistrationService,
         FileMapService,
+        MapsService,
         AuditLogsService,
         AuthGuard
     ],

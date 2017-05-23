@@ -11,7 +11,7 @@ import {AuditEntry} from './auditentries.ts';
      providers: [AuditLogsService, ColumnChartService]
  })
 
-export class AuditLogComponent  implements OnInit {
+    export class AuditLogComponent  implements OnInit {
     private _isLoading = false;
     private _subscription;
     private _entries : AuditEntry[];

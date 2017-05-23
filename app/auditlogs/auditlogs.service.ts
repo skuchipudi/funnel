@@ -21,9 +21,7 @@ export class AuditLogsService {
         return this._http.get(this.get_audit_logs + "partnerId/" + partnerId + "/clientId/" + clientId)
             .map(res => res.json());
     }
-
     
-
     // This is the JQuery Table - has sorting and search and paging capabiliti
      // Note using this as I am not using JQuery
     //https://datatables.net/examples/index
