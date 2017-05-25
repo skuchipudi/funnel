@@ -71,7 +71,14 @@ ngOnInit() {
 
 makeMapData()
 {
-    this._data = [];
+    // get the lat and lon
+    let datam = [  { name: 'Beijing',lat: 39.9042,lon: 116.4074 },
+                   { name: 'New York', lat: 40.7128, lon: -74.0059 },
+                   { name: 'Frankfurt', lat: 50.1109, lon: 8.6821 },
+                   { name: 'Jacksonville ', lat: 30.3322,lon: -81.6557}
+                ]
+
+    this._data1 = datam;
 }
 
 onSubmit(form: NgForm){
