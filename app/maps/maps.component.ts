@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { MapsChartsService} from '../charts/mapschart.service';
+import {AuditLogsService} from '../auditlogs/auditlogs.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {NgForm} from  '@angular/forms';
 
@@ -8,13 +9,17 @@ declare var Highcharts:any;
 
 @Component({
     templateUrl: '/app/maps/maps.component.html',
-    providers: [MapsChartsService]
+    providers: [MapsChartsService, AuditLogsService]
 })
 
 export class MapsComponent  implements OnInit {
+    private _isLoading = false;
+    private _partnerId:string;
+    private _clientId:string;
+    private _entries:any;
 
      // 
-     data1 =  [{
+     _data1 =  [{
             name: 'London',
             lat: 51.507222,
             lon: -0.1275
@@ -54,16 +59,30 @@ export class MapsComponent  implements OnInit {
             lon: -74.0059
         }
      ];
+
+  
      
    ngOnInit() {
-       this._mapsChartsService.renderChart(this.data1);
-   }     
+       // TODO  - Get this from the form
+       //this._auditLogService.getAuditLogsByPartnerAndClientID("partnerId", "clientId");
+       this._mapsChartsService.renderChart(this._data1);
+}
+
+onSubmit(form: NgForm){
+      this._auditLogService.getAuditLogsByPartnerAndClientID(this._partnerId, this._clientId).
+                subscribe(entries => {
+                  this._entries=entries;
+                  this._isLoading = false;
+                  // make sure to call this here to populate the entries into the graph plot
+                  this._mapsChartsService.renderChart(this._data1);
+                });
+    
+}
 
     constructor( 
         private _router: Router,
-        private _mapsChartsService: MapsChartsService
-    ){
-
-    }
+        private _mapsChartsService: MapsChartsService,
+        private _auditLogService: AuditLogsService
+    ){ }
 
 }
