@@ -17,6 +17,7 @@ export class MapsComponent  implements OnInit {
     private _partnerId:string;
     private _clientId:string;
     private _entries:any;
+    private _data;
 
      // 
      _data1 =  [{
@@ -62,10 +63,15 @@ export class MapsComponent  implements OnInit {
 
   
      
-   ngOnInit() {
+ngOnInit() {
        // TODO  - Get this from the form
        //this._auditLogService.getAuditLogsByPartnerAndClientID("partnerId", "clientId");
        this._mapsChartsService.renderChart(this._data1);
+}
+
+makeMapData()
+{
+    this._data = [];
 }
 
 onSubmit(form: NgForm){
@@ -74,9 +80,9 @@ onSubmit(form: NgForm){
                   this._entries=entries;
                   this._isLoading = false;
                   // make sure to call this here to populate the entries into the graph plot
+                  this.makeMapData();
                   this._mapsChartsService.renderChart(this._data1);
                 });
-    
 }
 
     constructor( 

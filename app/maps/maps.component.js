@@ -65,6 +65,9 @@ var MapsComponent = (function () {
         //this._auditLogService.getAuditLogsByPartnerAndClientID("partnerId", "clientId");
         this._mapsChartsService.renderChart(this._data1);
     };
+    MapsComponent.prototype.makeMapData = function () {
+        this._data = [];
+    };
     MapsComponent.prototype.onSubmit = function (form) {
         var _this = this;
         this._auditLogService.getAuditLogsByPartnerAndClientID(this._partnerId, this._clientId).
@@ -72,6 +75,7 @@ var MapsComponent = (function () {
             _this._entries = entries;
             _this._isLoading = false;
             // make sure to call this here to populate the entries into the graph plot
+            _this.makeMapData();
             _this._mapsChartsService.renderChart(_this._data1);
         });
     };
