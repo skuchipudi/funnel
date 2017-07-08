@@ -21,7 +21,7 @@ var FileMapComponent = (function () {
     FileMapComponent.prototype.ngAfterViewInit = function () {
         console.log('Filemap: ngAfterViewInit() called');
         // TODO - Pass the id to retrieve the
-        this._fileMapService.renderTree('partnerId');
+        this._fileMapService.renderTree('grande_partner_id');
     };
     // Note: you need to call this and clear svg
     // or else the graph will appear in every page.

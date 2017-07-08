@@ -3,23 +3,38 @@
  "children": [
   {
    "name": "Clients", "size": 3938,
-   "children": [
-     {
-     "name": "Bank of America",
      "children": [
-       {"name": "Daily Securities Exchange ", "size": 3938},
-       {"name": "Weekly Auto Load Securities", "size": 3812},
        {
-        "name": "Euro Exchange",
-         "children": [
+        "name": "Bank of America",
+        "children": [
+          {"name": "International Monetory Fund ", "size": 3938},
+          {"name": "Weekly Fixed Securities", "size": 3812},
+          {
+            "name": "World Bank Exchange",
+            "children": [
+                {"name": "Daily Securities Exchange", "size": 3938},
+                {"name": "Weekly Auto Load Securities", "size": 3812}
+            ]
+         },
+       {
+         "name": "Dubai Securities Exchange",
+          "children": [
               {"name": "Daily Securities Exchange ", "size": 3938},
               {"name": "Weekly Auto Load Securities", "size": 3812}
           ]
        }
      ]
-     }
+  }]
+  },
+  { "name": "Makers Inc", "size": 3000,
+    "children" : [
+      {"name": "legobots"},
+      {"name": "dronebots"}
     ]
-
-   }
+  },
+  { "name": "State Street Inc", "size": 3000},
+  { "name": "Spinners  Inc", "size": 3000}
+  
   ]
+
 }

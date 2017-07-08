@@ -1,0 +1,8 @@
+{
+  "name": "name",
+  "children": [
+      { "name" : "name1", "children": [ {"name": "d4"} ]},   
+
+      { "name" : "name1"}
+  ]
+}
