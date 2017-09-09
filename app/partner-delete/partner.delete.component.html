@@ -1,0 +1,26 @@
+<h1> Confirm Partner Delete </h1>
+        <div *ngIf="_isLoading">
+            <i class="fa fa-spinner fa-spin fa-3x"></i>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+               <tr>
+                 <th>Partner Id</th>
+                 <th>Partner Description</th>
+                 <th>Phone Number</th>
+                </tr>
+           </thead>
+           <tbody>
+             <tr *ngFor = "let p of _partners">
+                   <td>{{p.partnerId}}</td>
+                   <td>{{p.partnerDescription}}</td>
+                   <td>{{p.phoneNumber}}</td>
+            </tr>
+             </tbody>
+      </table>
+
+      <div>
+         isLoading =  {{ this._isLoading | json}}
+         _partnerId = {{ this._partnerId | json}}
+         partner = {{ this._partners | json}}
+     </div>
