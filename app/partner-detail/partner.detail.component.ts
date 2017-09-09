@@ -77,6 +77,7 @@ export class PartnerDetailComponent implements OnInit {
     {
         console.log('Filemap: noOnDestroy() called');
         this._fileMapService.destroyTree();
+        
     }
 
 }

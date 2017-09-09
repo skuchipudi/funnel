@@ -14,12 +14,15 @@ import { AppComponent }        from './app.component';
 import { HomeComponent }       from './home.component';
 
 import {AuditLogComponent} from './auditlogs/auditlogs.component';
+import {AlbumComponent} from './album/album.component';
 import {FileSentinelSplashComponent} from './splash/filesentinel_splash.component';
 
 import {PartnerComponent} from  './partners/partner.component';
 import {PartnerDetailComponent} from  './partner-detail/partner.detail.component';
 
 import {PartnerRegistrationComponent} from  './partner-registration/partner.registration.component';
+import {PartnerModifyComponent} from './partner-modify/partner.modify.component';
+import {PartnerDeleteComponent} from './partner-delete/partner.delete.component';
 import {ClientRegistrationComponent} from './client-registration/client.registration.component';
 
 import {RegistrationComponent} from './registration/registration.component';
@@ -41,8 +44,10 @@ import {LoginComponent} from './login/index';
 // service imports
 import {RegistrationService} from './registration/registration.service';
 import {ClientRegistrationService} from './client-registration/client.registration.service';
+
 import {PartnerServices} from  './partners/partner.services';
 import {PartnerDetailServices} from './partner-detail/partner.detail.services';
+
 import {FileMapService} from './filemap/filemap.service';
 import {AuditLogsService} from './auditlogs/auditlogs.service';
 import {MapsChartsService} from './charts/mapschart.service';
@@ -55,7 +60,9 @@ import {MapsChartsService} from './charts/mapschart.service';
         FileSentinelSplashComponent,
         LoginComponent,
         PartnerComponent,
-        PartnerDetailComponent,
+        PartnerModifyComponent,  
+        PartnerDeleteComponent,
+        PartnerDetailComponent, 
         RegistrationComponent,
         RegistrationDetailComponent,
         RegistrationsListComponent,

@@ -23,15 +23,22 @@ var FileMapComponent = (function () {
         // TODO - Pass the id to retrieve the
         this._fileMapService.renderTree('grande_partner_id');
     };
+    FileMapComponent.prototype.onSubmit = function (form) {
+        console.log('Filemap Component.onSubmit() - ENTER');
+        // destroy the tree so that you can create a new one
+        // or else the old one keep showing up
+        // console.log('partnerid=>' + this._partnerId);
+        //this._fileMapService.renderTree(this._partnerId);
+    };
     // Note: you need to call this and clear svg
     // or else the graph will appear in every page.
     FileMapComponent.prototype.ngOnDestroy = function () {
-        console.log('Filemap: noOnDestroy() called');
+        console.log('Filemap: OnDestroy() called');
         this._fileMapService.destroyTree();
     };
     FileMapComponent = __decorate([
         core_1.Component({
-            template: "\n        <h1>Files Map</h1>\n        <!-- File Tree renders thu the renderTree() lifecycle methods-->\n        ",
+            templateUrl: '/app/filemap/filemap.component.html',
             providers: [filemap_service_1.FileMapService]
         }), 
         __metadata('design:paramtypes', [filemap_service_1.FileMapService])

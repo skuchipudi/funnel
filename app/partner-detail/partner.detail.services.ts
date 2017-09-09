@@ -11,6 +11,7 @@ declare var table:any;
 
 @Injectable()
 export class PartnerDetailServices {
+    // TODO: Use relative paths
     private find_partner_url =
          'http://localhost:8080/partnerservices/findbypartnerid/';
 

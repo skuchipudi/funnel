@@ -15,6 +15,7 @@ require('rxjs/add/operator/map');
 var PartnerDetailServices = (function () {
     function PartnerDetailServices(_http) {
         this._http = _http;
+        // TODO: Use relative paths
         this.find_partner_url = 'http://localhost:8080/partnerservices/findbypartnerid/';
         this.get_client_url = 'http://localhost:8080/partnerservices/getclients/';
     }

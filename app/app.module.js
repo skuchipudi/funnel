@@ -24,6 +24,8 @@ var filesentinel_splash_component_1 = require('./splash/filesentinel_splash.comp
 var partner_component_1 = require('./partners/partner.component');
 var partner_detail_component_1 = require('./partner-detail/partner.detail.component');
 var partner_registration_component_1 = require('./partner-registration/partner.registration.component');
+var partner_modify_component_1 = require('./partner-modify/partner.modify.component');
+var partner_delete_component_1 = require('./partner-delete/partner.delete.component');
 var client_registration_component_1 = require('./client-registration/client.registration.component');
 var registration_component_1 = require('./registration/registration.component');
 var registrations_list_component_1 = require('./registration/registrations.list.component');
@@ -54,6 +56,8 @@ var AppModule = (function () {
                 filesentinel_splash_component_1.FileSentinelSplashComponent,
                 index_2.LoginComponent,
                 partner_component_1.PartnerComponent,
+                partner_modify_component_1.PartnerModifyComponent,
+                partner_delete_component_1.PartnerDeleteComponent,
                 partner_detail_component_1.PartnerDetailComponent,
                 registration_component_1.RegistrationComponent,
                 registrationdetail_component_1.RegistrationDetailComponent,

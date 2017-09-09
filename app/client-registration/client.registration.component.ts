@@ -22,6 +22,7 @@ export class ClientRegistrationComponent {
     private _partners;
     private _isLoading =true;
     private _partnerDoesNotExist;
+    private _latlng;
   
     // TODO: populate this later using a Service
     private languages: any;

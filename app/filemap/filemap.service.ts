@@ -9,7 +9,7 @@ declare var d3: any;
 export class FileMapService {
     // private _url = "http://jsonplaceholder.typicode.com/albums";
 
-     destroyTree()
+    destroyTree()
     {
       d3.select('svg') .remove();
     }
@@ -38,10 +38,8 @@ export class FileMapService {
 
         //d3.json("https://bl.ocks.org/mbostock/raw/4063550/flare.json", function(error:any, flare:any) {
         //d3.json('d3/flare.short.json', function(error: any, flare: any) {
-        d3.json('d3/d3.json', function(error: any, flare: any) {
-        d3.json('http://localhost:8080/partnerservices/getclienttree/' + partnerid, function(error: any, flare: any) {
-        
-
+        // d3.json('d3/d3.json', function(error: any, flare: any) {
+        d3.json('http://localhost:8080/partnerservices//getclienttree/' + partnerid, function(error: any, flare: any) {
         if (error) throw error;
 
         root = flare;
@@ -54,74 +52,74 @@ export class FileMapService {
             d._children.forEach(collapse);
             d.children = null;
          }
-    }
+        }
 
-    root.children.forEach(collapse);
-    update(root);
-    });
+        root.children.forEach(collapse);
+        update(root);
+        });
 
-    d3.select(self.frameElement).style('height', '800px');
+        d3.select(self.frameElement).style('height', '800px');
 
-    function update(source: any) {
+        function update(source: any) {
 
-    // Compute the new tree layout.
-    let nodes = tree.nodes(root).reverse(),
-    links = tree.links(nodes);
+        // Compute the new tree layout.
+        let nodes = tree.nodes(root).reverse(),
+        links = tree.links(nodes);
 
-    // Normalize for fixed-depth.
-    nodes.forEach(function(d: any) { d.y = d.depth * 180; });
+        // Normalize for fixed-depth.
+        nodes.forEach(function(d: any) { d.y = d.depth * 180; });
 
-    // Update the nodes…
-    let node = svg.selectAll('g.node')
+        // Update the nodes…
+        let node = svg.selectAll('g.node')
       .data(nodes, function(d: any) { return d.id || (d.id = ++i); });
 
-    // Enter any new nodes at the parent's previous position.
-    let nodeEnter = node.enter().append('g')
-      .attr('class', 'node')
-      .attr('transform', function(d: any) { return 'translate(' + source.y0 + ',' + source.x0 + ')'; })
-      .on('click', click);
+        // Enter any new nodes at the parent's previous position.
+        let nodeEnter = node.enter().append('g')
+        .attr('class', 'node')
+        .attr('transform', function(d: any) { return 'translate(' + source.y0 + ',' + source.x0 + ')'; })
+        .on('click', click);
 
-    nodeEnter.append('circle')
-      .attr('r', 1e-6)
-      .style('fill', function(d: any) { return d._children ? 'lightsteelblue' : '#fff'; });
+        nodeEnter.append('circle')
+        .attr('r', 1e-6)
+        .style('fill', function(d: any) { return d._children ? 'lightsteelblue' : '#fff'; });
 
-    nodeEnter.append('text')
-      .attr('x', function(d: any) { return d.children || d._children ? -10 : 10; })
-      .attr('dy', '.35em')
-      .attr('text-anchor', function(d: any) { return d.children || d._children ? 'end' : 'start'; })
-      .text(function(d: any) { return d.name; })
-      .style('fill-opacity', 1e-6);
+        nodeEnter.append('text')
+        .attr('x', function(d: any) { return d.children || d._children ? -10 : 10; })
+        .attr('dy', '.35em')
+        .attr('text-anchor', function(d: any) { return d.children || d._children ? 'end' : 'start'; })
+        .text(function(d: any) { return d.name; })
+        .style('fill-opacity', 1e-6);
 
-  // Transition nodes to their new position.
-   let nodeUpdate = node.transition()
-      .duration(duration)
-      .attr('transform', function(d: any) { return 'translate(' + d.y + ',' + d.x + ')'; });
+    // Transition nodes to their new position.
+       let nodeUpdate = node.transition()
+        .duration(duration)
+        .attr('transform', function(d: any) { return 'translate(' + d.y + ',' + d.x + ')'; });
 
-  nodeUpdate.select('circle')
+    nodeUpdate.select('circle')
       .attr('r', 4.5)
       .style('fill', function(d: any) { return d._children ? 'lightsteelblue' : '#fff'; });
 
-  nodeUpdate.select('text')
+    nodeUpdate.select('text')
       .style('fill-opacity', 1);
 
-  // Transition exiting nodes to the parent's new position.
-  let nodeExit = node.exit().transition()
+    // Transition exiting nodes to the parent's new position.
+    let nodeExit = node.exit().transition()
       .duration(duration)
       .attr('transform', function(d: any) { return 'translate(' + source.y + ',' + source.x + ')'; })
       .remove();
 
-  nodeExit.select('circle')
+    nodeExit.select('circle')
       .attr('r', 1e-6);
 
-  nodeExit.select('text')
+    nodeExit.select('text')
       .style('fill-opacity', 1e-6);
 
-  // Update the links…
-  let link = svg.selectAll('path.link')
+    // Update the links…
+    let link = svg.selectAll('path.link')
       .data(links, function(d: any) { return d.target.id; });
 
-  // Enter any new links at the parent's previous position.
-  link.enter().insert('path', 'g')
+    // Enter any new links at the parent's previous position.
+    link.enter().insert('path', 'g')
       .attr('class', 'link')
       .attr('d', function(d: any) {
         let o = {x: source.x0, y: source.y0};
@@ -129,7 +127,7 @@ export class FileMapService {
       });
 
   // Transition links to their new position.
-  link.transition()
+   link.transition()
       .duration(duration)
       .attr('d', diagonal);
 
@@ -152,8 +150,8 @@ export class FileMapService {
 // Toggle children on click.
 function click(d: any) {
   if (d.children) {
-    d._children = d.children;
-    d.children = null;
+     d._children = d.children;
+     d.children = null;
   } else {
     d.children = d._children;
     d._children = null;

@@ -36,6 +36,8 @@
               <th>Partner Server Address</th>
               <th>Partner File Path</th>
               <th>Email Address</th>
+              <th>Modify</th>
+              <th>Remove</th>
             </tr>
         </thead>
         <tbody>
@@ -48,9 +50,18 @@
                 <td>{{entries.serverAddress}}</td>
                 <td>{{entries.filePath}}</td>
                 <td>{{entries.emailAddress.emailAddress}}</td>
+                <td><a [routerLink]="['/partnermodify',entries.partnerId]">Modify</a></td>
+                <td><a [routerLink]="['/partnerdelete',entries.partnerId]">Remove</a></td>
+                
+                <!--<td><a [routerLink]="['/partnerdelete',entries.partnerId]"><img src="images/close.png"></a></td>-->
+
+               <!-- <td>
+                <ul class="nav nav-pills">
+                    <a href="#"><span class="badge">x</span></a>
+                </ul>
+                </td> -->
               </tr>
           </tbody>
    </table>
 
-   
 
