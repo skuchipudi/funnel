@@ -47,7 +47,7 @@ import {ClientRegistrationService} from './client-registration/client.registrati
 
 import {PartnerServices} from  './partners/partner.services';
 import {PartnerDetailServices} from './partner-detail/partner.detail.services';
-
+import {PartnerModifyServices} from './partner-modify/partner.modify.services';
 import {FileMapService} from './filemap/filemap.service';
 import {AuditLogsService} from './auditlogs/auditlogs.service';
 import {MapsChartsService} from './charts/mapschart.service';
@@ -80,6 +80,7 @@ import {MapsChartsService} from './charts/mapschart.service';
         RegistrationService,
         PartnerServices,
         PartnerDetailServices,
+        PartnerModifyServices,
         ClientRegistrationService,
         FileMapService,
         MapsChartsService,

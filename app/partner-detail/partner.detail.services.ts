@@ -36,7 +36,7 @@ export class PartnerDetailServices {
     }
 
     handleError(error: Response){
-        //console.error(error);
+        console.error(error);
         return  Observable.throw(error.json().error || 'Server Error');
     }
 

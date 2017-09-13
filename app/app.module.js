@@ -41,6 +41,7 @@ var registration_service_1 = require('./registration/registration.service');
 var client_registration_service_1 = require('./client-registration/client.registration.service');
 var partner_services_1 = require('./partners/partner.services');
 var partner_detail_services_1 = require('./partner-detail/partner.detail.services');
+var partner_modify_services_1 = require('./partner-modify/partner.modify.services');
 var filemap_service_1 = require('./filemap/filemap.service');
 var auditlogs_service_1 = require('./auditlogs/auditlogs.service');
 var mapschart_service_1 = require('./charts/mapschart.service');
@@ -76,6 +77,7 @@ var AppModule = (function () {
                 registration_service_1.RegistrationService,
                 partner_services_1.PartnerServices,
                 partner_detail_services_1.PartnerDetailServices,
+                partner_modify_services_1.PartnerModifyServices,
                 client_registration_service_1.ClientRegistrationService,
                 filemap_service_1.FileMapService,
                 mapschart_service_1.MapsChartsService,

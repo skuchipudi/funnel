@@ -9,13 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var partner_detail_services_1 = require('../partner-detail/partner.detail.services');
+var partner_modify_services_1 = require('../partner-modify/partner.modify.services');
 var router_1 = require('@angular/router');
 var PartnerModifyComponent = (function () {
-    function PartnerModifyComponent(_activatedRoute, _router, _partnerDetailServices) {
+    function PartnerModifyComponent(_activatedRoute, _router, _partnerModifyServices) {
         this._activatedRoute = _activatedRoute;
         this._router = _router;
-        this._partnerDetailServices = _partnerDetailServices;
+        this._partnerModifyServices = _partnerModifyServices;
         this._isLoading = true;
     }
     PartnerModifyComponent.prototype.ngOnInit = function () {
@@ -23,19 +23,19 @@ var PartnerModifyComponent = (function () {
         this._activatedRoute.params.subscribe(function (params) {
             console.log('PartnerModifyComponent().partnerId =>' + params['partnerId']);
             _this._partnerId = params['partnerId'];
-            _this._partnerDetailServices.getPartnerDetailsByPartnerId(params['partnerId']).
-                subscribe(function (partners) {
+            _this._partnerModifyServices.getPartnerModifyServices(params['partnerId']).
+                subscribe(function (partner) {
                 _this._isLoading = false;
-                _this._partners = partners;
+                _this._partner = partner;
             });
         });
     };
     PartnerModifyComponent = __decorate([
         core_1.Component({
             templateUrl: '/app/partner-modify/partner.modify.component.html',
-            providers: [partner_detail_services_1.PartnerDetailServices]
+            providers: [partner_modify_services_1.PartnerModifyServices]
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, partner_detail_services_1.PartnerDetailServices])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, partner_modify_services_1.PartnerModifyServices])
     ], PartnerModifyComponent);
     return PartnerModifyComponent;
 }());

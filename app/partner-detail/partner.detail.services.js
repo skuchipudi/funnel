@@ -32,7 +32,7 @@ var PartnerDetailServices = (function () {
             .catch(this.handleError);
     };
     PartnerDetailServices.prototype.handleError = function (error) {
-        //console.error(error);
+        console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server Error');
     };
     // jQuery Service Impl  commented out in the html page
