@@ -3,7 +3,7 @@
         isLoading =  {{ this._isLoading | json}}
         _partnerId = {{ this._partnerId | json}}
        <!-- _partnerName = {{ this._partner.partnerName}} -->
-        _partner =    {{ this._partner | json}}  
+       <!-- _partner =    {{ this._partner | json}}  -->
 </div>
 <h1>Confirm Partner Modify </h1>
         <div *ngIf="_isLoading">
@@ -13,14 +13,22 @@
             <thead>
                <tr>
                  <th>Partner Id</th>
+                 <th>Partner Name</th>
                  <th>Partner Description</th>
+                 <th>Partner Phone #</th>
+                 <th>Partner EmailAddress</th>
                 </tr>
            </thead>
            <tbody>
                  <td></td>
            <tbody>
-                 
-           </tbody>
+            <tr *ngFor = "let p of _partners">
+                <td>{{p.partnerId}}</td> 
+                <td>{{p.partnerName}}</td> 
+                <td>{{p.partnerDescription}}</td>
+                <td>{{p.phoneNumber}}</td>
+                <td>{{p.emailAddress.emailAddress}}</td>
+            </tbody>
       </table>
 
       

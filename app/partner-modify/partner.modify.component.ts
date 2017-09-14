@@ -12,7 +12,7 @@ import {Partner} from  '../partner-detail/partner.detail';
 export class PartnerModifyComponent implements OnInit {
     private _isLoading = true;
     private _subscription;
-    private _partner: any;
+    private _partners: any;
     private _partnerId: string;
 
     constructor (
@@ -26,9 +26,9 @@ export class PartnerModifyComponent implements OnInit {
             console.log( 'PartnerModifyComponent().partnerId =>' + params['partnerId']);
              this._partnerId = params['partnerId'];
              this._partnerModifyServices.getPartnerModifyServices( params['partnerId']).
-                 subscribe(partner => {
+                 subscribe(partners => {
                   this._isLoading = false;
-                  this._partner = partner;
+                  this._partners = partners;
                  });
             });
     }

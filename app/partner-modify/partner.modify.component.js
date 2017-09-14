@@ -24,9 +24,9 @@ var PartnerModifyComponent = (function () {
             console.log('PartnerModifyComponent().partnerId =>' + params['partnerId']);
             _this._partnerId = params['partnerId'];
             _this._partnerModifyServices.getPartnerModifyServices(params['partnerId']).
-                subscribe(function (partner) {
+                subscribe(function (partners) {
                 _this._isLoading = false;
-                _this._partner = partner;
+                _this._partners = partners;
             });
         });
     };
