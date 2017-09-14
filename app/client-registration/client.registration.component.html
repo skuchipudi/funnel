@@ -138,7 +138,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
                name="latlng" required 
                placeholder = "Enter Client Lat Lng"
                [(ngModel)]="_clientRegistrationModel.client.latlng"
-               #password="ngModel">
+               #latlng="ngModel">
            <div *ngIf="latlng.errors && (latlng.dirty || latlng.touched)"
                 class="alert alert-danger">
                 * Client Lat Lng is Required - Encrypted
