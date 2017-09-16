@@ -17,6 +17,7 @@ var PartnerDetailServices = (function () {
         this._http = _http;
         // TODO: Use relative paths
         this.find_partner_url = 'http://localhost:8080/partnerservices/findbypartnerid/';
+        this.delete_partner_url = 'http://localhost:8080/partnerservices/delete/';
         this.get_client_url = 'http://localhost:8080/partnerservices/getclients/';
     }
     PartnerDetailServices.prototype.getPartnerDetailsByPartnerId = function (partnerId) {
@@ -30,6 +31,21 @@ var PartnerDetailServices = (function () {
         return this._http.get(this.get_client_url + partnerId)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
+    };
+    PartnerDetailServices.prototype.deletePartner = function (partnerId) {
+        console.log('PartnerDetailServices.delete() ENTER');
+        // let partnerJSON = JSON.stringify(partner);
+        // let headers = new Headers({'Content-Type': 'application/json'});
+        // let options = new RequestOptions({headers: headers});
+        // console.log(this.delete_partner_url);
+        // console.log(partnerJSON);
+        console.log(this.delete_partner_url + partnerId);
+        return this._http.get(this.delete_partner_url + partnerId)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+        // return this._http.post(this.delete_partner_url, partnerJSON, options)
+        // .map((response:Response) => response.json())
+        // .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     };
     PartnerDetailServices.prototype.handleError = function (error) {
         console.error(error);

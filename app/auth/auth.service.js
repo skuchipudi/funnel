@@ -34,7 +34,7 @@ var Auth = (function () {
     ;
     Auth.prototype.logout = function () {
         // Remove token from localStorage
-        console.log('AuthService.logout called');
+        //console.log('AuthService.logout called');
         localStorage.removeItem('id_token');
     };
     ;

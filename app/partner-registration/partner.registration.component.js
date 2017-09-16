@@ -25,7 +25,7 @@ var PartnerRegistrationComponent = (function () {
     PartnerRegistrationComponent.prototype.validatePhoneNumber = function (phonenumber) {
         console.log("validatePhoneNumber called");
         // TODO write the function to validate
-        console.log('phonenumber.value=>' + phonenumber.value.length);
+        //console.log('phonenumber.value=>' + phonenumber.value.length);
         // TODO add additional validations
         //if(phonenumber.value.length != 14){
         //    console.log("value true");
@@ -33,12 +33,11 @@ var PartnerRegistrationComponent = (function () {
         //} else
     };
     PartnerRegistrationComponent.prototype.validatePartnerId = function (partnerId) {
-        var _this = this;
         console.log("validatePartnerId called=> " + partnerId.value);
-        this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(function (partnerInfo) {
-            _this._partnerRegistrationInfo = partnerInfo;
-            _this._partnerAlreadyExists = true;
-        });
+        // this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
+        //       this._partnerRegistrationInfo = partnerInfo; 
+        //       this._partnerAlreadyExists  = true;
+        // });
         this._partnerRegistrationInfo.partnerAlreadyExists = false;
     };
     PartnerRegistrationComponent.prototype.onSubmit = function (partnerForm) {

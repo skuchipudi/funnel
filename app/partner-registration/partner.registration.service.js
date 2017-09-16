@@ -25,7 +25,7 @@ var PartnerRegistrationService = (function () {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         var registrationInfoJSON = JSON.stringify(registrationInfo);
-        console.log("createRegistration()=>" + registrationInfoJSON);
+        //console.log("createRegistration()=>"+ registrationInfoJSON);
         return this._http.post(this._create_partner_registration_url, registrationInfoJSON, options)
             .map(function (response) { return response.json(); })
             .catch(function (error) { return Observable_1.Observable.throw(error.json().error || 'Server error'); }); //...errors if any

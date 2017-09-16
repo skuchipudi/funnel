@@ -29,7 +29,7 @@ export class ClientRegistrationService {
 
         let clientRegistrationInfoJSON = JSON.stringify(_clientRegistrationModel);
         console.log("createClientRegistration()=>"+ clientRegistrationInfoJSON);
-       return this._http.post(this._create_partner_client_registration_url, clientRegistrationInfoJSON, options)
+        return this._http.post(this._create_partner_client_registration_url, clientRegistrationInfoJSON, options)
                      .map((response:Response) => response.json())
                      .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     }

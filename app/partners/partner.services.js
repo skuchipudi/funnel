@@ -20,22 +20,6 @@ var PartnerServices = (function () {
         return this._http.get(this._url)
             .map(function (res) { return res.json(); });
     };
-    // Note using this as I am not using JQuery
-    //https://datatables.net/examples/index
-    PartnerServices.prototype.getTable = function () {
-        var table = jQuery('#partnerstable').DataTable({
-            "ajax": {
-                "url": "http://localhost:8080/partnerservices/entries/",
-                "type": "GET",
-                "dataSrc": "",
-            },
-            "columns": [
-                { "data": "partnerName" },
-                { "data": "partnerDescription" },
-                { "data": "emailAddress.emailAddress" },
-            ]
-        });
-    };
     PartnerServices = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

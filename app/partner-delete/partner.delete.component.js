@@ -21,12 +21,12 @@ var PartnerDeleteComponent = (function () {
     PartnerDeleteComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._activatedRoute.params.subscribe(function (params) {
-            console.log('PartnerDetailComponent().partnerId =>' + params['partnerId']);
+            console.log('PartnerDeleteComoponent().partnerId =>' + params['partnerId']);
             _this._partnerId = params['partnerId'];
             _this._partnerDetailServices.getPartnerDetailsByPartnerId(params['partnerId']).
-                subscribe(function (partners) {
+                subscribe(function (partner) {
                 _this._isLoading = false;
-                _this._partners = partners;
+                _this._partner = partner;
             });
         });
     };

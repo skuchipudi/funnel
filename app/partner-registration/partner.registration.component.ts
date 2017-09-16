@@ -31,22 +31,22 @@ export class PartnerRegistrationComponent {
     {
         console.log("validatePhoneNumber called");
         // TODO write the function to validate
-        console.log('phonenumber.value=>' + phonenumber.value.length);
+        //console.log('phonenumber.value=>' + phonenumber.value.length);
         // TODO add additional validations
         //if(phonenumber.value.length != 14){
         //    console.log("value true");
-           this._partnerRegistrationInfo.hasPhoneNumberError = false;
+        this._partnerRegistrationInfo.hasPhoneNumberError = false;
      //} else
     }
 
     validatePartnerId(partnerId:any)
     {
         console.log("validatePartnerId called=> " + partnerId.value);
-        this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
-              this._partnerRegistrationInfo = partnerInfo; 
-              this._partnerAlreadyExists  = true;
+        // this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
+        //       this._partnerRegistrationInfo = partnerInfo; 
+        //       this._partnerAlreadyExists  = true;
 
-        });
+        // });
         this._partnerRegistrationInfo.partnerAlreadyExists  = false;
     }
 

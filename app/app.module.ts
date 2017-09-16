@@ -23,15 +23,15 @@ import {PartnerDetailComponent} from  './partner-detail/partner.detail.component
 import {PartnerRegistrationComponent} from  './partner-registration/partner.registration.component';
 import {PartnerModifyComponent} from './partner-modify/partner.modify.component';
 import {PartnerDeleteComponent} from './partner-delete/partner.delete.component';
-import {ClientRegistrationComponent} from './client-registration/client.registration.component';
+import {PartnerDeleteConfirmedComponent} from './partner-delete/partner.delete.confirm.component';
 
+import {ClientRegistrationComponent} from './client-registration/client.registration.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {RegistrationsListComponent} from './registration/registrations.list.component';
 import {RegistrationDetailComponent} from './registration/registrationdetail.component';
 
 
 import {ScheduleTransferComponent} from './schedule/schedule.transfer.component';
-
 import {MapsComponent} from './maps/maps.component';
 
 import {ChartsComponent} from './charts/charts.component';
@@ -47,6 +47,7 @@ import {ClientRegistrationService} from './client-registration/client.registrati
 
 import {PartnerServices} from  './partners/partner.services';
 import {PartnerDetailServices} from './partner-detail/partner.detail.services';
+import {PartnerDeleteServices} from './partner-delete/partner.delete.services';
 import {PartnerModifyServices} from './partner-modify/partner.modify.services';
 import {FileMapService} from './filemap/filemap.service';
 import {AuditLogsService} from './auditlogs/auditlogs.service';
@@ -59,10 +60,14 @@ import {MapsChartsService} from './charts/mapschart.service';
         AuditLogComponent,
         FileSentinelSplashComponent,
         LoginComponent,
+       
         PartnerComponent,
         PartnerModifyComponent,  
+       
         PartnerDeleteComponent,
         PartnerDetailComponent, 
+        PartnerDeleteConfirmedComponent,
+        
         RegistrationComponent,
         RegistrationDetailComponent,
         RegistrationsListComponent,
@@ -80,6 +85,7 @@ import {MapsChartsService} from './charts/mapschart.service';
         RegistrationService,
         PartnerServices,
         PartnerDetailServices,
+        PartnerDeleteServices,
         PartnerModifyServices,
         ClientRegistrationService,
         FileMapService,

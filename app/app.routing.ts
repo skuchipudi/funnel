@@ -13,6 +13,7 @@ import {ScheduleTransferComponent} from './schedule/schedule.transfer.component'
 import {PartnerComponent} from './partners/partner.component';
 import {PartnerDetailComponent} from './partner-detail/partner.detail.component';
 import {PartnerDeleteComponent} from './partner-delete/partner.delete.component';
+import {PartnerDeleteConfirmedComponent} from './partner-delete/partner.delete.confirm.component';
 import {PartnerModifyComponent} from './partner-modify/partner.modify.component';
 import {PartnerRegistrationComponent} from './partner-registration/partner.registration.component';
 import {ClientRegistrationComponent} from './client-registration/client.registration.component';
@@ -33,6 +34,8 @@ const appRoutes: Routes = [
   { path: 'partners', component: PartnerComponent, canActivate: [AuthGuard]},
   { path: 'partnerdetail/:partnerId', component: PartnerDetailComponent, canActivate: [AuthGuard]},
   { path: 'partnerdelete/:partnerId', component: PartnerDeleteComponent, canActivate: [AuthGuard]},
+  { path: 'partnerconfirmdelete/:partnerId', component: PartnerDeleteConfirmedComponent, canActivate: [AuthGuard]},
+  
   { path: 'partnermodify/:partnerId', component: PartnerModifyComponent, canActivate: [AuthGuard]},
   
 

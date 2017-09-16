@@ -26,6 +26,7 @@ var partner_detail_component_1 = require('./partner-detail/partner.detail.compon
 var partner_registration_component_1 = require('./partner-registration/partner.registration.component');
 var partner_modify_component_1 = require('./partner-modify/partner.modify.component');
 var partner_delete_component_1 = require('./partner-delete/partner.delete.component');
+var partner_delete_confirm_component_1 = require('./partner-delete/partner.delete.confirm.component');
 var client_registration_component_1 = require('./client-registration/client.registration.component');
 var registration_component_1 = require('./registration/registration.component');
 var registrations_list_component_1 = require('./registration/registrations.list.component');
@@ -41,6 +42,7 @@ var registration_service_1 = require('./registration/registration.service');
 var client_registration_service_1 = require('./client-registration/client.registration.service');
 var partner_services_1 = require('./partners/partner.services');
 var partner_detail_services_1 = require('./partner-detail/partner.detail.services');
+var partner_delete_services_1 = require('./partner-delete/partner.delete.services');
 var partner_modify_services_1 = require('./partner-modify/partner.modify.services');
 var filemap_service_1 = require('./filemap/filemap.service');
 var auditlogs_service_1 = require('./auditlogs/auditlogs.service');
@@ -60,6 +62,7 @@ var AppModule = (function () {
                 partner_modify_component_1.PartnerModifyComponent,
                 partner_delete_component_1.PartnerDeleteComponent,
                 partner_detail_component_1.PartnerDetailComponent,
+                partner_delete_confirm_component_1.PartnerDeleteConfirmedComponent,
                 registration_component_1.RegistrationComponent,
                 registrationdetail_component_1.RegistrationDetailComponent,
                 registrations_list_component_1.RegistrationsListComponent,
@@ -77,6 +80,7 @@ var AppModule = (function () {
                 registration_service_1.RegistrationService,
                 partner_services_1.PartnerServices,
                 partner_detail_services_1.PartnerDetailServices,
+                partner_delete_services_1.PartnerDeleteServices,
                 partner_modify_services_1.PartnerModifyServices,
                 client_registration_service_1.ClientRegistrationService,
                 filemap_service_1.FileMapService,

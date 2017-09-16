@@ -32,7 +32,7 @@ export class Auth {
 
   public logout() {
     // Remove token from localStorage
-    console.log('AuthService.logout called');
+    //console.log('AuthService.logout called');
     localStorage.removeItem('id_token');
   };
 }
