@@ -23,7 +23,7 @@ var PartnerDeleteComponent = (function () {
         this._activatedRoute.params.subscribe(function (params) {
             console.log('PartnerDeleteComoponent().partnerId =>' + params['partnerId']);
             _this._partnerId = params['partnerId'];
-            _this._partnerDetailServices.getPartnerDetailsByPartnerId(params['partnerId']).
+            _this._partnerDetailServices.getPartnerDetailsByPartnerId(_this._partnerId).
                 subscribe(function (partner) {
                 _this._isLoading = false;
                 _this._partner = partner;

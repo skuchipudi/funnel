@@ -15,7 +15,7 @@ export class PartnerDeleteComponent implements OnInit {
     private _subscription;
     private _partner: any;
     private _partnerId: string;
-
+ 
 
     constructor (
             private _activatedRoute: ActivatedRoute,
@@ -26,15 +26,12 @@ export class PartnerDeleteComponent implements OnInit {
     ngOnInit() {
         this._activatedRoute.params.subscribe((params: Params) => {
             console.log( 'PartnerDeleteComoponent().partnerId =>' + params['partnerId']);
-             
             this._partnerId = params['partnerId'];
-             this._partnerDetailServices.getPartnerDetailsByPartnerId( params['partnerId']).
+             this._partnerDetailServices.getPartnerDetailsByPartnerId(this._partnerId).
                  subscribe(partner => {
                      this._isLoading = false;
                      this._partner = partner;
-                 } );
- 
-        });
-
+                 });
+            });
       }
 }

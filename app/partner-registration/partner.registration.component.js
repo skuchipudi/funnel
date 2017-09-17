@@ -33,16 +33,20 @@ var PartnerRegistrationComponent = (function () {
         //} else
     };
     PartnerRegistrationComponent.prototype.validatePartnerId = function (partnerId) {
-        console.log("validatePartnerId called=> " + partnerId.value);
+        console.log("validatePartnerId called=> " + partnerId);
         // this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
         //       this._partnerRegistrationInfo = partnerInfo; 
         //       this._partnerAlreadyExists  = true;
         // });
         this._partnerRegistrationInfo.partnerAlreadyExists = false;
     };
+    PartnerRegistrationComponent.prototype.trimmer = function () {
+        this._partnerRegistrationInfo.partnerId.trim();
+    };
     PartnerRegistrationComponent.prototype.onSubmit = function (partnerForm) {
         var _this = this;
         // console.log('PartnerRegistration.onSubmit() - ENTER');
+        // clean up spaces before submitting.
         this._registrationService.createRegistration(this._partnerRegistrationInfo).subscribe(function (registrationInfo) {
             return _this._partnerRegistrationInfo = registrationInfo;
         });

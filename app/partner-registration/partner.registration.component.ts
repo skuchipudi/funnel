@@ -22,7 +22,6 @@ export class PartnerRegistrationComponent {
                 private _registrationService: PartnerRegistrationService,
                 private _partnerDetailService: PartnerDetailServices)
    {
-
       this._partnerRegistrationInfo = new Partner();
       this._partnerRegistrationInfo.partnerDescription = "Partner Description";
     }
@@ -41,7 +40,7 @@ export class PartnerRegistrationComponent {
 
     validatePartnerId(partnerId:any)
     {
-        console.log("validatePartnerId called=> " + partnerId.value);
+        console.log("validatePartnerId called=> " + partnerId);
         // this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
         //       this._partnerRegistrationInfo = partnerInfo; 
         //       this._partnerAlreadyExists  = true;
@@ -50,8 +49,15 @@ export class PartnerRegistrationComponent {
         this._partnerRegistrationInfo.partnerAlreadyExists  = false;
     }
 
+    trimmer() {
+        this._partnerRegistrationInfo.partnerId.trim();
+        
+    }
+
+    
     onSubmit(partnerForm: NgForm) {
        // console.log('PartnerRegistration.onSubmit() - ENTER');
+       // clean up spaces before submitting.
         this._registrationService.createRegistration(this._partnerRegistrationInfo).subscribe(registrationInfo => {
             return this._partnerRegistrationInfo = registrationInfo;
         });

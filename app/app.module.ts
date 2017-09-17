@@ -6,6 +6,7 @@ import {HttpModule}        from '@angular/http';
 import {AUTH_PROVIDERS }      from 'angular2-jwt';
 import {routing, appRoutingProviders} from './app.routing';
 
+
 import {AuthGuard} from './guards/index';
 
 
