@@ -33,20 +33,38 @@ var PartnerRegistrationComponent = (function () {
         //} else
     };
     PartnerRegistrationComponent.prototype.validatePartnerId = function (partnerId) {
-        console.log("validatePartnerId called=> " + partnerId);
-        // this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
-        //       this._partnerRegistrationInfo = partnerInfo; 
-        //       this._partnerAlreadyExists  = true;
-        // });
-        this._partnerRegistrationInfo.partnerAlreadyExists = false;
+        console.log("partnerId.trim.length()==>" + partnerId.value.trim().length);
+        if (partnerId.value.trim().length == 0)
+            return false;
+        else {
+            console.log("length is not zero");
+            partnerId = partnerId.value.trim();
+            //trim the partner id and re-assign or you
+            // will end up create a partner_id with spaces which is not good
+            // and difficult to retreive and maintain
+            this._partnerRegistrationInfo.partnerId = partnerId;
+        }
     };
-    PartnerRegistrationComponent.prototype.trimmer = function () {
-        this._partnerRegistrationInfo.partnerId.trim();
-    };
+    //  this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
+    //            this._partnerRegistrationInfo = partnerInfo; 
+    //            this._partnerAlreadyExists  = true;
+    //     });
+    //     //console.log(this._partnerRegistrationInfo.partnerId.trim());
+    //this._partnerRegistrationInfo.partnerId=partnerId.value.trim();
+    //this._partnerAlreadyExists = false;
     PartnerRegistrationComponent.prototype.onSubmit = function (partnerForm) {
-        var _this = this;
         // console.log('PartnerRegistration.onSubmit() - ENTER');
         // clean up spaces before submitting.
+        //    this._partnerRegistrationInfo.partnerId.trim();
+        //    this._partnerRegistrationInfo.partnerName.trim();
+        //    this._partnerRegistrationInfo.partnerDescription.trim();
+        //    this._partnerRegistrationInfo.phoneNumber.trim();
+        //    this._partnerRegistrationInfo.serverAddress.trim();
+        //    this._partnerRegistrationInfo.emailAddress.emailAddress.trim();
+        //    this._partnerRegistrationInfo.userid.trim();
+        //    this._partnerRegistrationInfo.password.trim();
+        //    this._partnerRegistrationInfo.filePath.trim();
+        var _this = this;
         this._registrationService.createRegistration(this._partnerRegistrationInfo).subscribe(function (registrationInfo) {
             return _this._partnerRegistrationInfo = registrationInfo;
         });
