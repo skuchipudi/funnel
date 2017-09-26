@@ -9,33 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var partner_modify_services_1 = require('../partner-modify/partner.modify.services');
 var router_1 = require('@angular/router');
+var partner_modify_info_1 = require('../partner-modify/partner.modify.info');
 var PartnerModifyComponent = (function () {
-    function PartnerModifyComponent(_activatedRoute, _router, _partnerModifyServices) {
+    function PartnerModifyComponent(_activatedRoute, _router, _model) {
         this._activatedRoute = _activatedRoute;
         this._router = _router;
-        this._partnerModifyServices = _partnerModifyServices;
+        this._model = _model;
         this._isLoading = true;
+        this._model = new partner_modify_info_1.PartnerModel();
     }
     PartnerModifyComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._activatedRoute.params.subscribe(function (params) {
             console.log('PartnerModifyComponent().partnerId =>' + params['partnerId']);
             _this._partnerId = params['partnerId'];
-            _this._partnerModifyServices.getPartnerModifyServices(params['partnerId']).
-                subscribe(function (partners) {
-                _this._isLoading = false;
-                _this._partners = partners;
-            });
         });
     };
     PartnerModifyComponent = __decorate([
         core_1.Component({
-            templateUrl: '/app/partner-modify/partner.modify.component.html',
-            providers: [partner_modify_services_1.PartnerModifyServices]
+            templateUrl: '/app/partner-delete/partner.delete.component.html',
+            providers: []
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, partner_modify_services_1.PartnerModifyServices])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, partner_modify_info_1.PartnerModel])
     ], PartnerModifyComponent);
     return PartnerModifyComponent;
 }());

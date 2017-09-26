@@ -15,17 +15,16 @@ require('rxjs/add/operator/map');
 var PartnerModifyServices = (function () {
     function PartnerModifyServices(_http) {
         this._http = _http;
-        // TODO: Use relative paths
-        this.find_partner_url = 'http://localhost:8080/partnerservices/findbypartnerid/';
+        this.partner_delete_url = 'http://localhost:8080/partnerservices/delete/';
     }
-    PartnerModifyServices.prototype.getPartnerModifyServices = function (partnerId) {
-        console.log('PartnerDetailServices.getPartnerDetails() called ' + partnerId);
-        return this._http.get(this.find_partner_url + partnerId)
+    PartnerModifyServices.prototype.deletePartner = function (partnerId) {
+        console.log(this.partner_delete_url + partnerId);
+        return this._http.get(this.partner_delete_url + partnerId)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     PartnerModifyServices.prototype.handleError = function (error) {
-        //console.error(error);
+        console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server Error');
     };
     PartnerModifyServices = __decorate([

@@ -16,6 +16,10 @@ export class PartnerDetailServices {
     private find_partner_url =
          'http://localhost:8080/partnerservices/findbypartnerid/';
 
+     //    private find_partner_url2 =
+     //    'http://localhost:8080/partnerservices/findbypartnerid2/';
+
+
     private delete_partner_url =
          'http://localhost:8080/partnerservices/delete/';
 
@@ -33,6 +37,13 @@ export class PartnerDetailServices {
             .map(res => res.json())
             .catch(this.handleError);
     }
+
+    // getPartnerDetailsByPartnerId2( partnerId: String) {
+    //     console.log('PartnerDetailServices.getPartnerDetails() 22 called ' + partnerId);
+    //     return this._http.get(this.find_partner_url2 + partnerId)
+    //         .map(res => res.json())
+    //         .catch(this.handleError);
+    // }
 
     getClients( partnerId: String) {
         console.log('PartnerDetailServices.getClients() called ' + partnerId);

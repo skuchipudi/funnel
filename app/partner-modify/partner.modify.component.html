@@ -1,34 +1,34 @@
-
-<div>
-        isLoading =  {{ this._isLoading | json}}
-        _partnerId = {{ this._partnerId | json}}
-       <!-- _partnerName = {{ this._partner.partnerName}} -->
-       <!-- _partner =    {{ this._partner | json}}  -->
-</div>
-<h1>Confirm Partner Modify </h1>
+<h1> Confirm Partner Modify </h1>
         <div *ngIf="_isLoading">
             <i class="fa fa-spinner fa-spin fa-3x"></i>
         </div>
+        
         <table class="table table-striped table-hover">
-            <thead>
-               <tr>
-                 <th>Partner Id</th>
-                 <th>Partner Name</th>
-                 <th>Partner Description</th>
-                 <th>Partner Phone #</th>
-                 <th>Partner EmailAddress</th>
-                </tr>
-           </thead>
-           <tbody>
-                 <td></td>
-           <tbody>
-            <tr *ngFor = "let p of _partners">
-                <td>{{p.partnerId}}</td> 
-                <td>{{p.partnerName}}</td> 
-                <td>{{p.partnerDescription}}</td>
-                <td>{{p.phoneNumber}}</td>
-                <td>{{p.emailAddress.emailAddress}}</td>
-            </tbody>
-      </table>
+                <thead>
+                   <tr>
+                     <th>Partner Id</th>
+                     <th>Partner Name</th>
+                     <th>Partner Description</th>
+                     <th>Partner Phone #</th>
+                     <th>Partner EmailAddress</th>
+                     <th>Remove</th>
+                    </tr>
+               </thead>
+               <tbody>
+                <tr *ngFor = "let p of _partner">
+                    <td>{{p.partnerId}}</td> 
+                    <td>{{p.partnerName}}</td> 
+                    <td>{{p.partnerDescription}}</td>
+                    <td>{{p.phoneNumber}}</td>
+                    <td>{{p.emailAddress.emailAddress}}</td>
+                    <td><a [routerLink]="['/partnerconfirmmodify',p.partnerId]">Modify</a></td>
+                    
+                </tbody>
+          </table>
+     <!-- <div>
+         isLoading =  {{ this._isLoading | json}}
+         _partnerId = {{ this._partnerId | json}}
+         partner = {{ this._partners | json}}
+     </div> -->
 
-      
+     

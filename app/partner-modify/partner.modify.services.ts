@@ -1,31 +1,35 @@
 import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 declare var jQuery: any;
-declare var example:any;
+declare var partnerstable:any;
 declare var table:any;
-
 
 
 @Injectable()
 export class PartnerModifyServices {
-    // TODO: Use relative paths
-    private find_partner_url =
-         'http://localhost:8080/partnerservices/findbypartnerid/';
+    private partner_delete_url =
+         'http://localhost:8080/partnerservices/delete/';
 
-  
     constructor(private _http: Http) { }
 
-    getPartnerModifyServices( partnerId: String) {
-        console.log('PartnerDetailServices.getPartnerDetails() called ' + partnerId);
-        return this._http.get(this.find_partner_url + partnerId)
+   
+    
+    deletePartner(partnerId: any) {
+          console.log (this.partner_delete_url+partnerId);
+         return this._http.get(this.partner_delete_url+partnerId)
             .map(res => res.json())
             .catch(this.handleError);
     }
+
     handleError(error: Response){
-        //console.error(error);
+        console.error(error);
         return  Observable.throw(error.json().error || 'Server Error');
     }
+
+    
+
+
 }

@@ -10,6 +10,7 @@ var partner_detail_component_1 = require('./partner-detail/partner.detail.compon
 var partner_delete_component_1 = require('./partner-delete/partner.delete.component');
 var partner_delete_confirm_component_1 = require('./partner-delete/partner.delete.confirm.component');
 var partner_modify_component_1 = require('./partner-modify/partner.modify.component');
+var partner_modify_confirm_component_1 = require('./partner-modify/partner.modify.confirm.component');
 var partner_registration_component_1 = require('./partner-registration/partner.registration.component');
 var client_registration_component_1 = require('./client-registration/client.registration.component');
 var maps_component_1 = require('./maps/maps.component');
@@ -26,6 +27,7 @@ var appRoutes = [
     { path: 'partnerdetail/:partnerId', component: partner_detail_component_1.PartnerDetailComponent, canActivate: [index_1.AuthGuard] },
     { path: 'partnerdelete/:partnerId', component: partner_delete_component_1.PartnerDeleteComponent, canActivate: [index_1.AuthGuard] },
     { path: 'partnerconfirmdelete/:partnerId', component: partner_delete_confirm_component_1.PartnerDeleteConfirmedComponent, canActivate: [index_1.AuthGuard] },
+    { path: 'partnerconfirmmodify/:partnerId', component: partner_modify_confirm_component_1.PartnerModifyConfirmedComponent, canActivate: [index_1.AuthGuard] },
     { path: 'partnermodify/:partnerId', component: partner_modify_component_1.PartnerModifyComponent, canActivate: [index_1.AuthGuard] },
     { path: 'registerpartner', component: partner_registration_component_1.PartnerRegistrationComponent, canActivate: [index_1.AuthGuard] },
     { path: 'registerclient', component: client_registration_component_1.ClientRegistrationComponent, canActivate: [index_1.AuthGuard] },

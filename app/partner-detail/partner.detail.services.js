@@ -17,6 +17,8 @@ var PartnerDetailServices = (function () {
         this._http = _http;
         // TODO: Use relative paths
         this.find_partner_url = 'http://localhost:8080/partnerservices/findbypartnerid/';
+        //    private find_partner_url2 =
+        //    'http://localhost:8080/partnerservices/findbypartnerid2/';
         this.delete_partner_url = 'http://localhost:8080/partnerservices/delete/';
         this.get_client_url = 'http://localhost:8080/partnerservices/getclients/';
     }
@@ -26,6 +28,12 @@ var PartnerDetailServices = (function () {
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
+    // getPartnerDetailsByPartnerId2( partnerId: String) {
+    //     console.log('PartnerDetailServices.getPartnerDetails() 22 called ' + partnerId);
+    //     return this._http.get(this.find_partner_url2 + partnerId)
+    //         .map(res => res.json())
+    //         .catch(this.handleError);
+    // }
     PartnerDetailServices.prototype.getClients = function (partnerId) {
         console.log('PartnerDetailServices.getClients() called ' + partnerId);
         return this._http.get(this.get_client_url + partnerId)
