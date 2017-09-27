@@ -35,12 +35,13 @@ const appRoutes: Routes = [
   
   { path: 'auditlogs', component: AuditLogComponent, canActivate: [AuthGuard] },
   { path: 'partners', component: PartnerComponent, canActivate: [AuthGuard]},
+  
   { path: 'partnerdetail/:partnerId', component: PartnerDetailComponent, canActivate: [AuthGuard]},
   { path: 'partnerdelete/:partnerId', component: PartnerDeleteComponent, canActivate: [AuthGuard]},
+  { path: 'partnermodify/:partnerId', component: PartnerModifyComponent, canActivate: [AuthGuard]},
+  
   { path: 'partnerconfirmdelete/:partnerId', component: PartnerDeleteConfirmedComponent, canActivate: [AuthGuard]},
   { path: 'partnerconfirmmodify/:partnerId', component: PartnerModifyConfirmedComponent, canActivate: [AuthGuard]},
-  
-  { path: 'partnermodify/:partnerId', component: PartnerModifyComponent, canActivate: [AuthGuard]},
   
 
   { path: 'registerpartner', component: PartnerRegistrationComponent, canActivate: [AuthGuard]},

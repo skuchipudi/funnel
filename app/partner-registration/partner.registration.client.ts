@@ -12,7 +12,7 @@ export class Client
 	  public emailAddress: EmailAddress;
 	
 	 constructor(){
-					this.emailAddress = new EmailAddress();
+			this.emailAddress = new EmailAddress();
 	  }
 
 }
