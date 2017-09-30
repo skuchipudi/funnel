@@ -11,12 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var partner_detail_services_1 = require('../partner-detail/partner.detail.services');
 var router_1 = require('@angular/router');
+var partner_detail_1 = require('../partner-detail/partner.detail');
 var PartnerDeleteComponent = (function () {
     function PartnerDeleteComponent(_activatedRoute, _router, _partnerDetailServices) {
         this._activatedRoute = _activatedRoute;
         this._router = _router;
         this._partnerDetailServices = _partnerDetailServices;
         this._isLoading = true;
+        this._partner = new partner_detail_1.Partner();
     }
     PartnerDeleteComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -26,7 +28,7 @@ var PartnerDeleteComponent = (function () {
             _this._partnerDetailServices.getPartnerDetailsByPartnerId(_this._partnerId).
                 subscribe(function (partner) {
                 _this._isLoading = false;
-                _this._partner = partner;
+                _this._partner = partner[0];
             });
         });
     };

@@ -7,7 +7,6 @@ export class PartnerModel
 		public partnerDescription:string;
 		public phoneNumber: string;
 		public emailAddress: EmailAddress;
-		public emailAddress: EmailAddress;
 		public userid:string;
 		public password:string;
 		public serverAddress:string;

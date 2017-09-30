@@ -11,14 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var partner_detail_services_1 = require('../partner-detail/partner.detail.services');
 var router_1 = require('@angular/router');
-var partner_modify_info_1 = require('../partner-modify/partner.modify.info');
+//import {PartnerModel} from '../partner-modify/partner.modify.info';
+var partner_detail_1 = require('../partner-detail/partner.detail');
 var PartnerModifyComponent = (function () {
     function PartnerModifyComponent(_activatedRoute, _router, _partnerDetailServices) {
         this._activatedRoute = _activatedRoute;
         this._router = _router;
         this._partnerDetailServices = _partnerDetailServices;
         this._isLoading = true;
-        this._model = new partner_modify_info_1.PartnerModel();
+        this._model = new partner_detail_1.Partner();
     }
     PartnerModifyComponent.prototype.ngOnInit = function () {
         var _this = this;

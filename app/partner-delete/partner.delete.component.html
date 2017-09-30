@@ -11,22 +11,24 @@
                      <th>Partner Description</th>
                      <th>Partner Phone #</th>
                      <th>Partner EmailAddress</th>
-                     <th>Remove</th>
+                     <th>Delete</th>
                     </tr>
                </thead>
-               <tbody>
-                <tr *ngFor = "let p of _partner">
-                    <td>{{p.partnerId}}</td> 
-                    <td>{{p.partnerName}}</td> 
-                    <td>{{p.partnerDescription}}</td>
-                    <td>{{p.phoneNumber}}</td>
-                    <td>{{p.emailAddress.emailAddress}}</td>
-                    <td><a [routerLink]="['/partnerconfirmdelete',p.partnerId]">Delete</a></td>
-                    
+                <tbody>
+                    <tr>
+                        <td>{{_partner.partnerId}}</td> 
+                        <td>{{_partner.partnerName}}</td> 
+                        <td>{{_partner.partnerDescription}}</td>
+                        <td>{{_partner.phoneNumber}}</td>
+                        <td>{{_partner.emailAddress}}</td>
+                        <td><a [routerLink]="['/partnerconfirmdelete',_partner.partnerId]">Delete</a></td>
+                    </tr>
                 </tbody>
           </table>
-     <!-- <div>
+<!--<div>
          isLoading =  {{ this._isLoading | json}}
          _partnerId = {{ this._partnerId | json}}
-         partner = {{ this._partners | json}}
-     </div> -->
+         partner = {{ _partner | json}}
+         emailAddress = {{_partner.emailAddress}}
+         {{_partner.partnerId}}
+</div> -->

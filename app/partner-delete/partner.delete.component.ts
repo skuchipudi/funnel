@@ -13,15 +13,17 @@ import {Partner} from '../partner-detail/partner.detail';
 export class PartnerDeleteComponent implements OnInit {
     private _isLoading = true;
     private _subscription;
-    private _partner: any;
     private _partnerId: string;
- 
+    private _partner: any;        
+    
 
     constructor (
             private _activatedRoute: ActivatedRoute,
             private _router: Router,
             private _partnerDetailServices:  PartnerDetailServices
-            ) { }
+            ) { 
+                this._partner = new Partner();
+            }
 
     ngOnInit() {
         this._activatedRoute.params.subscribe((params: Params) => {
@@ -30,7 +32,7 @@ export class PartnerDeleteComponent implements OnInit {
              this._partnerDetailServices.getPartnerDetailsByPartnerId(this._partnerId).
                  subscribe(partner => {
                      this._isLoading = false;
-                     this._partner = partner;
+                     this._partner = partner[0];
                  });
             });
       }
