@@ -33,18 +33,10 @@ export class PartnerDeleteConfirmedComponent implements OnInit {
                         subscribe (partner => {
                                 this._isLoading = false;
                                 this._partner = partner;
-                        })
-  
-                }); 
-        
-          this._router.navigate(['/partners']);
+                                // after deleting navigate to the partner's tab
+                                this._router.navigate(['/partners']);
+                         })
+                  }); 
         }
 
-        // this._subscription = this._activatedRoute.params.subscribe((params: Params) => {
-        //         this._partnerServices.getEntries().
-        //             subscribe(entries => {
-        //                 this._isLoading = false;
-        //                 this._entries = entries;
-        //            } );
-        //         });
 }

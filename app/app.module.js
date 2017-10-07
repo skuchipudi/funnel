@@ -25,7 +25,6 @@ var partner_component_1 = require('./partners/partner.component');
 var partner_detail_component_1 = require('./partner-detail/partner.detail.component');
 var partner_registration_component_1 = require('./partner-registration/partner.registration.component');
 var partner_modify_component_1 = require('./partner-modify/partner.modify.component');
-var partner_modify_confirm_component_1 = require('./partner-modify/partner.modify.confirm.component');
 var partner_delete_component_1 = require('./partner-delete/partner.delete.component');
 var partner_delete_confirm_component_1 = require('./partner-delete/partner.delete.confirm.component');
 var client_registration_component_1 = require('./client-registration/client.registration.component');
@@ -61,7 +60,6 @@ var AppModule = (function () {
                 index_2.LoginComponent,
                 partner_component_1.PartnerComponent,
                 partner_modify_component_1.PartnerModifyComponent,
-                partner_modify_confirm_component_1.PartnerModifyConfirmedComponent,
                 partner_delete_component_1.PartnerDeleteComponent,
                 partner_detail_component_1.PartnerDetailComponent,
                 partner_delete_confirm_component_1.PartnerDeleteConfirmedComponent,

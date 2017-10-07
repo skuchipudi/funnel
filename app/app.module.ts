@@ -23,7 +23,6 @@ import {PartnerDetailComponent} from  './partner-detail/partner.detail.component
 
 import {PartnerRegistrationComponent} from  './partner-registration/partner.registration.component';
 import {PartnerModifyComponent} from './partner-modify/partner.modify.component';
-import {PartnerModifyConfirmedComponent} from './partner-modify/partner.modify.confirm.component';
 
 import {PartnerDeleteComponent} from './partner-delete/partner.delete.component';
 import {PartnerDeleteConfirmedComponent} from './partner-delete/partner.delete.confirm.component';
@@ -66,7 +65,6 @@ import {MapsChartsService} from './charts/mapschart.service';
        
         PartnerComponent,
         PartnerModifyComponent,  
-        PartnerModifyConfirmedComponent,
        
         PartnerDeleteComponent,
         PartnerDetailComponent, 

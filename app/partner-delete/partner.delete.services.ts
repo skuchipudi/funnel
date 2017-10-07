@@ -26,10 +26,7 @@ export class PartnerDeleteServices {
 
     handleError(error: Response){
         console.error(error);
-        return  Observable.throw(error.json().error || 'Server Error');
+        return  Observable.throw(error.json().error || 'PartnerDeleteServices: Server Error');
     }
-
-    
-
 
 }

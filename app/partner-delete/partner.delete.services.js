@@ -25,7 +25,7 @@ var PartnerDeleteServices = (function () {
     };
     PartnerDeleteServices.prototype.handleError = function (error) {
         console.error(error);
-        return Observable_1.Observable.throw(error.json().error || 'Server Error');
+        return Observable_1.Observable.throw(error.json().error || 'PartnerDeleteServices: Server Error');
     };
     PartnerDeleteServices = __decorate([
         core_1.Injectable(), 

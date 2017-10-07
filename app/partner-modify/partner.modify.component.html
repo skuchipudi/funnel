@@ -1,16 +1,19 @@
 
 
 <h1> Confirm Partner Modify </h1>
-   
+     This is the form you can use to modify partner information. *Note that partnerid cannot be changed as this your 
+     unique identifier.
+    
      <form #modifyForm="ngForm"  (submit)="onSubmit(modifyForm)" name="form" novalidate>
-                  <div class="form-group">
-                    <label>Partner Id</label>
-                    <input type="text" class="form-control"
-                           name="partnerid" required 
-                           placeholder = "Enter a unique  and valid Partner name"
-                           [(ngModel)]="_model.partnerId"
-                           #partnerid="ngModel">
-                </div>
+
+                 <label>Partner Name*</label>
+                 <div class="panel panel-default">
+                        <div class="panel-heading">
+                                 {{_model.partnerId}}
+                        </div>
+                 </div>
+
+               
                 <div class="form-group">
                         <label>Partner Name</label>
                         <input type="text" class="form-control"
@@ -74,8 +77,6 @@
          <button type="submit" class="btn btn-default"
          [disabled]="!modifyForm.form.valid">Submit</button>
 </form>
-
-
 
 <div>
         Model: {{ _model | json}}

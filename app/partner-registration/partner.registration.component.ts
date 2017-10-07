@@ -81,10 +81,11 @@ export class PartnerRegistrationComponent {
        //    this._partnerRegistrationInfo.password.trim();
        //    this._partnerRegistrationInfo.filePath.trim();
        
-        this._registrationService.createRegistration(this._partnerRegistrationInfo).subscribe(registrationInfo => {
-            return this._partnerRegistrationInfo = registrationInfo;
-        });
-        this._router.navigate(['/partners']);
+        this._registrationService.createRegistration(this._partnerRegistrationInfo).
+                        subscribe(registrationInfo => {
+                                this._partnerRegistrationInfo = registrationInfo;
+                                this._router.navigate(['/partners']);
+                            });
        //console.log('PartnerRegistration.onSubmit() - EXIT');
     }
 

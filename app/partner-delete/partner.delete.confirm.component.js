@@ -28,9 +28,10 @@ var PartnerDeleteConfirmedComponent = (function () {
                 subscribe(function (partner) {
                 _this._isLoading = false;
                 _this._partner = partner;
+                // after deleting navigate to the partner's tab
+                _this._router.navigate(['/partners']);
             });
         });
-        this._router.navigate(['/partners']);
     };
     PartnerDeleteConfirmedComponent = __decorate([
         core_1.Component({

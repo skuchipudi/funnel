@@ -65,10 +65,11 @@ var PartnerRegistrationComponent = (function () {
         //    this._partnerRegistrationInfo.password.trim();
         //    this._partnerRegistrationInfo.filePath.trim();
         var _this = this;
-        this._registrationService.createRegistration(this._partnerRegistrationInfo).subscribe(function (registrationInfo) {
-            return _this._partnerRegistrationInfo = registrationInfo;
+        this._registrationService.createRegistration(this._partnerRegistrationInfo).
+            subscribe(function (registrationInfo) {
+            _this._partnerRegistrationInfo = registrationInfo;
+            _this._router.navigate(['/partners']);
         });
-        this._router.navigate(['/partners']);
         //console.log('PartnerRegistration.onSubmit() - EXIT');
     };
     PartnerRegistrationComponent = __decorate([
