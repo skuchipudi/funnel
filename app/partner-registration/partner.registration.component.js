@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var partner_registration_service_1 = require('./partner.registration.service');
-var partner_registration_info_1 = require('./partner.registration.info');
+var partner_model_1 = require('../models/partner.model');
 var partner_detail_services_1 = require('../partner-detail/partner.detail.services');
 var PartnerRegistrationComponent = (function () {
     function PartnerRegistrationComponent(_router, _registrationService, _partnerDetailService) {
@@ -19,8 +19,8 @@ var PartnerRegistrationComponent = (function () {
         this._registrationService = _registrationService;
         this._partnerDetailService = _partnerDetailService;
         this._partnerAlreadyExists = false;
-        this._partnerRegistrationInfo = new partner_registration_info_1.Partner();
-        this._partnerRegistrationInfo.partnerDescription = "Partner Description";
+        this._partnerRegistrationInfo = new partner_model_1.Partner();
+        this._partnerRegistrationInfo.partnerDescription = "";
     }
     PartnerRegistrationComponent.prototype.validatePhoneNumber = function (phonenumber) {
         console.log("validatePhoneNumber called");

@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import {Partner} from './partner.registration.info';
+import {Partner} from '../models/partner.model';
 import {PartnerDetailServices} from '../partner-detail/partner.detail.services'
 
 
@@ -26,7 +26,7 @@ export class PartnerRegistrationService {
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
         let registrationInfoJSON = JSON.stringify(registrationInfo);
-        //console.log("createRegistration()=>"+ registrationInfoJSON);
+        console.log("createRegistration()=>"+ registrationInfoJSON);
 
         return this._http.post(this._create_partner_registration_url, registrationInfoJSON, options)
                      .map((response:Response) => response.json())

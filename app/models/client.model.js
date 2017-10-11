@@ -5,4 +5,4 @@ var Client = (function () {
     return Client;
 }());
 exports.Client = Client;
-//# sourceMappingURL=partner.registration.client.js.map
+//# sourceMappingURL=client.model.js.map

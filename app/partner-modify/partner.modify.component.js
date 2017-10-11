@@ -12,8 +12,7 @@ var core_1 = require('@angular/core');
 var partner_detail_services_1 = require('../partner-detail/partner.detail.services');
 var partner_modify_services_1 = require('../partner-modify/partner.modify.services');
 var router_1 = require('@angular/router');
-//import {PartnerModel} from '../partner-modify/partner.modify.info';
-var partner_detail_1 = require('../partner-detail/partner.detail');
+var partner_model_1 = require('../models/partner.model');
 var PartnerModifyComponent = (function () {
     function PartnerModifyComponent(_activatedRoute, _router, _partnerDetailServices, _partnerModifyServices) {
         this._activatedRoute = _activatedRoute;
@@ -21,7 +20,7 @@ var PartnerModifyComponent = (function () {
         this._partnerDetailServices = _partnerDetailServices;
         this._partnerModifyServices = _partnerModifyServices;
         this._isLoading = true;
-        this._model = new partner_detail_1.Partner();
+        this._model = new partner_model_1.Partner();
     }
     PartnerModifyComponent.prototype.ngOnInit = function () {
         var _this = this;

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuditLogsService} from './auditlogs.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-import {Partner} from '../partner-registration/partner.registration.info';
+import {Partner} from '../models/partner.model';
 import {NgForm} from  '@angular/forms';
 import {ColumnChartService} from '../charts/columnchart.service';
 import {AuditEntry} from './auditentries.ts';

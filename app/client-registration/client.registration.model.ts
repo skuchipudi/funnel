@@ -1,4 +1,4 @@
-import {Client} from '../partner-registration/partner.registration.client';
+import {Client} from '../models/client.model';
 
 export class ClientRegistrationModel
 {
@@ -7,8 +7,6 @@ export class ClientRegistrationModel
 		constructor() {
 			this.client = new Client ();
 		}
-
-
 }
 
 

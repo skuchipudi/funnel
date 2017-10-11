@@ -52,42 +52,11 @@ export class PartnerDetailServices {
             .catch(this.handleError);
     }
 
-    deletePartner(partnerId: any) {
-        console.log('PartnerDetailServices.delete() ENTER');
-        // let partnerJSON = JSON.stringify(partner);
-        // let headers = new Headers({'Content-Type': 'application/json'});
-        // let options = new RequestOptions({headers: headers});
-
-       // console.log(this.delete_partner_url);
-       // console.log(partnerJSON);
-         console.log (this.delete_partner_url+partnerId);
-         return this._http.get(this.delete_partner_url+partnerId)
-            .map(res => res.json())
-            .catch(this.handleError);
-        // return this._http.post(this.delete_partner_url, partnerJSON, options)
-        // .map((response:Response) => response.json())
-        // .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
-        
-       
-    }
-
+    
     handleError(error: Response){
         console.error(error);
-        return  Observable.throw(error.json().error || 'Server Error');
+        return  Observable.throw(error.json().error || 'PartnerDetail::Server Error');
     }
 
-    // jQuery Service Impl  commented out in the html page
-    getDetailTable () {
-
-       var table =  jQuery('#exampletable').DataTable({
-             "ajax": {
-                 "url": 'http://localhost:8080/partnerservices/findbypartnerid/partnerId'
-            },
-            "columns":
-                [
-                    { "data": "partnerName"},
-                    { "data": "partnerDescription" },
-                ]
-            });
-    }
+    
 }

@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {PartnerDetailServices} from '../partner-detail/partner.detail.services';
 import {PartnerModifyServices} from '../partner-modify/partner.modify.services';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-//import {PartnerModel} from '../partner-modify/partner.modify.info';
-import {Partner} from '../partner-detail/partner.detail';
+import {Partner} from '../models/partner.model';
+//import {Partner} from '../partner-detail/partner.detail';
 
 import {NgForm} from  '@angular/forms';
 
@@ -19,7 +19,7 @@ export class PartnerModifyComponent implements OnInit {
 
     // for some reason if you make this
     // model part of the constructor this results in errors
-    private _model: any;
+    private _model: Partner;
     
     constructor (
         private _activatedRoute: ActivatedRoute,

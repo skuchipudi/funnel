@@ -22,7 +22,6 @@ export class PartnerComponent implements OnInit {
             private _partnerServices: PartnerServices
             ) { }
 
-
     ngOnInit() {
        console.log('PartnerComponent. ngOnit() called');
        

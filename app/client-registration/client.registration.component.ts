@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ClientRegistrationService} from './client.registration.service';
 import {ClientRegistrationModel} from './client.registration.model';
 import { PartnerServices} from '../partners/partner.services';
-import {Partner} from '../partner-detail/partner.detail';
+import {Partner} from '../models/partner.model';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {NgForm} from  '@angular/forms';
 
@@ -19,9 +19,9 @@ export class ClientRegistrationComponent {
 
     private _clientRegistrationModel: ClientRegistrationModel;
     private _subscription;
-    private _partners;
+    private _partner;
     private _isLoading =true;
-    private _partnerDoesNotExist;
+    private _partnerIdIsNotValid=false;
     private _latlng;
   
     // TODO: populate this later using a Service
@@ -35,28 +35,26 @@ export class ClientRegistrationComponent {
                   )
     {
         this._clientRegistrationModel = new ClientRegistrationModel();
-        
+        this._partner = new Partner();
     }
 
     ngOnInit() {
            console.log('ClientRegistration. ngOnit() called');
-           this._subscription = this._activatedRoute.params.subscribe((params: Params) => {
-            this._partnerService.getEntries().
-                subscribe(partners => {
-                    this._isLoading = false;
-                    this._partners = partners;
-                 } );
-            });
      }
 
       validatePartnerId(partnerId:any)
     {
         console.log("validatePartnerId called=> " + partnerId.value);
          this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
-              this._partnerDoesNotExist  = false;
-
+               this._partner = partnerInfo[0];
+               //console.log('partner returned  =>' + JSON.stringify(this._partner));
+               //console.log('partnerid returned =>' + this._partner.partnerId);
+               //if(partnerId.value == this._partner.partnerId)
+               if(this._partner==null) 
+                    this._partnerIdIsNotValid = true;
+                else
+                    this._partnerIdIsNotValid = false;
         });
-        this._partnerDoesNotExist = true;
 
     }
 

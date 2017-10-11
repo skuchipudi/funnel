@@ -1,5 +1,3 @@
-import {EmailAddress} from './partner.registration.emailaddress';
-
 export class Client
 {
 	  public clientId:string;
@@ -9,10 +7,5 @@ export class Client
 	  public userId:string;
 	  public password: string;
 	  public filePath: string;
-	  public emailAddress: EmailAddress;
-	
-	 constructor(){
-			this.emailAddress = new EmailAddress();
-	  }
-
+	  public emailAddress: string;
 }

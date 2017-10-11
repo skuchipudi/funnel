@@ -1,10 +1,9 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {PartnerRegistrationService} from './partner.registration.service';
-import {Partner} from './partner.registration.info';
+import {Partner} from '../models/partner.model';
 import {Token} from './token';
-import {EmailAddress} from './partner.registration.emailaddress';
-import {Client} from './partner.registration.client';
+import {Client} from '../models/client.model';
 import {NgForm} from  '@angular/forms';
 import {PartnerDetailServices} from '../partner-detail/partner.detail.services'
 
@@ -23,7 +22,7 @@ export class PartnerRegistrationComponent {
                 private _partnerDetailService: PartnerDetailServices)
    {
       this._partnerRegistrationInfo = new Partner();
-      this._partnerRegistrationInfo.partnerDescription = "Partner Description";
+      this._partnerRegistrationInfo.partnerDescription = "";
     }
 
     validatePhoneNumber(phonenumber)

@@ -1,8 +1,8 @@
 "use strict";
-var partner_registration_client_1 = require('../partner-registration/partner.registration.client');
+var client_model_1 = require('../models/client.model');
 var ClientRegistrationModel = (function () {
     function ClientRegistrationModel() {
-        this.client = new partner_registration_client_1.Client();
+        this.client = new client_model_1.Client();
     }
     return ClientRegistrationModel;
 }());

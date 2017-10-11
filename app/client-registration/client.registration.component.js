@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var client_registration_service_1 = require('./client.registration.service');
 var client_registration_model_1 = require('./client.registration.model');
 var partner_services_1 = require('../partners/partner.services');
+var partner_model_1 = require('../models/partner.model');
 var router_1 = require('@angular/router');
 var partner_detail_services_1 = require('../partner-detail/partner.detail.services');
 var ClientRegistrationComponent = (function () {
@@ -22,26 +23,26 @@ var ClientRegistrationComponent = (function () {
         this._partnerService = _partnerService;
         this._partnerDetailService = _partnerDetailService;
         this._isLoading = true;
+        this._partnerIdIsNotValid = false;
         this._clientRegistrationModel = new client_registration_model_1.ClientRegistrationModel();
+        this._partner = new partner_model_1.Partner();
     }
     ClientRegistrationComponent.prototype.ngOnInit = function () {
-        var _this = this;
         console.log('ClientRegistration. ngOnit() called');
-        this._subscription = this._activatedRoute.params.subscribe(function (params) {
-            _this._partnerService.getEntries().
-                subscribe(function (partners) {
-                _this._isLoading = false;
-                _this._partners = partners;
-            });
-        });
     };
     ClientRegistrationComponent.prototype.validatePartnerId = function (partnerId) {
         var _this = this;
         console.log("validatePartnerId called=> " + partnerId.value);
         this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(function (partnerInfo) {
-            _this._partnerDoesNotExist = false;
+            _this._partner = partnerInfo[0];
+            //console.log('partner returned  =>' + JSON.stringify(this._partner));
+            //console.log('partnerid returned =>' + this._partner.partnerId);
+            //if(partnerId.value == this._partner.partnerId)
+            if (_this._partner == null)
+                _this._partnerIdIsNotValid = true;
+            else
+                _this._partnerIdIsNotValid = false;
         });
-        this._partnerDoesNotExist = true;
     };
     ClientRegistrationComponent.prototype.onSubmit = function (clientForm) {
         var _this = this;

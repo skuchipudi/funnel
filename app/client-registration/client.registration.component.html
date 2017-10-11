@@ -25,18 +25,17 @@ enter partner infomation. All transfers are completed using a multi layered secu
        <input type = "text" name="partnerid" class="form-control"  required
                [(ngModel)]="_clientRegistrationModel.partnerId"  
                placeholder = "Enter a Partner Id"
-             (blur)="validatePartnerId(partnerid)"
+               (blur)="validatePartnerId(partnerid)"
                (change)="validatePartnerId(partnerid)"
                #partnerid= "ngModel">
-            <div *ngIf="_partnerDoesNotExist"
+               <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
+               class="alert alert-danger">
+               Partner Id is Required
+               </div>
+               <div *ngIf="this._partnerIdIsNotValid"
                 class="alert alert-danger">
                 PartnerId does not exist. Please choose a valid partner
                </div>
-           <div *ngIf="partnerid.errors && (partnerid.dirty || partnerid.touched)"
-                class="alert alert-danger">
-                Partner Id is Required
-           </div>
-
       </div>
 
 
@@ -164,7 +163,7 @@ enter partner infomation. All transfers are completed using a multi layered secu
         <input type="text" class="form-control"
                name="emailaddress" required 
                placeholder = "Enter Client Email Address"
-               [(ngModel)]="_clientRegistrationModel.client.emailAddress.emailAddress"
+               [(ngModel)]="_clientRegistrationModel.client.emailAddress"
                #emailaddress="ngModel">
            <div *ngIf="emailaddress.errors && (emailaddress.dirty || emailaddress.touched)"
                 class="alert alert-danger">
