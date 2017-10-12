@@ -45,26 +45,24 @@ export class PartnerRegistrationComponent {
        else {
             console.log("length is not zero");
             partnerId = partnerId.value.trim();
-            //trim the partner id and re-assign or you
+            // Note: Trim the partner id and re-assign or you
             // will end up create a partner_id with spaces which is not good
             // and difficult to retreive and maintain
             this._partnerRegistrationInfo.partnerId=partnerId;
             //console.log('partnerId ==>' + partnerId);
-            // this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId).subscribe(partnerInfo =>  {
-            //            this._partnerRegistrationInfo = partnerInfo; 
-            //            this._partnerAlreadyExists  = true;
-            //});
+            this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId).subscribe(partnerInfo =>  {
+                //      console.log('partnerInfo ->' + partnerInfo);
+                      if(partnerInfo[0]==null)
+                      {  
+                        this._partnerAlreadyExists = false;
+                       }
+                      else if(partnerInfo[0].partnerId = partnerId)
+                      {
+                        this._partnerAlreadyExists = true;
+                      }
+            });
        }
     }
-    //  this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
-    //            this._partnerRegistrationInfo = partnerInfo; 
-    //            this._partnerAlreadyExists  = true;
-    //     });
-    //     //console.log(this._partnerRegistrationInfo.partnerId.trim());
-        //this._partnerRegistrationInfo.partnerId=partnerId.value.trim();
-        //this._partnerAlreadyExists = false;
-
-
 
     onSubmit(partnerForm: NgForm) {
 

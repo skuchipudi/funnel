@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Partner} from './partner.detail';
+import {Partner} from '../models/partner.model';
 
 declare var jQuery: any;
 declare var example:any;

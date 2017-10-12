@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PartnerDetailServices} from './partner.detail.services';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-import {Partner} from './partner.detail';
-
+import {Partner} from '../models/partner.model';
 import {FileMapService} from '../filemap/filemap.service';
 
 

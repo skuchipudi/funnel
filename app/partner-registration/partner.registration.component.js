@@ -33,25 +33,29 @@ var PartnerRegistrationComponent = (function () {
         //} else
     };
     PartnerRegistrationComponent.prototype.validatePartnerId = function (partnerId) {
+        var _this = this;
         console.log("partnerId.trim.length()==>" + partnerId.value.trim().length);
         if (partnerId.value.trim().length == 0)
             return false;
         else {
             console.log("length is not zero");
             partnerId = partnerId.value.trim();
-            //trim the partner id and re-assign or you
+            // Note: Trim the partner id and re-assign or you
             // will end up create a partner_id with spaces which is not good
             // and difficult to retreive and maintain
             this._partnerRegistrationInfo.partnerId = partnerId;
+            //console.log('partnerId ==>' + partnerId);
+            this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId).subscribe(function (partnerInfo) {
+                //      console.log('partnerInfo ->' + partnerInfo);
+                if (partnerInfo[0] == null) {
+                    _this._partnerAlreadyExists = false;
+                }
+                else if (partnerInfo[0].partnerId = partnerId) {
+                    _this._partnerAlreadyExists = true;
+                }
+            });
         }
     };
-    //  this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
-    //            this._partnerRegistrationInfo = partnerInfo; 
-    //            this._partnerAlreadyExists  = true;
-    //     });
-    //     //console.log(this._partnerRegistrationInfo.partnerId.trim());
-    //this._partnerRegistrationInfo.partnerId=partnerId.value.trim();
-    //this._partnerAlreadyExists = false;
     PartnerRegistrationComponent.prototype.onSubmit = function (partnerForm) {
         // console.log('PartnerRegistration.onSubmit() - ENTER');
         // clean up spaces before submitting.

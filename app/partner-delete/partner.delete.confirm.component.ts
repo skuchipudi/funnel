@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-import {Partner} from '../partner-detail/partner.detail';
+import {Partner} from '../models/partner.model';
 import {PartnerDeleteServices} from '../partner-delete/partner.delete.services';
 import {PartnerDetailServices} from '../partner-detail/partner.detail.services';
 

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PartnerDetailServices} from '../partner-detail/partner.detail.services';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-import {Partner} from '../partner-detail/partner.detail';
+import {Partner} from '../models/partner.model';
 
 
 
