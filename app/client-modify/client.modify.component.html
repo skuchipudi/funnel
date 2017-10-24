@@ -1,0 +1,89 @@
+
+
+<h1> Confirm Client  Modify </h1>
+     This is the form you can use to modify partner information. *Note that partnerid cannot be changed as this your 
+     unique identifier.
+    
+     <form #clientModifyForm="ngForm"  (submit)="onSubmit(clientModifyForm)" name="form" novalidate>
+
+                 <label>Partner Name*</label>
+                 <div class="panel panel-default">
+                        <div class="panel-heading">
+                                 {{_partner.partnerId}}
+                        </div>
+                 </div>
+
+               
+                <div class="form-group">
+                        <label>Client Name</label>
+                        <input type="text" class="form-control"
+                            name="clientname" required 
+                            placeholder = "Enter a unique  and valid client name"
+                            [(ngModel)]="_client.clientName"
+                            #clientname="ngModel">
+                </div>
+
+                <div class="form-group">
+                        <label>Client Description</label>
+                        <input type="text" class="form-control"
+                            name="description" required 
+                            placeholder = "Enter a phone number"
+                            [(ngModel)]="_client.clientDescription"
+                            #description="ngModel">
+                </div>
+
+                <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control"
+                            name="phonenumber" required 
+                            placeholder = "Enter the server address"
+                            [(ngModel)]="_client.phoneNumber"
+                            #phonenumber="ngModel">
+                </div>
+
+                <div class="form-group">
+                        <label>Client UserId</label>
+                        <input type="text" class="form-control"
+                            name="userid" required 
+                            placeholder = "Enter a userid"
+                            [(ngModel)]="_client.userId"
+                            #userid="ngModel">
+                </div>
+
+                <div class="form-group">
+                        <label>Client Password</label>
+                        <input type="text" class="form-control"
+                            name="password" required 
+                            placeholder = "Enter a password"
+                            [(ngModel)]="_client.password"
+                            #password="ngModel">
+                </div>
+                <div class="form-group">
+                        <label>Client Filepath</label>
+                        <input type="text" class="form-control"
+                            name="filepath" required 
+                            placeholder = "Enter a filepath"
+                            [(ngModel)]="_client.filePath"
+                            #filepath="ngModel">
+                </div>
+             <div class="form-group">
+                        <label>Client Email</label>
+                        <input type="text" class="form-control"
+                            name="emailaddress" required 
+                            placeholder = "Enter a emailaddress"
+                            [(ngModel)]="_client.emailAddress"
+                            #emailaddress="ngModel">
+                </div> 
+         <button type="submit" class="btn btn-default"
+         [disabled]="!clientModifyForm.form.valid">Submit</button>
+</form>
+
+<div>
+        Model: {{ _client | json}}
+</div>
+
+<div></div>
+
+<div>
+        Angular Form: {{ clientModifyForm.value | json }}
+</div>
