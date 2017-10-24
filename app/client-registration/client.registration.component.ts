@@ -44,7 +44,7 @@ export class ClientRegistrationComponent {
 
       validatePartnerId(partnerId:any)
     {
-        console.log("validatePartnerId called=> " + partnerId.value);
+        //console.log("validatePartnerId called=> " + partnerId.value);
          this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(partnerInfo =>  {
                this._partner = partnerInfo[0];
                //console.log('partner returned  =>' + JSON.stringify(this._partner));

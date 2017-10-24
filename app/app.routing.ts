@@ -15,10 +15,11 @@ import {PartnerDetailComponent} from './partner-detail/partner.detail.component'
 import {PartnerDeleteComponent} from './partner-delete/partner.delete.component';
 import {PartnerDeleteConfirmedComponent} from './partner-delete/partner.delete.confirm.component';
 import {PartnerModifyComponent} from './partner-modify/partner.modify.component';
-
-
 import {PartnerRegistrationComponent} from './partner-registration/partner.registration.component';
+
 import {ClientRegistrationComponent} from './client-registration/client.registration.component';
+import {ClientModifyComponent} from './client-modify/client.modify.component';
+
 
 import {MapsComponent} from './maps/maps.component';
 import {ChartsComponent} from './charts/charts.component';
@@ -37,9 +38,10 @@ const appRoutes: Routes = [
   
   { path: 'partnerdetail/:partnerId', component: PartnerDetailComponent, canActivate: [AuthGuard]},
   { path: 'partnerdelete/:partnerId', component: PartnerDeleteComponent, canActivate: [AuthGuard]},
-  { path: 'partnermodify/:partnerId', component: PartnerModifyComponent, canActivate: [AuthGuard]},
-  
+  { path: 'partnermodify/:partnerId', component: PartnerModifyComponent, canActivate: [AuthGuard]},  
   { path: 'partnerconfirmdelete/:partnerId', component: PartnerDeleteConfirmedComponent, canActivate: [AuthGuard]},
+  
+  { path: 'clientmodify/:partnerId/:clientId', component: ClientModifyComponent, canActivate: [AuthGuard]},
   
 
   { path: 'registerpartner', component: PartnerRegistrationComponent, canActivate: [AuthGuard]},

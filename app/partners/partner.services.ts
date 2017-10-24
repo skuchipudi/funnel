@@ -19,9 +19,4 @@ export class PartnerServices {
         return this._http.get(this._url)
             .map(res => res.json());
     }
-
-    
-    
-
-
 }

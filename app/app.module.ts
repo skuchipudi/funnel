@@ -5,7 +5,7 @@ import {FormsModule}       from '@angular/forms';
 import {HttpModule}        from '@angular/http';
 import {AUTH_PROVIDERS }      from 'angular2-jwt';
 import {routing, appRoutingProviders} from './app.routing';
-
+import {enableProdMode} from '@angular/core';
 
 import {AuthGuard} from './guards/index';
 
@@ -28,6 +28,9 @@ import {PartnerDeleteComponent} from './partner-delete/partner.delete.component'
 import {PartnerDeleteConfirmedComponent} from './partner-delete/partner.delete.confirm.component';
 
 import {ClientRegistrationComponent} from './client-registration/client.registration.component';
+import {ClientModifyComponent} from './client-modify/client.modify.component';
+
+
 import {RegistrationComponent} from './registration/registration.component';
 import {RegistrationsListComponent} from './registration/registrations.list.component';
 import {RegistrationDetailComponent} from './registration/registrationdetail.component';
@@ -75,6 +78,7 @@ import {MapsChartsService} from './charts/mapschart.service';
         RegistrationsListComponent,
         PartnerRegistrationComponent,
         ClientRegistrationComponent,
+        ClientModifyComponent,
         ScheduleTransferComponent,
         MapsComponent,
         ChartsComponent,

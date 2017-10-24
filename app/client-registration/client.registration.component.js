@@ -32,7 +32,7 @@ var ClientRegistrationComponent = (function () {
     };
     ClientRegistrationComponent.prototype.validatePartnerId = function (partnerId) {
         var _this = this;
-        console.log("validatePartnerId called=> " + partnerId.value);
+        //console.log("validatePartnerId called=> " + partnerId.value);
         this._partnerDetailService.getPartnerDetailsByPartnerId(partnerId.value).subscribe(function (partnerInfo) {
             _this._partner = partnerInfo[0];
             //console.log('partner returned  =>' + JSON.stringify(this._partner));

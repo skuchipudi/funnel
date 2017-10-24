@@ -34,6 +34,7 @@
              <th>Client Email Address</th>
              <th>Client File Path</th>
              <th>Client Server UserId</th>
+             <th>Modify</th>
              </tr>
         </thead>
         <tbody>
@@ -45,6 +46,7 @@
                <td>{{c.emailAddress}}</td>
                <td>{{c.filePath}}</td>
                <td>{{c.userId}}</td>
+               <td><a [routerLink]="['/clientmodify',this._partnerId, c.clientId]">Modify</a></td>
             </tr>
         </tbody>
     </table>

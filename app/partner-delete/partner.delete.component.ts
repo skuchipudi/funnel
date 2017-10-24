@@ -35,5 +35,6 @@ export class PartnerDeleteComponent implements OnInit {
                      this._partner = partner[0];
                  });
             });
-      }
+    }
+      
 }

@@ -3,6 +3,7 @@ import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Partner} from '../models/partner.model';
+import {Client}  from '../models/client.model';
 
 declare var jQuery: any;
 declare var example:any;
@@ -28,6 +29,8 @@ export class PartnerDetailServices {
          'http://localhost:8080/partnerservices/getclients/';
 
 
+    private get_client_by_clientid_url =
+         'http://localhost:8080/partnerservices/getclientbyclientid/';
 
     constructor(private _http: Http) { }
 
@@ -38,12 +41,7 @@ export class PartnerDetailServices {
             .catch(this.handleError);
     }
 
-    // getPartnerDetailsByPartnerId2( partnerId: String) {
-    //     console.log('PartnerDetailServices.getPartnerDetails() 22 called ' + partnerId);
-    //     return this._http.get(this.find_partner_url2 + partnerId)
-    //         .map(res => res.json())
-    //         .catch(this.handleError);
-    // }
+   
 
     getClients( partnerId: String) {
         console.log('PartnerDetailServices.getClients() called ' + partnerId);
@@ -51,6 +49,15 @@ export class PartnerDetailServices {
             .map(res => res.json())
             .catch(this.handleError);
     }
+
+//  This is Stubbed and you need to define the back end services
+  getClientForPartnerByClientId( partnerId:String, clientId: String){
+    console.log ('getClientForPartnerByClientId => ' + partnerId  + "| " + clientId);
+    return this._http.get(this.get_client_by_clientid_url + partnerId + "/" + clientId)
+            .map(res => res.json())
+            .catch(this.handleError);
+  }
+    
 
     
     handleError(error: Response){

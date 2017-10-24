@@ -21,6 +21,7 @@ var PartnerDetailServices = (function () {
         //    'http://localhost:8080/partnerservices/findbypartnerid2/';
         this.delete_partner_url = 'http://localhost:8080/partnerservices/delete/';
         this.get_client_url = 'http://localhost:8080/partnerservices/getclients/';
+        this.get_client_by_clientid_url = 'http://localhost:8080/partnerservices/getclientbyclientid/';
     }
     PartnerDetailServices.prototype.getPartnerDetailsByPartnerId = function (partnerId) {
         console.log('PartnerDetailServices.getPartnerDetails() called ' + partnerId);
@@ -28,15 +29,16 @@ var PartnerDetailServices = (function () {
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
-    // getPartnerDetailsByPartnerId2( partnerId: String) {
-    //     console.log('PartnerDetailServices.getPartnerDetails() 22 called ' + partnerId);
-    //     return this._http.get(this.find_partner_url2 + partnerId)
-    //         .map(res => res.json())
-    //         .catch(this.handleError);
-    // }
     PartnerDetailServices.prototype.getClients = function (partnerId) {
         console.log('PartnerDetailServices.getClients() called ' + partnerId);
         return this._http.get(this.get_client_url + partnerId)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    //  This is Stubbed and you need to define the back end services
+    PartnerDetailServices.prototype.getClientForPartnerByClientId = function (partnerId, clientId) {
+        console.log('getClientForPartnerByClientId => ' + partnerId + "| " + clientId);
+        return this._http.get(this.get_client_by_clientid_url + partnerId + "/" + clientId)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };

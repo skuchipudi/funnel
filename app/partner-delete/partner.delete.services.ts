@@ -3,9 +3,6 @@ import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-declare var jQuery: any;
-declare var partnerstable:any;
-declare var table:any;
 
 
 @Injectable()
@@ -25,7 +22,7 @@ export class PartnerDeleteServices {
     }
 
     handleError(error: Response){
-        console.error(error);
+        console.error(error.json());
         return  Observable.throw(error.json().error || 'PartnerDeleteServices: Server Error');
     }
 

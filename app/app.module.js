@@ -28,6 +28,7 @@ var partner_modify_component_1 = require('./partner-modify/partner.modify.compon
 var partner_delete_component_1 = require('./partner-delete/partner.delete.component');
 var partner_delete_confirm_component_1 = require('./partner-delete/partner.delete.confirm.component');
 var client_registration_component_1 = require('./client-registration/client.registration.component');
+var client_modify_component_1 = require('./client-modify/client.modify.component');
 var registration_component_1 = require('./registration/registration.component');
 var registrations_list_component_1 = require('./registration/registrations.list.component');
 var registrationdetail_component_1 = require('./registration/registrationdetail.component');
@@ -68,6 +69,7 @@ var AppModule = (function () {
                 registrations_list_component_1.RegistrationsListComponent,
                 partner_registration_component_1.PartnerRegistrationComponent,
                 client_registration_component_1.ClientRegistrationComponent,
+                client_modify_component_1.ClientModifyComponent,
                 schedule_transfer_component_1.ScheduleTransferComponent,
                 maps_component_1.MapsComponent,
                 charts_component_1.ChartsComponent,
