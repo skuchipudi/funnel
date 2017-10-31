@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ClientRegistrationService} from './client.registration.service';
-import {ClientRegistrationModel} from './client.registration.model';
+import {ClientWrapperModel} from '../models/client.wrapper.model';
 import { PartnerServices} from '../partners/partner.services';
 import {Partner} from '../models/partner.model';
 import {Router, ActivatedRoute, Params} from '@angular/router';
@@ -17,7 +17,7 @@ import {PartnerDetailServices} from '../partner-detail/partner.detail.services'
 
 export class ClientRegistrationComponent {
 
-    private _clientRegistrationModel: ClientRegistrationModel;
+    private _clientRegistrationModel: ClientWrapperModel;
     private _subscription;
     private _partner;
     private _isLoading =true;
@@ -34,7 +34,7 @@ export class ClientRegistrationComponent {
                   private _partnerDetailService: PartnerDetailServices
                   )
     {
-        this._clientRegistrationModel = new ClientRegistrationModel();
+        this._clientRegistrationModel = new ClientWrapperModel();
         this._partner = new Partner();
     }
 

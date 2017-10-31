@@ -15,10 +15,22 @@ require('rxjs/add/operator/map');
 var ClientModifyServices = (function () {
     function ClientModifyServices(_http) {
         this._http = _http;
-        this._partner_modify_url = 'http://localhost:8080/partnerservices/modify/';
+        this._client_modify_url = 'http://localhost:8080/partnerservices/modifyclient/';
     }
-    ClientModifyServices.prototype.modifyClient = function (partner) {
-        console.log('modifyclient');
+    ClientModifyServices.prototype.modifyClient = function (clientModifyInfo) {
+        // This has be a Post to Save the Partner 
+        // Similar to the Partner Registration 
+        console.log('Modify Client Posted');
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        // TODO - YOu need to create the client wrapper
+        // that consists of the partnerid and the client object
+        var clientModifyInfoJSON = JSON.stringify(clientModifyInfo);
+        console.log('Modify Client JSON =>' + clientModifyInfoJSON);
+        //    
+        return this._http.post(this._client_modify_url, clientModifyInfoJSON, options)
+            .map(function (response) { return response.json(); })
+            .catch(function (error) { return Observable_1.Observable.throw(error.json().error || 'Server error'); });
     };
     ClientModifyServices.prototype.handleError = function (error) {
         console.error(error);

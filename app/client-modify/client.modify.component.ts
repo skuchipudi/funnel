@@ -4,6 +4,7 @@ import {ClientModifyServices} from '../client-modify/client.modify.services';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {Partner} from '../models/partner.model';
 import {Client} from '../models/client.model';
+import {ClientWrapperModel} from '../models/client.wrapper.model';
 
 //import {Partner} from '../partner-detail/partner.detail';
 
@@ -23,6 +24,7 @@ export class ClientModifyComponent implements OnInit {
     // model part of the constructor this results in errors
     private _partner: Partner;
     private _client: Client;
+    private _clientModifyInfo: ClientWrapperModel;
 
     constructor (
         private _activatedRoute: ActivatedRoute,
@@ -32,13 +34,14 @@ export class ClientModifyComponent implements OnInit {
     ) { 
                this._partner = new Partner();
                this._client  = new Client();
+               this._clientModifyInfo = new ClientWrapperModel();
       }
 
     ngOnInit() {
         this._activatedRoute.params.subscribe((params: Params) => {
             console.log( 'ClientModifyComponent().partnerId =>' + params['partnerId']);
             console.log( 'ClientModifyComponent().client =>' + params['clientId']);
-
+            
 
             this._partnerDetailServices.getPartnerDetailsByPartnerId(params['partnerId'])
             .subscribe(partners => {
@@ -58,10 +61,15 @@ export class ClientModifyComponent implements OnInit {
     }
 
     onSubmit(clientModifyForm: NgForm) {
-        console.log ("partner modify form " + clientModifyForm;
-        // This is a asynch call so you need to make sure
-        // to put the navigation within the promise
-       
-    
+        console.log ("client modify form  =>" + clientModifyForm);
+
+        this._clientModifyInfo.partnerId = this._partner.partnerId;
+        this._clientModifyInfo.client = this._client
+        
+          this._clientModifyServices.modifyClient(this._clientModifyInfo).
+        subscribe(client => {
+            this._client = client;
+            this._router.navigate(['/partners']);
+        });
     }
 }

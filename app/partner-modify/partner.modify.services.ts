@@ -15,8 +15,7 @@ export class PartnerModifyServices {
 
     constructor(private _http: Http) { }
 
-    
-    
+
     modifyPartner(partner: any) {
         // This has be a Post to Save the Partner 
         // Similar to the Partner Registration 
@@ -25,7 +24,7 @@ export class PartnerModifyServices {
         let options = new RequestOptions({headers: headers});
         let partnerJSON = JSON.stringify(partner);
         console.log('Modify Partner JSON =>' + partnerJSON);
-        //    
+        //
         return this._http.post(this._partner_modify_url, partnerJSON, options)
             .map((response:Response) => response.json())
             .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -35,18 +34,6 @@ export class PartnerModifyServices {
         console.error(error);
         return  Observable.throw(error.json().error || 'Server Error');
     }
+
+
 }
-
-
-// createRegistration(registrationInfo: Partner)
-// {
-//     console.log('createRegistration ENTER');
-//     let headers = new Headers({'Content-Type': 'application/json'});
-//     let options = new RequestOptions({headers: headers});
-//     let registrationInfoJSON = JSON.stringify(registrationInfo);
-//     //console.log("createRegistration()=>"+ registrationInfoJSON);
-
-//     return this._http.post(this._create_partner_registration_url, registrationInfoJSON, options)
-//                  .map((response:Response) => response.json())
-//                  .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
-// }

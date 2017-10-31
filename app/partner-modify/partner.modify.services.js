@@ -25,7 +25,7 @@ var PartnerModifyServices = (function () {
         var options = new http_1.RequestOptions({ headers: headers });
         var partnerJSON = JSON.stringify(partner);
         console.log('Modify Partner JSON =>' + partnerJSON);
-        //    
+        //
         return this._http.post(this._partner_modify_url, partnerJSON, options)
             .map(function (response) { return response.json(); })
             .catch(function (error) { return Observable_1.Observable.throw(error.json().error || 'Server error'); });
@@ -41,15 +41,4 @@ var PartnerModifyServices = (function () {
     return PartnerModifyServices;
 }());
 exports.PartnerModifyServices = PartnerModifyServices;
-// createRegistration(registrationInfo: Partner)
-// {
-//     console.log('createRegistration ENTER');
-//     let headers = new Headers({'Content-Type': 'application/json'});
-//     let options = new RequestOptions({headers: headers});
-//     let registrationInfoJSON = JSON.stringify(registrationInfo);
-//     //console.log("createRegistration()=>"+ registrationInfoJSON);
-//     return this._http.post(this._create_partner_registration_url, registrationInfoJSON, options)
-//                  .map((response:Response) => response.json())
-//                  .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
-// }
 //# sourceMappingURL=partner.modify.services.js.map

@@ -14,6 +14,7 @@ var client_modify_services_1 = require('../client-modify/client.modify.services'
 var router_1 = require('@angular/router');
 var partner_model_1 = require('../models/partner.model');
 var client_model_1 = require('../models/client.model');
+var client_wrapper_model_1 = require('../models/client.wrapper.model');
 var ClientModifyComponent = (function () {
     function ClientModifyComponent(_activatedRoute, _router, _partnerDetailServices, _clientModifyServices) {
         this._activatedRoute = _activatedRoute;
@@ -23,6 +24,7 @@ var ClientModifyComponent = (function () {
         this._isLoading = true;
         this._partner = new partner_model_1.Partner();
         this._client = new client_model_1.Client();
+        this._clientModifyInfo = new client_wrapper_model_1.ClientWrapperModel();
     }
     ClientModifyComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -45,9 +47,15 @@ var ClientModifyComponent = (function () {
         });
     };
     ClientModifyComponent.prototype.onSubmit = function (clientModifyForm) {
-        console.log("partner modify form " + clientModifyForm);
-        // This is a asynch call so you need to make sure
-        // to put the navigation within the promise
+        var _this = this;
+        console.log("client modify form  =>" + clientModifyForm);
+        this._clientModifyInfo.partnerId = this._partner.partnerId;
+        this._clientModifyInfo.client = this._client;
+        this._clientModifyServices.modifyClient(this._clientModifyInfo).
+            subscribe(function (client) {
+            _this._client = client;
+            _this._router.navigate(['/partners']);
+        });
     };
     ClientModifyComponent = __decorate([
         core_1.Component({

@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import {ClientRegistrationModel} from './client.registration.model';
+import {ClientWrapperModel} from './client.wrapper.model';
 
 
 
@@ -21,7 +21,7 @@ export class ClientRegistrationService {
 
     constructor(private _http: Http){}
 
-     createRegistration(_clientRegistrationModel: ClientRegistrationModel)
+     createRegistration(_clientRegistrationModel: ClientWrapperModel)
     {
         console.log('createRegistration ENTER');
         let headers = new Headers({'Content-Type': 'application/json'});

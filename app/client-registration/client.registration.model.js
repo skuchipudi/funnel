@@ -1,10 +1,10 @@
 "use strict";
 var client_model_1 = require('../models/client.model');
-var ClientRegistrationModel = (function () {
-    function ClientRegistrationModel() {
+var ClientWrapperModel = (function () {
+    function ClientWrapperModel() {
         this.client = new client_model_1.Client();
     }
-    return ClientRegistrationModel;
+    return ClientWrapperModel;
 }());
-exports.ClientRegistrationModel = ClientRegistrationModel;
+exports.ClientWrapperModel = ClientWrapperModel;
 //# sourceMappingURL=client.registration.model.js.map

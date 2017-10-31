@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var client_registration_service_1 = require('./client.registration.service');
-var client_registration_model_1 = require('./client.registration.model');
+var client_wrapper_model_1 = require('../models/client.wrapper.model');
 var partner_services_1 = require('../partners/partner.services');
 var partner_model_1 = require('../models/partner.model');
 var router_1 = require('@angular/router');
@@ -24,7 +24,7 @@ var ClientRegistrationComponent = (function () {
         this._partnerDetailService = _partnerDetailService;
         this._isLoading = true;
         this._partnerIdIsNotValid = false;
-        this._clientRegistrationModel = new client_registration_model_1.ClientRegistrationModel();
+        this._clientRegistrationModel = new client_wrapper_model_1.ClientWrapperModel();
         this._partner = new partner_model_1.Partner();
     }
     ClientRegistrationComponent.prototype.ngOnInit = function () {
