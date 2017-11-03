@@ -1,0 +1,36 @@
+<h1> Confirm Client Delete </h1>
+        <div *ngIf="_isLoading">
+            <i class="fa fa-spinner fa-spin fa-3x"></i>
+        </div>
+        
+        <table class="table table-striped table-hover">
+                <thead>
+                   <tr>
+                     <th>Client Id</th>
+                     <th>Client Name</th>
+                     <th>Client Description</th>
+                     <th>Client Phone #</th>
+                     <th>Client EmailAddress</th>
+                     <th>Delete</th>
+                    </tr>
+               </thead>
+                <tbody>
+                    <tr>
+                        <td>{{_client.clientId}}</td> 
+                        <td>{{_client.clientName}}</td> 
+                        <td>{{_client.clientDescription}}</td>
+                        <td>{{_client.phoneNumber}}</td>
+                        <td>{{_client.emailAddress}}</td>
+                        <td><a [routerLink]="['/clientconfirmdelete',_partner.partnerId,_client.clientId]">Delete</a></td>
+                    </tr>
+                </tbody>
+          </table>
+
+<div>
+         isLoading =  {{ this._isLoading | json}}
+         _partnerId = {{ this._partnerId | json}}
+         partner = {{ _partner | json}}
+         partnerId = {{_partner.partnerId}}
+         emailAddress = {{_partner.emailAddress}}
+         
+</div> 

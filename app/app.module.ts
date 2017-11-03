@@ -29,7 +29,8 @@ import {PartnerDeleteConfirmedComponent} from './partner-delete/partner.delete.c
 
 import {ClientRegistrationComponent} from './client-registration/client.registration.component';
 import {ClientModifyComponent} from './client-modify/client.modify.component';
-
+import {ClientDeleteComponent} from './client-delete/client.delete.component';
+import {ClientDeleteConfirmedComponent} from './client-delete/client.delete.confirm.component';
 
 import {RegistrationComponent} from './registration/registration.component';
 import {RegistrationsListComponent} from './registration/registrations.list.component';
@@ -77,8 +78,12 @@ import {MapsChartsService} from './charts/mapschart.service';
         RegistrationDetailComponent,
         RegistrationsListComponent,
         PartnerRegistrationComponent,
+        
         ClientRegistrationComponent,
         ClientModifyComponent,
+        ClientDeleteComponent,
+        ClientDeleteConfirmedComponent,
+
         ScheduleTransferComponent,
         MapsComponent,
         ChartsComponent,

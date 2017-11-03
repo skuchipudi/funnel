@@ -35,6 +35,7 @@
              <th>Client File Path</th>
              <th>Client Server UserId</th>
              <th>Modify</th>
+             <th>Remove</th>
              </tr>
         </thead>
         <tbody>
@@ -47,6 +48,7 @@
                <td>{{c.filePath}}</td>
                <td>{{c.userId}}</td>
                <td><a [routerLink]="['/clientmodify',this._partnerId, c.clientId]">Modify</a></td>
+               <td><a [routerLink]="['/clientdelete',this._partnerId, c.clientId]">Remove</a></td>
             </tr>
         </tbody>
     </table>
