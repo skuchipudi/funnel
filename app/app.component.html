@@ -1,5 +1,5 @@
 
-      <!--show only if authenticated-->
+    <!--show only if authenticated-->
     <!--<nav *ngIf="auth.authenticated()" class="navbar navbar-inverse"> -->
       <nav  class="navbar navbar-inverse">
       <div class="container-fluid">
@@ -23,7 +23,6 @@
              <li><a [routerLink]="['registerclient']">Add Client</a></li>
              <li><a [routerLink]="['auditlogs']">Audit Logs</a></li>
              <li><a [routerLink]="['schedule']">Schedule</a></li>
-           
             <!-- <li><a [routerLink]="['registrationslist']">Registrations</a></li> -->
              <li><a [routerLink]="['maps']">Maps</a></li>
              <li><a [routerLink]="['charts']">Charts</a></li>
@@ -47,5 +46,7 @@
       </div>
       <!-- /.container-fluid -->
      </nav>
+
+     
     <router-outlet></router-outlet>
 
