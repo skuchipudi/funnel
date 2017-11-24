@@ -6,7 +6,9 @@ export class Partner
 		public partnerName: string;
 		public partnerDescription:string;
 		public phoneNumber: string;
-	    public emailAddress: string;
+		public emailAddress: string;
+		public walletPassword:string;
+		public walletFilePath:string;
 		public userid:string;
 		public password:string;
 		public serverAddress:string;

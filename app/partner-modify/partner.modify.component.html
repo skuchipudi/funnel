@@ -23,6 +23,32 @@
                             #partnername="ngModel">
                 </div>
 
+
+                <div class="form-group">
+                        <label>Partner Wallet Path</label>
+                        <input type="text" class="form-control"
+                               name="walletfilepath" required 
+                               placeholder = "Enter the Path to the Partner Wallet file"
+                               [(ngModel)]="_model.walletFilePath"
+                               #walletfilepath="ngModel">
+                           <div *ngIf="walletfilepath.errors && (walletfilepath.dirty || walletfilepath.touched)"
+                                class="alert alert-danger">
+                                Path to the Wallet file is required
+                           </div>
+                     </div>
+                  
+                     <div class="form-group">
+                      <label>Partner Wallet Password</label>
+                      <input type="text" class="form-control"
+                             name="walletpassword" required 
+                             placeholder = "Enter the password for the Wallet"
+                             [(ngModel)]="_model.walletPassword"
+                             #walletpassword="ngModel">
+                         <div *ngIf="walletpassword.errors && (walletpassword.dirty || walletpassword.touched)"
+                              class="alert alert-danger">
+                              Wallet password is required
+                         </div>
+                      </div>
                 <div class="form-group">
                         <label>Partner Description</label>
                         <input type="text" class="form-control"
@@ -86,10 +112,11 @@
          <button type="submit" class="btn btn-default"
          [disabled]="!modifyForm.form.valid">Submit</button>
 </form>
-
+<!--
 <div>
         Model: {{ _model | json}}
 </div>
 <div>
         Angular Form: {{ modifyForm.value | json }}
 </div>
+-->

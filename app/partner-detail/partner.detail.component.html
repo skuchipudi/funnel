@@ -33,7 +33,7 @@
              <th>Phone Number</th>
              <th>Client Email Address</th>
              <th>Client File Path</th>
-             <th>Client Server UserId</th>
+            <!-- <th>Client Server UserId</th>  -->
              <th>Modify</th>
              <th>Remove</th>
              </tr>
@@ -46,7 +46,7 @@
                <td>{{c.phoneNumber}} </td>
                <td>{{c.emailAddress}}</td>
                <td>{{c.filePath}}</td>
-               <td>{{c.userId}}</td>
+               <!--<td>{{c.userId}}</td> -->
                <td><a [routerLink]="['/clientmodify',this._partnerId, c.clientId]">Modify</a></td>
                <td><a [routerLink]="['/clientdelete',this._partnerId, c.clientId]">Remove</a></td>
             </tr>
@@ -68,9 +68,9 @@
                 <td>{{c.auditEntries[1].logEntry}}</td>
         </tbody>
    </table>
-   -->
 
 
    <div>
   {{ _clients | json }}
    </div>
+   -->
