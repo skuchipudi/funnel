@@ -78,7 +78,7 @@ var PartnerRegistrationComponent = (function () {
     };
     PartnerRegistrationComponent = __decorate([
         core_1.Component({
-            templateUrl: '/app/partner-registration/partner.registration.component.html',
+            templateUrl: '/app/partner-add/partner.registration.component.html',
             providers: [partner_registration_service_1.PartnerRegistrationService, partner_detail_services_1.PartnerDetailServices]
         }), 
         __metadata('design:paramtypes', [router_1.Router, partner_registration_service_1.PartnerRegistrationService, partner_detail_services_1.PartnerDetailServices])

@@ -16,7 +16,7 @@ import {PartnerDetailComponent} from './partner-detail/partner.detail.component'
 import {PartnerDeleteComponent} from './partner-delete/partner.delete.component';
 import {PartnerDeleteConfirmedComponent} from './partner-delete/partner.delete.confirm.component';
 import {PartnerModifyComponent} from './partner-modify/partner.modify.component';
-import {PartnerRegistrationComponent} from './partner-registration/partner.registration.component';
+import {PartnerRegistrationComponent} from './partner-add/partner.registration.component';
 
 import {ClientRegistrationComponent} from './client-registration/client.registration.component';
 import {ClientModifyComponent} from './client-modify/client.modify.component';

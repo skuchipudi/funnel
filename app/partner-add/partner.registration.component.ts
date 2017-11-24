@@ -9,7 +9,7 @@ import {PartnerDetailServices} from '../partner-detail/partner.detail.services'
 
 
 @Component({
-    templateUrl: '/app/partner-registration/partner.registration.component.html',
+    templateUrl: '/app/partner-add/partner.registration.component.html',
     providers: [PartnerRegistrationService, PartnerDetailServices]
 })
 

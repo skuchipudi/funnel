@@ -21,7 +21,7 @@ import {FileSentinelSplashComponent} from './splash/filesentinel_splash.componen
 import {PartnerComponent} from  './partners/partner.component';
 import {PartnerDetailComponent} from  './partner-detail/partner.detail.component';
 
-import {PartnerRegistrationComponent} from  './partner-registration/partner.registration.component';
+import {PartnerRegistrationComponent} from  './partner-add/partner.registration.component';
 import {PartnerModifyComponent} from './partner-modify/partner.modify.component';
 
 import {PartnerDeleteComponent} from './partner-delete/partner.delete.component';
